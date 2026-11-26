@@ -8,10 +8,13 @@ MSD Engineering – The Fire Wala's **Fire Alarm System Installation** service.
 |---|---|
 | `index.html` | The complete landing page (HTML + CSS + JS, no build step) |
 | `assets/img/` | Logo, favicon and optimized photos (WebP) |
-| `leads/google-apps-script.gs` | Optional Google Sheets lead collector |
+| `leads/google-apps-script.gs` | Google Sheets lead recorder (Apps Script) |
+| `leads/SETUP.md` | Step-by-step guide to connect the form to Google Sheets |
+| `assets/video/` | Project videos (audio removed – always play muted) |
+| `assets/certs/` | ISO 7202, Udyam (MSME) and Trademark certificates |
 
 ## Configure (top of `index.html`, `window.FW_CONFIG`)
-- `LEAD_ENDPOINT` – Google Apps Script web-app URL (see `leads/google-apps-script.gs`).
+- `LEAD_ENDPOINT` – Google Apps Script web-app URL (see `leads/SETUP.md`).
   If left empty, each enquiry opens WhatsApp with the filled details so no lead is lost.
 - `WHATSAPP` – number receiving WhatsApp enquiries (default `917772078610`).
 - `META_PIXEL_ID` – Meta Pixel ID. Fires `PageView`, `InitiateCheckout` (form started),
@@ -24,7 +27,8 @@ Upload `index.html` and the `assets/` folder to any static host (your web server
 Vercel, GitHub Pages, Hostinger etc.) and use that URL as the ad's destination.
 
 ## Sections
-Hero + lead form → Trust stats & clients → Pain points → How it works → Components &
-system types → Industries → 6-step process → Packages → Deliverables & standards →
-Why The Fire Wala → FAQ (objection handling) → Final CTA → Footer.
-Sticky Call / WhatsApp / Free Survey bar on mobile.
+Hero + lead form → Stats band → Services (Conventional / Addressable tabs + devices) →
+Real work videos (muted) → How it protects + pain points → Industries → How we work (6 steps) →
+Certificates (lightbox) → Client logos + Google reviews → Packages → Deliverables & standards →
+FAQ → Final CTA → Footer. Sticky Call / WhatsApp / FREE Survey bar on mobile.
+Design matches the Hydrant & Sprinkler landing page (Inter font, navy + orange).

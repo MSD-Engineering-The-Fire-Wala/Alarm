@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fire Alarm System Installation | The Fire Wala – MSD Engineering, Raipur</title>
+<meta name="description" content="Fire Alarm System design, supply, installation, testing & commissioning by The Fire Wala (MSD Engineering), ISO 9001:2015. NBC Part 4 & IS 2189 aligned. Free site survey. Call 7772078610.">
+<meta name="theme-color" content="#031a33">
+<meta property="og:title" content="Fire Alarm System Installation – The Fire Wala">
+<meta property="og:description" content="Detect fire early. Alert everyone instantly. Engineering-designed fire alarm systems for hospitals, hotels, schools, factories & offices. Book a free site survey.">
+<meta property="og:image" content="assets/img/team-van.webp">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ===================== CONFIGURATION =====================
+  LEAD_ENDPOINT : Google Apps Script Web-App URL (see leads/google-apps-script.gs).
+                  Leave "" and every enquiry will open WhatsApp with the details instead.
+  WHATSAPP      : number that receives WhatsApp enquiries (country code, no +).
+  META_PIXEL_ID : your Meta (Facebook) Pixel ID – fires PageView + Lead events.
+=========================================================== -->
+<script>
+  window.FW_CONFIG = {
+    LEAD_ENDPOINT: "",
+    WHATSAPP: "917772078610",
+    META_PIXEL_ID: ""
+  };
+</script>
+<script>
+  // Meta Pixel (only loads when an ID is set above)
+  (function(){
+    var id = window.FW_CONFIG.META_PIXEL_ID; if(!id) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', id); fbq('track', 'PageView');
+  })();
+</script>
+
+<style>
+:root{
+  --navy:#004890; --navy-700:#003a75; --deep:#031a33; --deep-2:#06264a;
+  --orange:#E87010; --teal:#00A0B0; --red:#E63B26; --red-700:#c92f1c;
+  --ink:#141414; --body:#3a3f45; --gray:#8A8D8F; --line:#e3e8ef;
+  --bg:#ffffff; --bg-soft:#f3f6fa;
+  --radius:14px; --shadow:0 10px 30px rgba(3,26,51,.10); --shadow-lg:0 24px 60px rgba(3,26,51,.22);
+  --font-h:'Montserrat', Arial, Helvetica, sans-serif;
+  --font-b:Arial, Helvetica, system-ui, sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-b);color:var(--body);background:var(--bg);line-height:1.55;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--font-h);color:var(--ink);line-height:1.18;letter-spacing:-.01em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-h);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--orange),var(--teal))}
+.sec-head{max-width:720px;margin:0 auto 48px;text-align:center}
+.sec-head .eyebrow{justify-content:center}
+.sec-head h2{font-size:clamp(26px,3.4vw,38px);margin:12px 0 12px;color:var(--navy)}
+.sec-head p{color:var(--body);font-size:17px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-h);font-weight:700;font-size:16px;border:0;cursor:pointer;border-radius:10px;padding:15px 26px;transition:transform .15s ease, box-shadow .2s ease, background .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 10px 24px rgba(230,59,38,.35)}
+.btn-red:hover{background:var(--red-700);transform:translateY(-2px)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-700);transform:translateY(-2px)}
+.btn-wa{background:#1fa855;color:#fff}
+.btn-wa:hover{background:#178a45}
+
+/* ---------- Header ---------- */
+.topbar{background:var(--red);color:#fff;font-size:13.5px;font-family:var(--font-h);font-weight:600}
+.topbar .wrap{display:flex;justify-content:center;align-items:center;gap:10px;padding-top:8px;padding-bottom:8px;text-align:center}
+.topbar .dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.2s infinite}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(3,26,51,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.brand img{height:46px;width:auto}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-phones{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--font-h);font-weight:700;font-size:15px}
+.nav-phones svg{width:18px;height:18px;color:var(--orange)}
+.nav-phones a:hover{color:var(--orange)}
+.nav-phones .sep{opacity:.35}
+.nav .btn{padding:11px 18px;font-size:14px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;color:#dfe8f3;background:
+  radial-gradient(900px 520px at 88% 8%, rgba(232,112,16,.28), transparent 60%),
+  radial-gradient(700px 500px at 0% 100%, rgba(0,160,176,.22), transparent 60%),
+  linear-gradient(160deg,var(--deep) 0%, #052a52 55%, var(--deep) 100%);
+  padding:64px 0 90px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;
+  background-image:repeating-linear-gradient(115deg,#fff 0 1px,transparent 1px 34px)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:start}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:7px 14px 7px 8px;border-radius:999px;font-size:13px;font-family:var(--font-h);font-weight:600;color:#fff}
+.hero-tag b{background:var(--orange);color:#fff;border-radius:999px;padding:3px 10px;font-size:11px;letter-spacing:.08em}
+.hero h1{color:#fff;font-size:clamp(34px,5vw,58px);font-weight:800;margin:20px 0 18px;letter-spacing:-.02em}
+.hero h1 .hl{background:linear-gradient(90deg,#ff9a3c,var(--orange) 50%,#ff6a3d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:18.5px;max-width:560px;color:#c9d6e6}
+.hero-points{list-style:none;margin:26px 0 30px;display:grid;gap:12px}
+.hero-points li{display:flex;gap:12px;align-items:flex-start;color:#fff;font-size:16px}
+.hero-points .tick{flex:none;width:24px;height:24px;border-radius:50%;background:rgba(0,160,176,.2);border:1.5px solid var(--teal);display:grid;place-items:center}
+.hero-points .tick svg{width:13px;height:13px;color:#5fe6f2}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-visual{margin-top:40px;display:flex;align-items:center;gap:22px}
+.detector{position:relative;width:150px;height:150px;flex:none}
+.detector .ring{position:absolute;inset:0;border-radius:50%;border:2px solid var(--orange);opacity:0;animation:ripple 2.6s ease-out infinite}
+.detector .ring:nth-child(2){animation-delay:.85s;border-color:var(--teal)}
+.detector .ring:nth-child(3){animation-delay:1.7s}
+.detector svg{position:absolute;inset:18px;width:calc(100% - 36px);height:calc(100% - 36px);filter:drop-shadow(0 12px 24px rgba(0,0,0,.45))}
+.led{animation:blink 1s infinite}
+.hero-visual p{font-size:14.5px;color:#b9c8da;max-width:330px}
+.hero-visual p strong{color:#fff;font-family:var(--font-h);display:block;font-size:17px;margin-bottom:4px}
+
+/* ---------- Form ---------- */
+.form-card{background:#fff;border-radius:18px;box-shadow:var(--shadow-lg);padding:28px 26px 24px;color:var(--body);position:relative;scroll-margin-top:90px}
+.form-card::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;border-radius:18px 18px 0 0;background:linear-gradient(90deg,var(--orange),var(--red) 50%,var(--teal))}
+.form-card h3{font-size:22px;color:var(--navy);margin-bottom:4px}
+.form-card .sub{font-size:14px;color:var(--gray);margin-bottom:18px}
+.form-card .sub b{color:var(--red)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 12px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12.5px;font-weight:700;color:var(--ink);font-family:var(--font-h)}
+.field label .req{color:var(--red)}
+.field input,.field select,.field textarea{font:inherit;font-size:15px;color:var(--ink);border:1.5px solid var(--line);background:#fbfcfe;border-radius:10px;padding:12px 12px;outline:none;transition:border-color .15s, box-shadow .15s;width:100%}
+.field textarea{resize:vertical;min-height:64px}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(0,72,144,.12);background:#fff}
+.field.invalid input,.field.invalid select{border-color:var(--red);box-shadow:0 0 0 3px rgba(230,59,38,.12)}
+.field .err{display:none;font-size:12px;color:var(--red)}
+.field.invalid .err{display:block}
+.phone-wrap{display:flex}
+.phone-wrap span{display:grid;place-items:center;padding:0 10px;border:1.5px solid var(--line);border-right:0;border-radius:10px 0 0 10px;background:var(--bg-soft);font-size:14px;color:var(--body);font-weight:700}
+.phone-wrap input{border-radius:0 10px 10px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:8px 12px;border:1.5px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;font-family:var(--font-b);color:var(--body);background:#fbfcfe;transition:all .15s}
+.chips input:checked + span{border-color:var(--navy);background:var(--navy);color:#fff}
+.chips input:focus-visible + span{box-shadow:0 0 0 3px rgba(0,72,144,.25)}
+.form-card .btn{width:100%;margin-top:16px;font-size:17px;padding:16px}
+.form-note{display:flex;gap:8px;align-items:center;justify-content:center;font-size:12.5px;color:var(--gray);margin-top:12px;text-align:center}
+.form-note svg{width:14px;height:14px;color:var(--teal);flex:none}
+.success{display:none;text-align:center;padding:18px 4px}
+.success .ok{width:68px;height:68px;border-radius:50%;background:rgba(0,160,176,.12);display:grid;place-items:center;margin:0 auto 14px}
+.success .ok svg{width:34px;height:34px;color:var(--teal)}
+.success h3{margin-bottom:8px}
+.success p{font-size:15px;margin-bottom:18px}
+.success .btn{margin-top:10px}
+.form-card.done form{display:none}
+.form-card.done .success{display:block}
+
+/* ---------- Trust strip ---------- */
+.trust{background:#fff;padding:0;position:relative;z-index:3}
+.trust .wrap{transform:translateY(-44px)}
+.trust-grid{background:#fff;border-radius:16px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(5,1fr);overflow:hidden;border:1px solid var(--line)}
+.stat{padding:22px 14px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--font-h);font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+.stat b em{font-style:normal;color:var(--orange)}
+.stat span{font-size:13px;color:var(--gray);font-weight:600}
+.clients{margin-top:26px;text-align:center}
+.clients small{display:block;font-family:var(--font-h);font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:12px}
+.client-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;font-family:var(--font-h);font-weight:700;color:#5d6670;font-size:15px}
+.client-row span{opacity:.85}
+
+/* ---------- Pain points ---------- */
+.pain{background:var(--bg-soft);padding-top:40px}
+.pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pain-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;display:flex;gap:14px;align-items:flex-start;transition:transform .2s, box-shadow .2s}
+.pain-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.pain-card .ic{flex:none;width:42px;height:42px;border-radius:10px;background:rgba(230,59,38,.09);display:grid;place-items:center}
+.pain-card .ic svg{width:22px;height:22px;color:var(--red)}
+.pain-card p{font-size:15px;color:var(--ink);font-weight:600;line-height:1.4}
+.pain-cta{margin-top:34px;text-align:center;font-size:18px;color:var(--ink);font-family:var(--font-h);font-weight:700}
+.pain-cta a{color:var(--red);border-bottom:2px solid currentColor}
+
+/* ---------- How it works ---------- */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative;counter-reset:flow}
+.flow::before{content:"";position:absolute;top:44px;left:12%;right:12%;height:3px;background:linear-gradient(90deg,var(--orange),var(--red),var(--teal));border-radius:3px;opacity:.5}
+.flow-step{text-align:center;position:relative}
+.flow-step .bubble{width:88px;height:88px;border-radius:50%;margin:0 auto 18px;background:#fff;border:3px solid var(--line);display:grid;place-items:center;box-shadow:var(--shadow);position:relative}
+.flow-step .bubble svg{width:40px;height:40px;color:var(--navy)}
+.flow-step .bubble::after{counter-increment:flow;content:counter(flow);position:absolute;top:-6px;right:-6px;width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;font-family:var(--font-h);font-weight:800;font-size:13px;display:grid;place-items:center;border:3px solid #fff}
+.flow-step h4{font-size:18px;color:var(--navy);margin-bottom:6px}
+.flow-step p{font-size:14.5px;max-width:240px;margin:0 auto}
+.outcomes{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.outcome{display:flex;align-items:center;gap:12px;background:var(--bg-soft);border-radius:12px;padding:16px 18px;font-weight:700;color:var(--ink);font-size:15px}
+.outcome svg{width:22px;height:22px;color:var(--teal);flex:none}
+
+/* ---------- Components ---------- */
+.components{background:linear-gradient(180deg,var(--deep) 0%, #05264a 100%);color:#c9d6e6;position:relative;overflow:hidden}
+.components::before{content:"";position:absolute;inset:0;opacity:.05;background-image:repeating-linear-gradient(115deg,#fff 0 1px,transparent 1px 34px)}
+.components .sec-head h2{color:#fff}
+.components .sec-head p{color:#b9c8da}
+.components .eyebrow{color:#ffb070}
+.comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.comp{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:22px 20px;transition:background .2s, transform .2s, border-color .2s}
+.comp:hover{background:rgba(255,255,255,.09);transform:translateY(-3px);border-color:rgba(232,112,16,.5)}
+.comp .ic{width:56px;height:56px;border-radius:14px;background:#fff;display:grid;place-items:center;margin-bottom:14px}
+.comp .ic svg{width:34px;height:34px}
+.comp h4{color:#fff;font-size:16.5px;margin-bottom:6px}
+.comp p{font-size:14px;color:#a9bbd0;line-height:1.5}
+.panel-types{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px;position:relative}
+.ptype{border-radius:var(--radius);padding:24px;background:#fff;color:var(--body)}
+.ptype h4{color:var(--navy);font-size:19px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.ptype h4 .badge{font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:rgba(232,112,16,.12);color:#b4520a;padding:4px 9px;border-radius:999px}
+.ptype p{font-size:14.5px}
+.ptype ul{list-style:none;margin-top:10px;display:grid;gap:6px;font-size:14.5px}
+.ptype li::before{content:"→ ";color:var(--orange);font-weight:700}
+
+/* ---------- Industries ---------- */
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ind{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3.3;background:var(--deep);isolation:isolate}
+.ind img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s;z-index:-1}
+.ind:hover img{transform:scale(1.06)}
+.ind::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,26,51,0) 30%,rgba(3,26,51,.92) 100%);z-index:-1}
+.ind div{position:absolute;left:16px;right:16px;bottom:14px;color:#fff}
+.ind h4{color:#fff;font-size:18px}
+.ind p{font-size:13px;color:#cfdbea}
+
+/* ---------- Process ---------- */
+.process{background:var(--bg-soft)}
+.proc-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.proc-img{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.proc-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/4.2}
+.proc-img.plan{background:#fff;border:1px solid var(--line)}
+.proc-img.plan svg{display:block;width:100%;height:auto;margin-bottom:76px}
+.proc-img .tagbox{position:absolute;left:16px;bottom:16px;right:16px;background:rgba(3,26,51,.9);color:#fff;border-radius:12px;padding:14px 16px;font-size:14px;backdrop-filter:blur(4px)}
+.proc-img .tagbox b{font-family:var(--font-h);color:#ffb070}
+.steps{display:grid;gap:12px}
+.step{display:flex;gap:16px;background:#fff;border-radius:12px;padding:16px 18px;border:1px solid var(--line);align-items:flex-start}
+.step .num{flex:none;width:40px;height:40px;border-radius:10px;background:var(--navy);color:#fff;font-family:var(--font-h);font-weight:800;display:grid;place-items:center;font-size:15px}
+.step:nth-child(even) .num{background:var(--teal)}
+.step h4{font-size:16.5px;color:var(--navy);margin-bottom:3px}
+.step p{font-size:14.5px}
+
+/* ---------- Packages ---------- */
+.pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
+.pkg{border:1.5px solid var(--line);border-radius:16px;padding:26px 22px;display:flex;flex-direction:column;background:#fff;position:relative;transition:transform .2s, box-shadow .2s}
+.pkg:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.pkg.pop{border-color:var(--navy);box-shadow:var(--shadow)}
+.pkg.pop .flag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-family:var(--font-h);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;white-space:nowrap}
+.pkg .tier{font-family:var(--font-h);font-weight:800;font-size:13px;letter-spacing:.14em;color:var(--orange)}
+.pkg h4{font-size:20px;color:var(--navy);margin:6px 0 4px}
+.pkg .for{font-size:13.5px;color:var(--gray);margin-bottom:16px;min-height:40px}
+.pkg ul{list-style:none;display:grid;gap:9px;font-size:14.5px;color:var(--ink);margin-bottom:22px;flex:1}
+.pkg li{display:flex;gap:9px}
+.pkg li svg{flex:none;width:18px;height:18px;color:var(--teal);margin-top:1px}
+.pkg .btn{width:100%;padding:13px;font-size:15px}
+.pkg-note{text-align:center;margin-top:22px;font-size:14px;color:var(--gray)}
+
+/* ---------- Deliverables / Standards ---------- */
+.deliv{background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%)}
+.deliv-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:28px}
+.deliv-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px}
+.deliv-card h3{font-size:22px;color:var(--navy);margin-bottom:6px}
+.deliv-card > p{font-size:15px;margin-bottom:20px}
+.deliv-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+.deliv-list div{display:flex;gap:10px;align-items:center;font-weight:600;color:var(--ink);font-size:15px}
+.deliv-list svg{width:20px;height:20px;flex:none;color:var(--teal)}
+.std-card{background:var(--navy);color:#d6e3f3;border-radius:18px;padding:30px;position:relative;overflow:hidden}
+.std-card::after{content:"";position:absolute;right:-40px;bottom:-40px;width:200px;height:200px;background:url(assets/img/flame.png) no-repeat center/contain;opacity:.12}
+.std-card h3{color:#fff;font-size:22px;margin-bottom:16px}
+.std{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.std:last-of-type{border-bottom:0}
+.std b{font-family:var(--font-h);color:#fff;min-width:110px;font-size:15px}
+.std span{font-size:14px}
+.success-crit{margin-top:16px;font-size:13.5px;color:#b9cde4;position:relative;z-index:1}
+
+/* ---------- Why us ---------- */
+.why-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.why-photo{position:relative}
+.why-photo img{border-radius:18px;box-shadow:var(--shadow-lg);width:100%}
+.why-photo .badge-iso{position:absolute;right:-12px;top:-14px;background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:12px 16px;display:flex;gap:10px;align-items:center}
+.why-photo .badge-iso svg{width:30px;height:30px;color:var(--navy)}
+.why-photo .badge-iso b{font-family:var(--font-h);color:var(--navy);display:block;font-size:15px;line-height:1.1}
+.why-photo .badge-iso small{font-size:12px;color:var(--gray)}
+.quote{margin-top:18px;background:var(--bg-soft);border-left:4px solid var(--orange);border-radius:0 12px 12px 0;padding:16px 18px;font-size:15px;color:var(--ink)}
+.quote em{display:block;font-family:var(--font-h);font-weight:700;font-style:normal;color:var(--navy);margin-bottom:4px;font-size:16.5px}
+.quote small{display:block;margin-top:6px;color:var(--gray);font-size:13px}
+.why-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.why-item{display:flex;gap:12px;align-items:flex-start}
+.why-item .ic{flex:none;width:38px;height:38px;border-radius:10px;background:rgba(0,72,144,.08);display:grid;place-items:center}
+.why-item .ic svg{width:20px;height:20px;color:var(--navy)}
+.why-item b{font-family:var(--font-h);color:var(--ink);font-size:14.5px;display:block}
+.why-item span{font-size:13.5px;color:var(--gray)}
+.why-wrap h2{font-size:clamp(26px,3.4vw,38px);color:var(--navy);margin:12px 0 12px}
+
+/* ---------- FAQ ---------- */
+.faq{background:var(--bg-soft)}
+.faq-list{max-width:820px;margin:0 auto;display:grid;gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 20px;transition:box-shadow .2s}
+details[open]{box-shadow:var(--shadow)}
+summary{list-style:none;cursor:pointer;padding:18px 0;font-family:var(--font-h);font-weight:700;color:var(--ink);font-size:16.5px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--orange);font-weight:600;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 18px;font-size:15.5px}
+
+/* ---------- Final CTA ---------- */
+.final{background:
+  radial-gradient(700px 400px at 100% 0%, rgba(232,112,16,.30), transparent 60%),
+  radial-gradient(600px 400px at 0% 100%, rgba(0,160,176,.22), transparent 60%),
+  var(--deep);color:#c9d6e6;text-align:center}
+.final h2{color:#fff;font-size:clamp(28px,4vw,44px);max-width:820px;margin:14px auto 14px}
+.final p{max-width:640px;margin:0 auto 28px;font-size:17.5px}
+.final .eyebrow{color:#ffb070}
+.final-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.final-phones{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:center;font-family:var(--font-h);font-weight:800;font-size:clamp(22px,3vw,30px);color:#fff}
+.final-phones a{display:inline-flex;align-items:center;gap:10px}
+.final-phones a:hover{color:#ffb070}
+.final-phones svg{width:26px;height:26px;color:var(--orange)}
+
+/* ---------- Footer ---------- */
+footer{background:#020f1f;color:#8fa2b8;font-size:14px;padding:44px 0 100px}
+.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px}
+footer img{height:52px;width:auto;margin-bottom:12px}
+footer h5{font-family:var(--font-h);color:#fff;font-size:14px;margin-bottom:10px;letter-spacing:.04em}
+footer a:hover{color:#fff}
+footer .line{display:flex;gap:8px;margin-bottom:8px}
+footer .line svg{width:16px;height:16px;flex:none;margin-top:2px;color:var(--orange)}
+.copy{border-top:1px solid rgba(255,255,255,.08);margin-top:30px;padding-top:18px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:12.5px}
+
+/* ---------- Sticky mobile bar ---------- */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;grid-template-columns:1fr 1fr 1.3fr;background:#fff;box-shadow:0 -6px 20px rgba(3,26,51,.15);padding:8px;gap:8px;padding-bottom:calc(8px + env(safe-area-inset-bottom))}
+.mbar a{display:flex;align-items:center;justify-content:center;gap:6px;border-radius:10px;padding:12px 6px;font-family:var(--font-h);font-weight:700;font-size:14px}
+.mbar svg{width:18px;height:18px}
+.mbar .call{background:var(--navy);color:#fff}
+.mbar .wa{background:#1fa855;color:#fff}
+.mbar .quote-b{background:var(--red);color:#fff}
+.wa-float{position:fixed;right:20px;bottom:24px;z-index:55;width:58px;height:58px;border-radius:50%;background:#1fa855;display:grid;place-items:center;box-shadow:0 10px 24px rgba(31,168,85,.45);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;color:#fff}
+
+/* ---------- Animations ---------- */
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes ripple{0%{transform:scale(.55);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){
+  .comp-grid,.pkg-grid{grid-template-columns:repeat(2,1fr)}
+  .pain-grid{grid-template-columns:repeat(2,1fr)}
+  .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-phones .p2,.nav-phones .sep{display:none}
+}
+@media (max-width:900px){
+  section{padding:64px 0}
+  .hero{padding:40px 0 80px}
+  .hero .wrap{grid-template-columns:1fr;gap:34px}
+  .hero-visual{display:none}
+  .trust-grid{grid-template-columns:repeat(3,1fr)}
+  .stat:nth-child(3){border-right:0}
+  .stat:nth-child(n+4){border-top:1px solid var(--line)}
+  .flow{grid-template-columns:repeat(2,1fr);row-gap:34px}
+  .flow::before{display:none}
+  .outcomes{grid-template-columns:1fr 1fr}
+  .proc-wrap,.why-wrap,.deliv-wrap{grid-template-columns:1fr}
+  .proc-img img{aspect-ratio:16/11}
+  .proc-img.plan svg{margin-bottom:84px}
+  .foot{grid-template-columns:1fr}
+  .nav-phones{display:none}
+}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .wrap{padding:0 16px}
+  .topbar{font-size:12px}
+  header.nav .wrap{height:62px}
+  .brand img{height:38px}
+  .nav .btn{padding:10px 14px;font-size:13px}
+  .hero-tag{font-size:12px}
+  .hero-tag .long{display:none}
+  .hero h1{font-size:33px}
+  .hero .lead{font-size:16.5px}
+  .hero-ctas .btn{flex:1 1 100%}
+  .form-card{padding:24px 18px 20px}
+  .fgrid{grid-template-columns:1fr}
+  .trust .wrap{transform:translateY(-36px)}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .stat{border-right:1px solid var(--line)!important;border-top:1px solid var(--line)}
+  .stat:nth-child(-n+2){border-top:0}
+  .stat:nth-child(even){border-right:0!important}
+  .stat:last-child{grid-column:1/-1;border-right:0!important}
+  .stat b{font-size:26px}
+  .pain-grid,.comp-grid,.pkg-grid,.panel-types,.outcomes,.why-list,.deliv-list{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr;gap:26px 12px}
+  .flow-step .bubble{width:72px;height:72px}
+  .flow-step .bubble svg{width:32px;height:32px}
+  .flow-step h4{font-size:16px}
+  .flow-step p{font-size:13.5px}
+  .ind-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .ind h4{font-size:15px}
+  .ind p{display:none}
+  .why-photo .badge-iso{right:8px;top:-14px}
+  .mbar{display:grid}
+  .wa-float{display:none}
+  footer{padding-bottom:110px}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG sprite (line icons: navy primary, one accent) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-checkc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M7.5 12.3l3 3 6-6.3"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3.5L2.5 20h19z"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 10v4.5M12 17.4v.1"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2.8l8 3.2v6c0 4.9-3.4 8.4-8 9.6-4.6-1.2-8-4.7-8-9.6V6z"/><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.2l2.5 2.5 4.6-4.9"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar"><div class="wrap"><span class="dot"></span><span>Free Site Survey &amp; Detector Layout Consultation — limited slots this month</span></div></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="MSD Engineering – The Fire Wala"><img src="assets/img/logo-white.png" alt="MSD Engineering – The Fire Wala, ISO 9001:2015 Certified" width="128" height="46"></a>
+    <div class="nav-right">
+      <div class="nav-phones">
+        <svg><use href="#i-phone"/></svg>
+        <a href="tel:+917772078610" data-track="call">77720 78610</a><span class="sep">|</span><a class="p2" href="tel:+917772070303" data-track="call">77720 70303</a>
+      </div>
+      <a href="#quote" class="btn btn-red">Get Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="hero-tag"><b>FIRE ALARM</b> Design · Installation<span class="long"> · Supply · Testing</span></span>
+      <h1>Detect Fire in Seconds.<br><span class="hl">Alert Everyone Instantly.</span></h1>
+      <p class="lead">Engineering-designed Fire Alarm Systems for hospitals, hotels, schools, factories, offices &amp; residential buildings — installed, tested and handed over with complete documentation.</p>
+      <ul class="hero-points">
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span><span>Designed as per <b>NBC Part 4 &amp; IS 2189</b> — ready for Fire NOC &amp; insurance</span></li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span><span>Conventional &amp; Addressable systems — sized for your building</span></li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span><span>Testing, commissioning, staff training &amp; AMC support</span></li>
+      </ul>
+      <div class="hero-ctas">
+        <a href="#quote" class="btn btn-red">Book Free Site Survey <svg><use href="#i-arrow"/></svg></a>
+        <a href="tel:+917772078610" class="btn btn-ghost" data-track="call"><svg><use href="#i-phone"/></svg>Call 77720 78610</a>
+      </div>
+      <div class="hero-visual">
+        <div class="detector" aria-hidden="true">
+          <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+          <svg viewBox="0 0 120 120">
+            <defs>
+              <radialGradient id="dg" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9e2ec"/></radialGradient>
+            </defs>
+            <circle cx="60" cy="60" r="56" fill="url(#dg)"/>
+            <circle cx="60" cy="60" r="56" fill="none" stroke="#b8c5d3" stroke-width="2"/>
+            <circle cx="60" cy="60" r="38" fill="none" stroke="#c9d4df" stroke-width="2"/>
+            <g stroke="#aab8c7" stroke-width="3" stroke-linecap="round">
+              <path d="M60 26v8M60 86v8M26 60h8M86 60h8M36 36l5.5 5.5M78.5 78.5L84 84M84 36l-5.5 5.5M41.5 78.5L36 84"/>
+            </g>
+            <circle cx="60" cy="60" r="16" fill="#eef3f8" stroke="#c3cfdb" stroke-width="2"/>
+            <circle class="led" cx="60" cy="60" r="5.5" fill="#E63B26"/>
+          </svg>
+        </div>
+        <p><strong>Every second counts.</strong>A smoke detector senses fire at the smouldering stage — long before flames spread — and triggers hooters across the building.</p>
+      </div>
+    </div>
+
+    <!-- LEAD FORM -->
+    <div class="form-card" id="quote">
+      <form id="leadForm" novalidate>
+        <h3>Get a Free Site Survey &amp; Quote</h3>
+        <p class="sub">Share a few details — our fire alarm engineer will call you <b>within 2 working hours</b>.</p>
+        <div class="fgrid">
+          <div class="field">
+            <label for="f-name">Full Name <span class="req">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+            <span class="err">Please enter your name</span>
+          </div>
+          <div class="field">
+            <label for="f-phone">Mobile Number <span class="req">*</span></label>
+            <div class="phone-wrap"><span>+91</span><input id="f-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="10" placeholder="10-digit mobile" required></div>
+            <span class="err">Enter a valid 10-digit mobile number</span>
+          </div>
+          <div class="field">
+            <label for="f-city">City / Location <span class="req">*</span></label>
+            <input id="f-city" name="city" type="text" autocomplete="address-level2" placeholder="e.g. Raipur" required>
+            <span class="err">Please enter your city</span>
+          </div>
+          <div class="field">
+            <label for="f-type">Property Type <span class="req">*</span></label>
+            <select id="f-type" name="property_type" required>
+              <option value="">Select property</option>
+              <option>Hospital / Nursing Home / Diagnostic Centre</option>
+              <option>Hotel / Resort / Banquet Hall</option>
+              <option>School / College / Hostel</option>
+              <option>Office / Commercial Complex</option>
+              <option>Mall / Showroom / Retail Store</option>
+              <option>Factory / Manufacturing Unit</option>
+              <option>Warehouse / Logistics</option>
+              <option>Residential Society / High-Rise</option>
+              <option>Other</option>
+            </select>
+            <span class="err">Please select property type</span>
+          </div>
+          <div class="field full">
+            <label>What do you need? <span class="req">*</span></label>
+            <div class="chips" id="needChips">
+              <label><input type="radio" name="requirement" value="New Fire Alarm Installation" required><span>New Installation</span></label>
+              <label><input type="radio" name="requirement" value="Upgrade / Expansion of Existing System"><span>Upgrade / Expansion</span></label>
+              <label><input type="radio" name="requirement" value="Repair – System Not Working / False Alarms"><span>Repair / False Alarms</span></label>
+              <label><input type="radio" name="requirement" value="Fire NOC / Audit Compliance"><span>For Fire NOC</span></label>
+              <label><input type="radio" name="requirement" value="AMC for Fire Alarm"><span>AMC</span></label>
+            </div>
+            <span class="err" id="needErr">Please choose one option</span>
+          </div>
+          <div class="field">
+            <label for="f-size">Approx. Built-up Area</label>
+            <select id="f-size" name="area">
+              <option value="">Select area</option>
+              <option>Below 2,000 sq.ft</option>
+              <option>2,000 – 10,000 sq.ft</option>
+              <option>10,000 – 50,000 sq.ft</option>
+              <option>50,000 sq.ft +</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-floors">No. of Floors</label>
+            <select id="f-floors" name="floors">
+              <option value="">Select floors</option>
+              <option>Ground only</option>
+              <option>G + 1 to G + 3</option>
+              <option>G + 4 to G + 7</option>
+              <option>G + 8 and above</option>
+              <option>Multiple buildings / campus</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="f-time">When do you need it?</label>
+            <select id="f-time" name="timeline">
+              <option value="">Select timeline</option>
+              <option>Urgent – within 2 weeks</option>
+              <option>Within 1 month</option>
+              <option>1 – 3 months</option>
+              <option>Just exploring / budget estimate</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="f-msg">Anything else? <span style="font-weight:500;color:var(--gray)">(optional)</span></label>
+            <textarea id="f-msg" name="message" rows="2" placeholder="e.g. NOC inspection next month, existing panel showing faults…"></textarea>
+          </div>
+        </div>
+        <!-- tracking (auto-filled) -->
+        <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="fbclid"><input type="hidden" name="page">
+        <button type="submit" class="btn btn-red" id="submitBtn">Book My Free Site Survey <svg><use href="#i-arrow"/></svg></button>
+        <p class="form-note"><svg><use href="#i-lock"/></svg>Your details are safe with us. No spam — only a call from our engineer.</p>
+      </form>
+      <div class="success" role="status" aria-live="polite">
+        <div class="ok"><svg><use href="#i-checkc"/></svg></div>
+        <h3>Thank you, <span id="okName">there</span>!</h3>
+        <p>Your request is received. Our fire alarm engineer will call you shortly on <b id="okPhone"></b>.</p>
+        <a class="btn btn-wa" id="okWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Send details on WhatsApp</a>
+        <a class="btn btn-navy" href="tel:+917772078610" data-track="call"><svg><use href="#i-phone"/></svg>Call now: 77720 78610</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST ================= -->
+<section class="trust" aria-label="Why clients trust us">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="stat"><b>8<em>+</em></b><span>Years of Execution</span></div>
+      <div class="stat"><b>500<em>+</em></b><span>Projects Completed</span></div>
+      <div class="stat"><b>50<em>+</em></b><span>Trained Team Members</span></div>
+      <div class="stat"><b>50<em>+</em></b><span>Active AMC Clients</span></div>
+      <div class="stat"><b>ISO</b><span>9001:2015 Certified</span></div>
+    </div>
+    <div class="clients">
+      <small>Trusted by hospitals, hotels, schools &amp; industries</small>
+      <div class="client-row">
+        <span>Tata Power</span><span>PVR INOX</span><span>Reebok</span><span>UPL</span><span>Malabar Gold</span><span>Sanjeevani Hospital</span><span>Saroj Group of Hospitals</span><span>Maira Resort</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAIN POINTS ================= -->
+<section class="pain">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Sound familiar?</span>
+      <h2>Is your building facing any of these?</h2>
+      <p>Most buildings come to us when one of these problems puts lives, compliance or business at risk.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal"><span class="ic"><svg><use href="#i-warn"/></svg></span><p>No fire alarm system installed in the building</p></div>
+      <div class="pain-card reveal"><span class="ic"><svg><use href="#i-warn"/></svg></span><p>Existing system is non-functional or shows faults</p></div>
+      <div class="pain-card reveal"><span class="ic"><svg><use href="#i-warn"/></svg></span><p>Frequent false alarms disturbing operations</p></div>
+      <div class="pain-card reveal"><span class="ic"><svg><use href="#i-warn"/></svg></span><p>Fire NOC getting delayed or rejected</p></div>
+      <div class="pain-card reveal"><span class="ic"><svg><use href="#i-warn"/></svg></span><p>Insurance or Fire Audit has raised observations</p></div>
+      <div class="pain-card reveal"><span class="ic"><svg><use href="#i-warn"/></svg></span><p>Building expanded — coverage is now inadequate</p></div>
+      <div class="pain-card reveal"><span class="ic"><svg><use href="#i-warn"/></svg></span><p>No way to alert all occupants during an emergency</p></div>
+      <div class="pain-card reveal"><span class="ic"><svg><use href="#i-warn"/></svg></span><p>Hospital / NABH, hotel or tenant compliance requirement</p></div>
+    </div>
+    <p class="pain-cta reveal">Fire alarm ki zarurat aaj hai, kal nahi. <a href="#quote">Get your building checked free →</a></p>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it protects you</span>
+      <h2>The first warning line of defence against fire</h2>
+      <p>A properly designed system gives you the critical minutes that save lives, reduce damage and protect your business.</p>
+    </div>
+    <div class="flow">
+      <div class="flow-step reveal">
+        <div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3" stroke="#E87010"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2"/></svg></div>
+        <h4>Detect</h4><p>Smoke, heat &amp; flame detectors sense fire at its initial stage.</p>
+      </div>
+      <div class="flow-step reveal">
+        <div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h3"/><circle cx="15" cy="15" r="2.2" fill="#E87010" stroke="#E87010"/></svg></div>
+        <h4>Signal</h4><p>The control panel instantly identifies the zone / device in alarm.</p>
+      </div>
+      <div class="flow-step reveal">
+        <div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l5 4V6L7 10z"/><path d="M15.5 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11" stroke="#E87010"/></svg></div>
+        <h4>Alert</h4><p>Hooters &amp; response indicators warn every occupant immediately.</p>
+      </div>
+      <div class="flow-step reveal">
+        <div class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4.5" r="1.8"/><path d="M9 21l2.5-6 2.5 2v4M11.5 15l1-5-3 1.5-1.5 3M12.5 10l3 2.5 2.5-.5"/><path d="M3 21h4V17h4" stroke="#00A0B0"/></svg></div>
+        <h4>Evacuate</h4><p>People exit safely while response begins — damage is minimised.</p>
+      </div>
+    </div>
+    <div class="outcomes">
+      <div class="outcome reveal"><svg><use href="#i-checkc"/></svg>Early Fire Detection</div>
+      <div class="outcome reveal"><svg><use href="#i-checkc"/></svg>Faster Emergency Response</div>
+      <div class="outcome reveal"><svg><use href="#i-checkc"/></svg>Occupant Warning System</div>
+      <div class="outcome reveal"><svg><use href="#i-checkc"/></svg>Property &amp; Asset Protection</div>
+      <div class="outcome reveal"><svg><use href="#i-checkc"/></svg>Fire NOC &amp; Insurance Readiness</div>
+      <div class="outcome reveal"><svg><use href="#i-checkc"/></svg>Future-Expandable Infrastructure</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPONENTS ================= -->
+<section class="components">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we install</span>
+      <h2>Complete fire alarm system — every component covered</h2>
+      <p>Site-specific device planning. Right detector for the right area — no over-selling, no under-protection.</p>
+    </div>
+    <div class="comp-grid">
+      <div class="comp reveal"><div class="ic"><svg viewBox="0 0 40 40"><rect x="6" y="7" width="28" height="3" rx="1.5" fill="#004890"/><path d="M9 10h22v6a11 11 0 0 1-22 0z" fill="#fff" stroke="#004890" stroke-width="2.2"/><path d="M14 17h12M15 20.5h10" stroke="#004890" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="24.5" r="1.8" fill="#E63B26"/><path d="M13 31c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0" stroke="#E87010" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></div><h4>Smoke Detectors</h4><p>Optical detectors for rooms, corridors, lobbies &amp; offices — detect smouldering fires early.</p></div>
+      <div class="comp reveal"><div class="ic"><svg viewBox="0 0 40 40"><rect x="6" y="7" width="28" height="3" rx="1.5" fill="#004890"/><path d="M9 10h22v6a11 11 0 0 1-22 0z" fill="#fff" stroke="#004890" stroke-width="2.2"/><rect x="18.5" y="14" width="3" height="9" rx="1.5" fill="#E87010"/><circle cx="20" cy="24" r="2.6" fill="#E87010"/><path d="M12 33l2-3M20 34v-3M28 33l-2-3" stroke="#004890" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4>Heat Detectors</h4><p>For kitchens, pantries, generator &amp; boiler rooms where smoke detectors cause false alarms.</p></div>
+      <div class="comp reveal"><div class="ic"><svg viewBox="0 0 40 40"><rect x="6" y="7" width="28" height="3" rx="1.5" fill="#004890"/><path d="M9 10h22v6a11 11 0 0 1-22 0z" fill="#fff" stroke="#004890" stroke-width="2.2"/><circle cx="16" cy="18" r="2.2" fill="#004890"/><circle cx="24" cy="18" r="2.2" fill="#00A0B0"/><path d="M14 31h12" stroke="#00A0B0" stroke-width="2" stroke-linecap="round"/></svg></div><h4>Multi-Sensor Detectors</h4><p>Smoke + heat in one device for mixed-risk areas — fewer false alarms, faster response.</p></div>
+      <div class="comp reveal"><div class="ic"><svg viewBox="0 0 40 40"><rect x="3" y="14" width="7" height="12" rx="1.5" fill="#fff" stroke="#004890" stroke-width="2"/><rect x="30" y="14" width="7" height="12" rx="1.5" fill="#fff" stroke="#004890" stroke-width="2"/><path d="M10 20h20" stroke="#E87010" stroke-width="2" stroke-dasharray="3 2.5"/><circle cx="6.5" cy="20" r="1.6" fill="#E63B26"/></svg></div><h4>Beam &amp; Flame Detectors</h4><p>For warehouses, factory sheds &amp; high ceilings where point detectors can't reach.</p></div>
+      <div class="comp reveal"><div class="ic"><svg viewBox="0 0 40 40"><rect x="8" y="6" width="24" height="28" rx="3" fill="#E63B26"/><rect x="12" y="11" width="16" height="16" rx="1.5" fill="#fff"/><path d="M15 23l5-8 5 8" fill="none" stroke="#004890" stroke-width="2" stroke-linejoin="round"/><path d="M20 23v-3" stroke="#004890" stroke-width="2"/></svg></div><h4>Manual Call Points (MCP)</h4><p>"Break glass / push" points near exits so anyone can raise the alarm manually.</p></div>
+      <div class="comp reveal"><div class="ic"><svg viewBox="0 0 40 40"><path d="M10 15h6l7-6v22l-7-6h-6z" fill="#fff" stroke="#004890" stroke-width="2.2" stroke-linejoin="round"/><path d="M27 15a6 6 0 0 1 0 10M30.5 11a11 11 0 0 1 0 18" fill="none" stroke="#E87010" stroke-width="2.2" stroke-linecap="round"/></svg></div><h4>Hooters &amp; Sounders</h4><p>Loud audio-visual alarms placed so every floor and room hears the warning.</p></div>
+      <div class="comp reveal"><div class="ic"><svg viewBox="0 0 40 40"><rect x="13" y="8" width="14" height="22" rx="3" fill="#fff" stroke="#004890" stroke-width="2.2"/><circle cx="20" cy="17" r="4" fill="#E63B26"/><path d="M20 30v4" stroke="#004890" stroke-width="2.2"/><path d="M8 14l-3-2M8 20H4.5M32 14l3-2M32 20h3.5" stroke="#E87010" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4>Response Indicators</h4><p>LED indicators outside closed rooms showing exactly which room is in alarm.</p></div>
+      <div class="comp reveal"><div class="ic"><svg viewBox="0 0 40 40"><rect x="7" y="6" width="26" height="28" rx="2.5" fill="#fff" stroke="#004890" stroke-width="2.2"/><rect x="11" y="10" width="18" height="7" rx="1" fill="#004890"/><circle cx="13.5" cy="22" r="1.6" fill="#E63B26"/><circle cx="18" cy="22" r="1.6" fill="#00A0B0"/><circle cx="22.5" cy="22" r="1.6" fill="#E87010"/><path d="M12 28h16" stroke="#004890" stroke-width="2" stroke-linecap="round"/></svg></div><h4>Fire Alarm Control Panel</h4><p>Brain of the system with battery backup, power supply &amp; complete cabling infrastructure.</p></div>
+    </div>
+    <div class="panel-types">
+      <div class="ptype reveal">
+        <h4>Conventional System <span class="badge">Small – Medium</span></h4>
+        <p>Detectors grouped into zones — the panel shows which zone is in alarm. Cost-effective and reliable.</p>
+        <ul><li>Shops, small offices, clinics, small schools</li><li>Lower initial investment</li></ul>
+      </div>
+      <div class="ptype reveal">
+        <h4>Addressable System <span class="badge">Medium – Large</span></h4>
+        <p>Every device has its own address — the panel pinpoints the exact detector &amp; location on loop design.</p>
+        <ul><li>Hospitals, hotels, malls, factories, campuses</li><li>Faster response, easy fault finding, expandable</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INDUSTRIES ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Industries we protect</span>
+      <h2>Fire alarm systems for every type of building</h2>
+      <p>Each occupancy has a different risk profile — we design the detection layout accordingly.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind reveal"><img src="assets/img/ind-hospital.webp" alt="Hospital corridor" loading="lazy"><div><h4>Hospitals &amp; Healthcare</h4><p>Hospitals, nursing homes, diagnostic centres · NABH ready</p></div></div>
+      <div class="ind reveal"><img src="assets/img/ind-hotel.webp" alt="Hotel kitchen" loading="lazy"><div><h4>Hotels &amp; Banquets</h4><p>Hotels, resorts, banquet halls, restaurants</p></div></div>
+      <div class="ind reveal"><img src="assets/img/ind-school.webp" alt="School corridor" loading="lazy"><div><h4>Schools &amp; Colleges</h4><p>Schools, colleges, universities, hostels</p></div></div>
+      <div class="ind reveal"><img src="assets/img/ind-office.webp" alt="Corporate office" loading="lazy"><div><h4>Offices &amp; Commercial</h4><p>Corporate offices, commercial complexes</p></div></div>
+      <div class="ind reveal"><img src="assets/img/ind-factory.webp" alt="Factory floor" loading="lazy"><div><h4>Factories</h4><p>Manufacturing &amp; production units</p></div></div>
+      <div class="ind reveal"><img src="assets/img/ind-warehouse.webp" alt="Warehouse racks" loading="lazy"><div><h4>Warehouses</h4><p>Storage, logistics &amp; distribution centres</p></div></div>
+      <div class="ind reveal"><img src="assets/img/ind-retail.webp" alt="Retail store aisle" loading="lazy"><div><h4>Malls &amp; Retail</h4><p>Shopping malls, showrooms, retail stores</p></div></div>
+      <div class="ind reveal"><img src="assets/img/ind-residential.webp" alt="Residential building staircase" loading="lazy"><div><h4>Residential</h4><p>High-rise buildings &amp; societies</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="process">
+  <div class="wrap proc-wrap">
+    <div class="proc-img plan reveal">
+      <svg viewBox="0 0 480 500" role="img" aria-label="Sample fire alarm detector layout drawing with smoke detectors, heat detector, manual call points, hooters and control panel">
+        <rect width="480" height="500" fill="#ffffff"/>
+        <g stroke="#e8eef5" stroke-width="1"><path d="M20 0V500"/><path d="M40 0V500"/><path d="M60 0V500"/><path d="M80 0V500"/><path d="M100 0V500"/><path d="M120 0V500"/><path d="M140 0V500"/><path d="M160 0V500"/><path d="M180 0V500"/><path d="M200 0V500"/><path d="M220 0V500"/><path d="M240 0V500"/><path d="M260 0V500"/><path d="M280 0V500"/><path d="M300 0V500"/><path d="M320 0V500"/><path d="M340 0V500"/><path d="M360 0V500"/><path d="M380 0V500"/><path d="M400 0V500"/><path d="M420 0V500"/><path d="M440 0V500"/><path d="M460 0V500"/><path d="M0 20H480"/><path d="M0 40H480"/><path d="M0 60H480"/><path d="M0 80H480"/><path d="M0 100H480"/><path d="M0 120H480"/><path d="M0 140H480"/><path d="M0 160H480"/><path d="M0 180H480"/><path d="M0 200H480"/><path d="M0 220H480"/><path d="M0 240H480"/><path d="M0 260H480"/><path d="M0 280H480"/><path d="M0 300H480"/><path d="M0 320H480"/><path d="M0 340H480"/><path d="M0 360H480"/><path d="M0 380H480"/><path d="M0 400H480"/><path d="M0 420H480"/><path d="M0 440H480"/><path d="M0 460H480"/><path d="M0 480H480"/></g>
+        <text x="24" y="34" font-family="Montserrat,Arial" font-weight="800" font-size="13" fill="#004890" letter-spacing="1.5">DETECTOR LAYOUT · TYPICAL FLOOR</text>
+        <g fill="none" stroke="#004890" stroke-width="4" stroke-linejoin="round">
+          <rect x="24" y="52" width="432" height="300"/>
+          <path d="M184 52v120M184 210v142M324 52v100M324 190v40M324 270v82M24 230h120M184 230h272"/>
+        </g>
+        <g fill="#004890" font-family="Arial" font-size="10.5" font-weight="700" opacity=".6">
+          <text x="32" y="70">OFFICE</text><text x="192" y="70">CONFERENCE</text><text x="332" y="70">CABIN</text><text x="32" y="248">STORE</text><text x="192" y="248">OPEN WORK AREA</text><text x="400" y="248">PANTRY</text><text x="32" y="192">CORRIDOR</text>
+        </g>
+        <g fill="rgba(0,160,176,.10)" stroke="#00A0B0" stroke-width="1.2" stroke-dasharray="4 3">
+          <circle cx="104" cy="140" r="58"/><circle cx="254" cy="140" r="58"/><circle cx="390" cy="140" r="52"/>
+          <circle cx="84" cy="290" r="50"/><circle cx="226" cy="290" r="54"/><circle cx="290" cy="290" r="54"/>
+        </g>
+        <g fill="#fff" stroke="#004890" stroke-width="2.5">
+          <circle cx="104" cy="140" r="9"/><circle cx="254" cy="140" r="9"/><circle cx="390" cy="140" r="9"/>
+          <circle cx="84" cy="290" r="9"/><circle cx="226" cy="290" r="9"/><circle cx="290" cy="290" r="9"/><circle cx="254" cy="215" r="9"/>
+        </g>
+        <g fill="#E63B26"><circle cx="104" cy="140" r="3"/><circle cx="254" cy="140" r="3"/><circle cx="390" cy="140" r="3"/><circle cx="84" cy="290" r="3"/><circle cx="226" cy="290" r="3"/><circle cx="290" cy="290" r="3"/><circle cx="254" cy="215" r="3"/></g>
+        <g><circle cx="390" cy="290" r="10" fill="#E87010"/><text x="390" y="294" text-anchor="middle" font-family="Arial" font-weight="700" font-size="10" fill="#fff">H</text></g>
+        <g fill="#E63B26"><rect x="30" y="200" width="16" height="16" rx="2"/><rect x="436" y="200" width="16" height="16" rx="2"/></g>
+        <g fill="#fff" font-family="Arial" font-weight="700" font-size="9"><text x="33" y="211.5">M</text><text x="439" y="211.5">M</text></g>
+        <g><path d="M150 200l10 6-10 6z" fill="#E87010"/><path d="M340 200l10 6-10 6z" fill="#E87010"/></g>
+        <rect x="190" y="326" width="40" height="22" rx="3" fill="#004890"/><text x="210" y="341" text-anchor="middle" font-family="Arial" font-weight="700" font-size="10" fill="#fff">FACP</text>
+        <path d="M210 326V300M104 149V200H254M254 149V206M390 149V200H254M84 281V240H254M290 281V240M226 281V240M390 280V240" fill="none" stroke="#E87010" stroke-width="1.4" stroke-dasharray="5 3" opacity=".8"/>
+        <g font-family="Arial" font-size="11" fill="#141414">
+          <circle cx="36" cy="382" r="7" fill="#fff" stroke="#004890" stroke-width="2"/><circle cx="36" cy="382" r="2.4" fill="#E63B26"/><text x="50" y="386">Smoke detector</text>
+          <circle cx="36" cy="408" r="8" fill="#E87010"/><text x="33" y="412" fill="#fff" font-weight="700" font-size="9">H</text><text x="50" y="412">Heat detector</text>
+          <rect x="29" y="427" width="14" height="14" rx="2" fill="#E63B26"/><text x="32" y="438" fill="#fff" font-weight="700" font-size="8.5">M</text><text x="50" y="438">Manual call point</text>
+          <path d="M180 376l10 6-10 6z" fill="#E87010"/><text x="198" y="386">Hooter / sounder</text>
+          <rect x="178" y="401" width="16" height="12" rx="2" fill="#004890"/><text x="198" y="412">Fire alarm panel</text>
+          <circle cx="186" cy="434" r="8" fill="rgba(0,160,176,.12)" stroke="#00A0B0" stroke-dasharray="3 2"/><text x="198" y="438">Coverage radius</text>
+          <path d="M330 382h24" stroke="#E87010" stroke-width="1.6" stroke-dasharray="5 3"/><text x="360" y="386">Loop cabling</text>
+        </g>
+      </svg>
+      <div class="tagbox"><b>Step 1 is free:</b> our engineer visits your site, studies the layout &amp; risk areas and prepares the right detector plan.</div>
+    </div>
+    <div>
+      <span class="eyebrow reveal">Our 6-step process</span>
+      <h2 class="reveal" style="font-size:clamp(26px,3.4vw,38px);color:var(--navy);margin:12px 0 22px">From site survey to signed handover</h2>
+      <div class="steps">
+        <div class="step reveal"><span class="num">01</span><div><h4>Site Survey</h4><p>Review of building layout, occupancy type &amp; risk areas to decide detector requirement.</p></div></div>
+        <div class="step reveal"><span class="num">02</span><div><h4>System Design</h4><p>Detector &amp; device layout, panel selection (conventional / addressable), zone &amp; loop design.</p></div></div>
+        <div class="step reveal"><span class="num">03</span><div><h4>Material Supply</h4><p>Panel, detectors, MCPs, hooters, batteries, cables, conduits &amp; junction boxes — right make for your budget.</p></div></div>
+        <div class="step reveal"><span class="num">04</span><div><h4>Installation</h4><p>Neat cable laying, conduiting, device mounting, panel installation &amp; termination by our in-house team.</p></div></div>
+        <div class="step reveal"><span class="num">05</span><div><h4>Testing &amp; Commissioning</h4><p>Detector, MCP, hooter, battery, zone &amp; loop testing, fault simulation and full demonstration.</p></div></div>
+        <div class="step reveal"><span class="num">06</span><div><h4>Training &amp; Handover</h4><p>Your staff learn panel operation, alarm acknowledgement &amp; basic troubleshooting. Handover signed.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PACKAGES ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Solutions for every size</span>
+      <h2>Choose the right fire alarm package</h2>
+      <p>Pricing depends on building area, height, device quantity &amp; cable routing — so every quote is site-specific and transparent.</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg reveal">
+        <span class="tier">BASIC</span><h4>Small Premises</h4><p class="for">Small offices, shops &amp; clinics</p>
+        <ul><li><svg><use href="#i-check"/></svg>Conventional fire alarm panel</li><li><svg><use href="#i-check"/></svg>Basic smoke / heat detection</li><li><svg><use href="#i-check"/></svg>MCP &amp; hooter</li><li><svg><use href="#i-check"/></svg>Testing &amp; handover</li></ul>
+        <a href="#quote" class="btn btn-navy" data-pkg="Basic">Get Quote</a>
+      </div>
+      <div class="pkg pop reveal">
+        <span class="flag">Most requested</span>
+        <span class="tier">STANDARD</span><h4>Full Coverage</h4><p class="for">Schools, hotels &amp; commercial buildings</p>
+        <ul><li><svg><use href="#i-check"/></svg>Full building detection coverage</li><li><svg><use href="#i-check"/></svg>Conventional or addressable</li><li><svg><use href="#i-check"/></svg>Zone-wise layout drawing</li><li><svg><use href="#i-check"/></svg>Staff training</li></ul>
+        <a href="#quote" class="btn btn-red" data-pkg="Standard">Get Quote</a>
+      </div>
+      <div class="pkg reveal">
+        <span class="tier">PREMIUM</span><h4>High-Risk Sites</h4><p class="for">Hospitals, factories &amp; warehouses</p>
+        <ul><li><svg><use href="#i-check"/></svg>Advanced / addressable detection</li><li><svg><use href="#i-check"/></svg>Risk-area specific devices</li><li><svg><use href="#i-check"/></svg>Detailed documentation set</li><li><svg><use href="#i-check"/></svg>AMC-ready handover</li></ul>
+        <a href="#quote" class="btn btn-navy" data-pkg="Premium">Get Quote</a>
+      </div>
+      <div class="pkg reveal">
+        <span class="tier">ENTERPRISE</span><h4>Large Campuses</h4><p class="for">Industrial plants, malls &amp; multi-building projects</p>
+        <ul><li><svg><use href="#i-check"/></svg>Multi-loop addressable system</li><li><svg><use href="#i-check"/></svg>Integration planning</li><li><svg><use href="#i-check"/></svg>Management-dashboard-ready infrastructure</li><li><svg><use href="#i-check"/></svg>Dedicated project manager</li></ul>
+        <a href="#quote" class="btn btn-navy" data-pkg="Enterprise">Get Quote</a>
+      </div>
+    </div>
+    <p class="pkg-note">Easy payment terms: advance for material → running payment during execution → balance before handover.</p>
+  </div>
+</section>
+
+<!-- ================= DELIVERABLES & STANDARDS ================= -->
+<section class="deliv">
+  <div class="wrap deliv-wrap">
+    <div class="deliv-card reveal">
+      <span class="eyebrow">What you receive</span>
+      <h3 style="margin-top:10px">Not just a system — a fully documented handover</h3>
+      <p>Everything you need for Fire NOC, insurance audits and future maintenance.</p>
+      <div class="deliv-list">
+        <div><svg><use href="#i-checkc"/></svg>Working Fire Alarm System</div>
+        <div><svg><use href="#i-checkc"/></svg>As-Built Layout Drawing</div>
+        <div><svg><use href="#i-checkc"/></svg>Installation Report</div>
+        <div><svg><use href="#i-checkc"/></svg>Testing Report</div>
+        <div><svg><use href="#i-checkc"/></svg>Device Schedule</div>
+        <div><svg><use href="#i-checkc"/></svg>Material List</div>
+        <div><svg><use href="#i-checkc"/></svg>Warranty Documents</div>
+        <div><svg><use href="#i-checkc"/></svg>User Training Record</div>
+        <div><svg><use href="#i-checkc"/></svg>Signed Handover Report</div>
+      </div>
+    </div>
+    <div class="std-card reveal">
+      <h3>Designed to the right standards</h3>
+      <div class="std"><b>NBC Part 4</b><span>National Building Code – Fire &amp; Life Safety</span></div>
+      <div class="std"><b>IS 2189</b><span>Code of practice for fire detection &amp; alarm systems</span></div>
+      <div class="std"><b>Local Fire Authority</b><span>Requirements for Fire NOC</span></div>
+      <div class="std"><b>Insurance &amp; OEM</b><span>Guidelines &amp; manufacturer recommendations</span></div>
+      <p class="success-crit">Project is complete only when all devices, zones &amp; loops are operational, there is no active fault, testing &amp; training are done, and handover is signed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section>
+  <div class="wrap why-wrap">
+    <div class="why-photo reveal">
+      <img src="assets/img/team-van.webp" alt="The Fire Wala field team in front of the MSD Engineering service vehicle" loading="lazy">
+      <div class="badge-iso"><svg><use href="#i-shield"/></svg><div><b>ISO 9001:2015</b><small>Certified Company</small></div></div>
+    </div>
+    <div>
+      <span class="eyebrow reveal">Why The Fire Wala</span>
+      <h2 class="reveal">Your long-term fire safety partner in Raipur &amp; Central India</h2>
+      <p class="reveal">MSD Engineering – The Fire Wala is a founder-led, engineering-driven fire safety company with an in-house team for design, installation, testing and service.</p>
+      <div class="why-list">
+        <div class="why-item reveal"><span class="ic"><svg><use href="#i-shield"/></svg></span><div><b>Engineering-Based Design</b><span>Site-specific device planning</span></div></div>
+        <div class="why-item reveal"><span class="ic"><svg><use href="#i-checkc"/></svg></span><div><b>In-House Trained Team</b><span>Better quality &amp; accountability</span></div></div>
+        <div class="why-item reveal"><span class="ic"><svg><use href="#i-checkc"/></svg></span><div><b>Checklist-Based SOP</b><span>Consistent, mistake-free execution</span></div></div>
+        <div class="why-item reveal"><span class="ic"><svg><use href="#i-checkc"/></svg></span><div><b>Progress Reporting</b><span>Photo &amp; milestone updates</span></div></div>
+        <div class="why-item reveal"><span class="ic"><svg><use href="#i-checkc"/></svg></span><div><b>Honest Recommendation</b><span>No unnecessary brands or devices</span></div></div>
+        <div class="why-item reveal"><span class="ic"><svg><use href="#i-checkc"/></svg></span><div><b>AMC &amp; NOC Support</b><span>Support long after installation</span></div></div>
+      </div>
+      <div class="quote reveal"><em>"Fire safety is not an option — it's a responsibility."</em>We design, install, test and maintain fire safety systems that work in real emergencies — not just on paper.<small>— Mr. Dilshad Ansari, Founder &amp; CEO</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Common questions</span>
+      <h2>Fire alarm — your questions answered</h2>
+    </div>
+    <div class="faq-list">
+      <details class="reveal"><summary>We already have fire extinguishers. Do we still need a fire alarm?</summary><p>Yes. An extinguisher works only when someone knows there is a fire. A fire alarm system gives the <b>early warning</b> — it detects fire at the initial stage and alerts everyone, even at night or in unattended rooms.</p></details>
+      <details class="reveal"><summary>Abhi fire alarm ki zarurat nahi hai — why now?</summary><p>Delay in detecting a fire is the single biggest risk. Most fire damage happens in the first few minutes, before anyone notices. A fire alarm buys those critical minutes for evacuation and response — and it's also required for Fire NOC and insurance in most commercial buildings.</p></details>
+      <details class="reveal"><summary>How much does a fire alarm system cost?</summary><p>Cost depends on building area &amp; height, number of detectors, panel capacity, cable quantity and routing. Instead of a fixed price, we do a <b>free site survey</b> and give you a transparent, itemised quote. Think of it as a life-safety and property-protection investment — not just a compliance cost.</p></details>
+      <details class="reveal"><summary>Conventional or addressable — which one do I need?</summary><p>Conventional systems suit smaller premises like shops, clinics and small offices. Addressable systems are better for hospitals, hotels, malls, factories and campuses as they pinpoint the exact device in alarm. Our engineer will recommend the right one after the survey.</p></details>
+      <details class="reveal"><summary>How long does installation take?</summary><p>A small office can be done in a few days. Schools, hotels, hospitals and factories are project-based — duration depends on device quantity, cable routing complexity and site readiness. You get a clear timeline with the proposal.</p></details>
+      <details class="reveal"><summary>Will this help us get a Fire NOC?</summary><p>Our design follows NBC Part 4, IS 2189 and local fire authority requirements, and you receive full testing &amp; handover documentation. NOC approval itself is a separate service — we also offer Fire NOC consultancy if you need end-to-end support.</p></details>
+      <details class="reveal"><summary>What is not included in the installation scope?</summary><p>Civil work, core cutting, electrical infrastructure modification, internet integration, Fire NOC approval and third-party certification are outside the standard scope — we'll clearly mention any such requirement in your proposal.</p></details>
+      <details class="reveal"><summary>Do you provide maintenance after installation?</summary><p>Yes. We offer Fire Alarm AMC with regular detector testing, panel checks, battery checks and service reports — plus fire safety audits, staff training and mock fire drills.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow reveal">Because fire doesn't wait</span>
+    <h2 class="reveal">Protect your people &amp; property with a fire alarm that works when it matters</h2>
+    <p class="reveal">Book a free site survey today. Our engineer will assess your building and recommend the right system — no obligation.</p>
+    <div class="final-ctas reveal">
+      <a href="#quote" class="btn btn-red">Book Free Site Survey <svg><use href="#i-arrow"/></svg></a>
+      <a href="#" class="btn btn-wa js-wa"><svg><use href="#i-wa"/></svg>Chat on WhatsApp</a>
+    </div>
+    <div class="final-phones reveal">
+      <a href="tel:+917772078610" data-track="call"><svg><use href="#i-phone"/></svg>77720 78610</a>
+      <a href="tel:+917772070303" data-track="call"><svg><use href="#i-phone"/></svg>77720 70303</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img src="assets/img/logo-white.png" alt="MSD Engineering – The Fire Wala" width="145" height="52" loading="lazy">
+        <p>Aapke Apno Ka Rakhwala – The Fire Wala.<br>We Keep You &amp; Your Property Safe From Fire.</p>
+      </div>
+      <div>
+        <h5>CONTACT</h5>
+        <div class="line"><svg><use href="#i-phone"/></svg><span><a href="tel:+917772078610" data-track="call">+91 77720 78610</a> | <a href="tel:+917772070303" data-track="call">+91 77720 70303</a></span></div>
+        <div class="line"><svg><use href="#i-mail"/></svg><a href="mailto:info@thefirewala.com">info@thefirewala.com</a></div>
+      </div>
+      <div>
+        <h5>OFFICE</h5>
+        <div class="line"><svg><use href="#i-pin"/></svg><span>Office No. G04, Stadium, Safoorah Complex, Parashuram Chowk, Near Swami Vivekananda Stadium, Kota, Raipur, Chhattisgarh – 492010</span></div>
+      </div>
+    </div>
+    <div class="copy"><span>© <span id="yr">2026</span> MSD Engineering – The Fire Wala®. All rights reserved.</span><span>ISO 9001:2015 Certified · MSME Registered</span></div>
+  </div>
+</footer>
+
+<a href="#" class="wa-float js-wa" aria-label="Chat on WhatsApp"><svg><use href="#i-wa"/></svg></a>
+<nav class="mbar" aria-label="Quick contact">
+  <a href="tel:+917772078610" class="call" data-track="call"><svg><use href="#i-phone"/></svg>Call</a>
+  <a href="#" class="wa js-wa"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+  <a href="#quote" class="quote-b">Free Survey</a>
+</nav>
+
+<script>
+(function(){
+  var C = window.FW_CONFIG;
+  var track = function(ev, data){ try{ if(window.fbq) fbq('track', ev, data||{}); }catch(e){} };
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // WhatsApp links
+  var waMsg = "Hello The Fire Wala, I want details for a Fire Alarm System installation.";
+  var waUrl = function(t){ return "https://wa.me/" + C.WHATSAPP + "?text=" + encodeURIComponent(t); };
+  document.querySelectorAll('.js-wa').forEach(function(a){
+    a.href = waUrl(waMsg); a.target = "_blank"; a.rel = "noopener";
+    a.addEventListener('click', function(){ track('Contact', {method:'whatsapp'}); });
+  });
+  document.querySelectorAll('[data-track="call"]').forEach(function(a){
+    a.addEventListener('click', function(){ track('Contact', {method:'call'}); });
+  });
+
+  // Capture UTM / fbclid for ad attribution
+  var form = document.getElementById('leadForm'); var F = form.elements;
+  var qs = new URLSearchParams(location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content','fbclid'].forEach(function(k){ if(F[k]) F[k].value = qs.get(k) || ''; });
+  F.page.value = location.href.split('#')[0];
+
+  // Package buttons pre-fill the message
+  document.querySelectorAll('[data-pkg]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var m = document.getElementById('f-msg');
+      if(!m.value) m.value = "Interested in the " + b.dataset.pkg + " package.";
+    });
+  });
+
+  // Phone: digits only
+  var ph = document.getElementById('f-phone');
+  ph.addEventListener('input', function(){ ph.value = ph.value.replace(/\D/g,'').replace(/^(91|0)(?=\d{10})/,'').slice(0,10); });
+
+  var started = false;
+  form.addEventListener('focusin', function(){ if(!started){ started = true; track('InitiateCheckout', {content_name:'Fire Alarm Lead Form'}); } });
+
+  function setInvalid(el, bad){ var f = el.closest('.field'); if(f) f.classList.toggle('invalid', bad); return !bad; }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var ok = true;
+    ok = setInvalid(F.name, F.name.value.trim().length < 2) && ok;
+    ok = setInvalid(ph, !/^[6-9]\d{9}$/.test(ph.value)) && ok;
+    ok = setInvalid(F.city, F.city.value.trim().length < 2) && ok;
+    ok = setInvalid(F.property_type, !F.property_type.value) && ok;
+    var need = form.querySelector('input[name="requirement"]:checked');
+    ok = setInvalid(document.getElementById('needChips'), !need) && ok;
+    if(!ok){ var first = form.querySelector('.invalid input, .invalid select'); if(first) first.focus(); return; }
+
+    var data = {}; new FormData(form).forEach(function(v,k){ data[k] = v; });
+    data.submitted_at = new Date().toISOString();
+
+    var msg = "New Fire Alarm Enquiry\n" +
+      "Name: " + data.name + "\nMobile: " + data.phone + "\nCity: " + data.city +
+      "\nProperty: " + data.property_type + "\nRequirement: " + data.requirement +
+      (data.area ? "\nArea: " + data.area : "") + (data.floors ? "\nFloors: " + data.floors : "") +
+      (data.timeline ? "\nTimeline: " + data.timeline : "") + (data.message ? "\nNote: " + data.message : "");
+
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true; btn.textContent = "Sending…";
+
+    var done = function(){
+      track('Lead', {content_name:'Fire Alarm Installation', content_category: data.property_type});
+      document.getElementById('okName').textContent = data.name.split(' ')[0];
+      document.getElementById('okPhone').textContent = "+91 " + data.phone;
+      document.getElementById('okWa').href = waUrl(msg);
+      var card = document.getElementById('quote');
+      card.classList.add('done');
+      card.scrollIntoView({behavior:'smooth', block:'center'});
+    };
+
+    if(C.LEAD_ENDPOINT){
+      fetch(C.LEAD_ENDPOINT, {method:'POST', mode:'no-cors', body:new URLSearchParams(data)})
+        .then(done).catch(function(){ done(); window.open(waUrl(msg), '_blank'); });
+    } else {
+      // No backend configured: deliver the enquiry via WhatsApp so no lead is lost
+      done(); window.open(waUrl(msg), '_blank');
+    }
+  });
+
+  // Reveal on scroll
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+</body>
+</html>

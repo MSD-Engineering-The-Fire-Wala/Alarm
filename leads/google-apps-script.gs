@@ -28,9 +28,9 @@ var COLUMNS = [
 
 function getSheet_() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sh = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
-  if (sh.getLastRow() === 0) {
-    sh.appendRow(COLUMNS.map(function (c) { return c[1]; }));
+  var sh = ss.getSheetByName(SHEET_NAME) || ss.getSheets()[0];
+  if (sh.getLastRow() === 0) sh.appendRow(COLUMNS.map(function (c) { return c[1]; }));
+  if (sh.getFrozenRows() === 0) {
     sh.getRange(1, 1, 1, COLUMNS.length).setFontWeight("bold").setBackground("#004890").setFontColor("#ffffff");
     sh.setFrozenRows(1);
   }

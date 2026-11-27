@@ -1,33 +1,27 @@
-# Where do the leads go?
+# Fire Alarm leads → dedicated Google Sheet
 
-**Right now:** every enquiry is saved in the **main website's leads sheet** — the same Google Sheet the
-Hydrant & Sprinkler page uses. Fire Alarm leads are marked **"Fire Alarm – …"** in the *service_type*
-column and **fire-alarm-lp** in the *form_id* column, so you can filter them. Property type, city, stage,
-area and message are together in the *company_name* column (separated by "|").
+Sheet: **Fire Alarm Leads** (same shared-drive folder as "The Fire Wala- Service Request")
+https://docs.google.com/spreadsheets/d/19d1y-_Z21N4VFHiFixA0jW9eg93mAN47viMupmtwUQk/edit
 
-**Optional:** for a separate "Fire Alarm Leads" sheet with every field in its own column, follow the
-steps below and paste the URL into `ALARM_SHEET_URL` in `index.html`.
+Leads do NOT go to the main website sheet. Until the steps below are done, every enquiry
+opens WhatsApp (77720 78610) with the filled details.
 
-# Dedicated Fire Alarm sheet (about 5 minutes)
-
-1. Go to **sheets.google.com**, create a blank spreadsheet and name it, e.g. **"The Fire Wala – Leads"**.
-2. In that sheet open **Extensions → Apps Script**.
-3. Delete the sample code, paste the full contents of `leads/google-apps-script.gs`, click **Save** (💾).
+## One-time connection (about 5 minutes)
+1. Open the **Fire Alarm Leads** sheet above.
+2. **Extensions → Apps Script**. Delete the sample code, paste the full contents of
+   `leads/google-apps-script.gs`, click **Save** (💾).
    - Optional: put an email inside `NOTIFY_EMAIL = ""` to get an email for every lead.
-4. In the function dropdown choose **testSetup** and click **▶ Run**.
-   Google asks for permission → choose your account → *Advanced* → *Go to project (unsafe)* → **Allow**.
-   A tab **"Fire Alarm Leads"** with blue headings now appears in the sheet.
-5. Click **Deploy → New deployment** → gear icon ⚙ → **Web app**.
-   - Description: `Fire Alarm leads`
+3. Choose **testSetup** in the function dropdown and click **▶ Run**.
+   Allow access: choose your account → *Advanced* → *Go to project (unsafe)* → **Allow**.
+   The heading row turns blue.
+4. **Deploy → New deployment** → ⚙ → **Web app**
    - Execute as: **Me**
    - Who has access: **Anyone**
-   Click **Deploy** and **copy the Web app URL** (ends with `/exec`).
-6. Open `index.html`, find `ALARM_SHEET_URL: ""` near the top and paste the URL between the quotes:
-   `ALARM_SHEET_URL: "https://script.google.com/macros/s/XXXX/exec",`
-7. Upload the updated `index.html`, submit a test enquiry, and check that a new row appears in the sheet.
+   → **Deploy** → copy the **Web app URL** (ends with `/exec`).
+5. Paste that URL into `ALARM_SHEET_URL: ""` at the top of `index.html` (or send it to Claude),
+   redeploy, submit one test enquiry and check the new row.
 
-Notes
-- Each row stores date/time, name, mobile, city, property type, service, project stage, area,
-  message and the ad tracking details (UTM source / campaign / ad and Facebook click ID).
-- The same Apps Script can serve the Hydrant & Sprinkler page too — rows are labelled by "Landing Page".
-- If you edit the script later, use **Deploy → Manage deployments → Edit → New version** so the URL stays the same.
+Columns: Date & Time, Name, Mobile, City, Property Type, Service Required, Project Stage,
+Built-up Area, Message, Landing Page, UTM Source / Medium / Campaign / Content (Ad), FB Click ID, Page URL.
+
+If you edit the script later: **Deploy → Manage deployments → Edit → New version** keeps the same URL.

@@ -21,7 +21,7 @@ opens WhatsApp (77720 78610) with the filled details.
 5. Paste that URL into `ALARM_SHEET_URL: ""` at the top of `index.html` (or send it to Claude),
    redeploy, submit one test enquiry and check the new row.
 
-Columns: Date & Time, Name, Mobile, City, Property Type, Service Required, Project Stage,
-Built-up Area, Message, Landing Page, UTM Source / Medium / Campaign / Content (Ad), FB Click ID, Page URL.
+Columns (A–I): Date & Time, Name, Mobile, City, Property Type, Service Required, Project Stage,
+Built-up Area, Message.
 
 If you edit the script later: **Deploy → Manage deployments → Edit → New version** keeps the same URL.

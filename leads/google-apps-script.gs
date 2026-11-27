@@ -16,14 +16,7 @@ var COLUMNS = [
   ["requirement", "Service Required"],
   ["project_stage", "Project Stage"],
   ["area", "Built-up Area"],
-  ["message", "Message"],
-  ["service", "Landing Page"],
-  ["utm_source", "UTM Source"],
-  ["utm_medium", "UTM Medium"],
-  ["utm_campaign", "UTM Campaign"],
-  ["utm_content", "UTM Content (Ad)"],
-  ["fbclid", "FB Click ID"],
-  ["page", "Page URL"]
+  ["message", "Message"]
 ];
 
 function getSheet_() {

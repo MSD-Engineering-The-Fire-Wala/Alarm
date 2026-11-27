@@ -17,14 +17,18 @@
 <link rel="preload" as="image" href="assets/img/hero-bg.webp">
 
 <!-- ===================== CONFIGURATION =====================
-  LEAD_ENDPOINT : Google Apps Script Web-App URL (see leads/SETUP.md).
-                  While empty, every enquiry opens WhatsApp with the details so no lead is lost.
-  WHATSAPP      : number that receives WhatsApp enquiries (country code, no +).
-  META_PIXEL_ID : Meta (Facebook) Pixel ID – fires PageView, InitiateCheckout, Lead, Contact.
+  ALARM_SHEET_URL : (optional) Web-App URL of a dedicated "Fire Alarm Leads" sheet
+                    (leads/google-apps-script.gs – see leads/SETUP.md). Every field gets its own column.
+  MAIN_SHEET_URL  : the main website's leads sheet (same one the Hydrant & Sprinkler page uses).
+                    Used while ALARM_SHEET_URL is empty. Leads are tagged "Fire Alarm – …" in service_type.
+  WHATSAPP        : number that receives WhatsApp enquiries (country code, no +).
+  META_PIXEL_ID   : Meta (Facebook) Pixel ID – fires PageView, InitiateCheckout, Lead, Contact.
 =========================================================== -->
 <script>
   window.FW_CONFIG = {
-    LEAD_ENDPOINT: "",
+    ALARM_SHEET_URL: "",
+    MAIN_SHEET_URL: "https://script.google.com/macros/s/AKfycbwasN-crY9yuP1QWLOzz1gcKA2aRIO8TUJEIk8DYoUa6uRTnnpFn1OlgFveo3s_P5lkHg/exec",
+    FORM_ID: "fire-alarm-lp",
     WHATSAPP: "917772078610",
     META_PIXEL_ID: ""
   };
@@ -963,10 +967,27 @@ footer a:hover{color:#fff}
       document.getElementById('okWa').href = waUrl(msg);
       var card = document.getElementById('quote'); card.classList.add('done'); card.scrollIntoView({behavior:'smooth', block:'center'});
     };
-    if(C.LEAD_ENDPOINT){
-      fetch(C.LEAD_ENDPOINT, {method:'POST', mode:'no-cors', body:new URLSearchParams(d)})
-        .then(done).catch(function(){ done(); window.open(waUrl(msg), '_blank'); });
-    } else { done(); window.open(waUrl(msg), '_blank'); }
+    var post = function(url, body){
+      return fetch(url, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(body)});
+    };
+    var req;
+    if(C.ALARM_SHEET_URL){
+      // Dedicated Fire Alarm sheet: every field in its own column
+      req = post(C.ALARM_SHEET_URL, Object.assign({form_id:C.FORM_ID}, d));
+    } else if(C.MAIN_SHEET_URL){
+      // Main website sheet (same columns as the Hydrant page): details packed into company_name,
+      // service_type starts with "Fire Alarm" so these leads are easy to filter.
+      var details = [d.property_type, d.city, d.project_stage, d.area, d.message].filter(Boolean).join(' | ');
+      var utm = [d.utm_source, d.utm_campaign, d.utm_content].filter(Boolean).join(' / ');
+      req = post(C.MAIN_SHEET_URL, {
+        client_name: d.name, phone: d.phone, email: '',
+        company_name: details, service_type: 'Fire Alarm – ' + d.requirement,
+        extinguisher_quantity: '', form_id: C.FORM_ID + (utm ? ' [' + utm + ']' : ''),
+        page: d.page, website: ''
+      });
+    }
+    if(req){ req.then(done).catch(function(){ done(); window.open(waUrl(msg), '_blank'); }); }
+    else { done(); window.open(waUrl(msg), '_blank'); }
   });
 
   /* Reveal on scroll */

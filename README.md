@@ -14,8 +14,8 @@ MSD Engineering – The Fire Wala's **Fire Alarm System Installation** service.
 | `assets/certs/` | ISO 7202, Udyam (MSME) and Trademark certificates |
 
 ## Configure (top of `index.html`, `window.FW_CONFIG`)
-- `LEAD_ENDPOINT` – Google Apps Script web-app URL (see `leads/SETUP.md`).
-  If left empty, each enquiry opens WhatsApp with the filled details so no lead is lost.
+- `MAIN_SHEET_URL` – main website leads sheet (active now; leads tagged "Fire Alarm – …").
+- `ALARM_SHEET_URL` – optional dedicated Fire Alarm sheet (see `leads/SETUP.md`); takes priority when set.
 - `WHATSAPP` – number receiving WhatsApp enquiries (default `917772078610`).
 - `META_PIXEL_ID` – Meta Pixel ID. Fires `PageView`, `InitiateCheckout` (form started),
   `Lead` (form submitted) and `Contact` (call / WhatsApp clicks).

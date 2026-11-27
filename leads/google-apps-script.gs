@@ -42,6 +42,8 @@ function doPost(e) {
   lock.waitLock(10000);
   try {
     var p = (e && e.parameter) || {};
+    // The landing page sends JSON as text/plain; fall back to form parameters
+    try { if (e && e.postData && e.postData.contents) p = Object.assign({}, p, JSON.parse(e.postData.contents)); } catch (err) {}
     var row = COLUMNS.map(function (c) {
       var v = p[c[0]] || "";
       if (c[0] === "submitted_at") v = v ? new Date(v) : new Date();

@@ -5,20 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fire Alarm System Installation | The Fire Wala – MSD Engineering, Raipur</title>
 <meta name="description" content="Fire Alarm System design, supply, installation, testing & commissioning by The Fire Wala (MSD Engineering), Raipur. NBC Part 4 & IS 2189 compliant. FREE site survey – call 77720 78610.">
-<meta name="theme-color" content="#004890">
-<meta property="og:title" content="Fire Alarm Systems – designed, installed & tested | The Fire Wala">
+<meta name="theme-color" content="#E63B26">
+<meta property="og:title" content="Fire Alarm Systems – detect early, alert everyone | The Fire Wala">
 <meta property="og:description" content="Smoke & heat detectors, call points, hooters and control panels for hospitals, hotels, schools, factories & offices. Book a FREE site survey.">
 <meta property="og:image" content="assets/video/alarm-1-poster.webp">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/hero-bg.webp">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- ===================== CONFIGURATION =====================
   ALARM_SHEET_URL : Web-App URL of the dedicated "Fire Alarm Leads" Google Sheet
-                    (leads/google-apps-script.gs – see leads/SETUP.md). Every field gets its own column.
+                    (leads/google-apps-script.gs – see leads/SETUP.md).
                     While empty, each enquiry opens WhatsApp with the details so no lead is lost.
   WHATSAPP        : number that receives WhatsApp enquiries (country code, no +).
   META_PIXEL_ID   : Meta (Facebook) Pixel ID – fires PageView, InitiateCheckout, Lead, Contact.
@@ -45,298 +44,260 @@
 
 <style>
 :root{
-  --navy:#004890; --navy-d:#00356b; --navy-x:#062547;
-  --orange:#E87010; --orange-d:#c95e08; --peach:#ffb27d; --cream:#fff6ef;
-  --teal:#00A0B0; --red:#E63B26; --green:#22c55e; --green-d:#16a34a;
-  --ink:#141414; --muted:#5f6672; --line:#e6e9ef; --soft:#f5f7fa;
-  --radius:16px; --shadow:0 10px 30px rgba(6,37,71,.10); --shadow-lg:0 24px 60px rgba(6,37,71,.25);
-  --font:'Inter','Segoe UI',Arial,sans-serif; --wrap:1140px;
+  --red:#E63B26; --red-d:#c42d1a; --red-soft:#fdecea;
+  --navy:#004890; --navy-d:#00356b; --ink:#0b1b2e; --night:#081526;
+  --orange:#E87010; --teal:#00A0B0; --green-d:#16a34a;
+  --text:#1d2633; --muted:#5d6673; --line:#e5e9ef; --soft:#f4f6f9;
+  --shadow:0 12px 34px rgba(8,21,38,.10); --shadow-lg:0 28px 70px rgba(8,21,38,.28);
+  --h:'Montserrat',Arial,sans-serif; --b:'Inter','Segoe UI',Arial,sans-serif; --wrap:1160px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--font);color:var(--ink);background:#fff;line-height:1.55;font-size:16px;overflow-x:hidden}
+body{font-family:var(--b);color:var(--text);background:#fff;line-height:1.6;font-size:16px;overflow-x:hidden}
 img,video{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit}
-h1,h2,h3,h4{line-height:1.16;letter-spacing:-.02em}
+h1,h2,h3,h4{font-family:var(--h);color:var(--ink);line-height:1.15;letter-spacing:-.01em}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
-section{padding:84px 0;scroll-margin-top:70px}
-.eyebrow{display:inline-block;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
-.sec-head{max-width:720px;margin:0 auto 44px;text-align:center}
-.sec-head h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;color:var(--navy);margin:10px 0 10px}
-.sec-head p{color:var(--muted);font-size:17px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;font-size:15.5px;border:0;cursor:pointer;border-radius:10px;padding:14px 24px;transition:transform .15s,box-shadow .2s,background .2s;white-space:nowrap}
+section{padding:88px 0;scroll-margin-top:72px}
+.tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--h);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(230,59,38,.18)}
+.head{margin-bottom:40px}
+.head h2{font-size:clamp(27px,3.4vw,40px);font-weight:800;margin:10px 0 10px}
+.head p{color:var(--muted);font-size:17px;max-width:620px}
+.head.center{text-align:center}.head.center p{margin:0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--h);font-weight:700;font-size:15.5px;border:0;cursor:pointer;border-radius:12px;padding:15px 24px;transition:transform .15s,box-shadow .2s,background .2s;white-space:nowrap}
 .btn svg{width:19px;height:19px;flex:none}
-.btn-orange{background:var(--orange);color:#fff;box-shadow:0 10px 22px rgba(232,112,16,.35)}
-.btn-orange:hover{background:var(--orange-d);transform:translateY(-2px)}
-.btn-green{background:var(--green-d);color:#fff;box-shadow:0 10px 22px rgba(22,163,74,.3)}
-.btn-green:hover{background:#12843c;transform:translateY(-2px)}
-.btn-navy{background:var(--navy);color:#fff}
-.btn-navy:hover{background:var(--navy-d);transform:translateY(-2px)}
-.mt-cta{margin-top:36px;text-align:center}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 12px 26px rgba(230,59,38,.35)}
+.btn-red:hover{background:var(--red-d);transform:translateY(-2px)}
+.btn-line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-line:hover{background:rgba(255,255,255,.08)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{transform:translateY(-2px)}
+.btn-green{background:var(--green-d);color:#fff}
 
-/* top strip + header */
-.strip{background:var(--orange);color:#fff;font-size:13px;font-weight:600}
-.strip .wrap{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 10px;padding-top:7px;padding-bottom:7px;text-align:center}
-.strip .dot{opacity:.7}
-header.nav{position:sticky;top:0;z-index:50;background:var(--navy);box-shadow:0 6px 20px rgba(0,0,0,.12)}
-header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
-.logo{display:flex;align-items:center;gap:10px;color:#fff}
-.logo img{height:42px;width:auto}
-.logo small{display:block;font-size:10.5px;font-weight:600;opacity:.9;line-height:1.1}
-.logo b{display:block;font-size:19px;font-weight:800;letter-spacing:.04em;line-height:1.1}
+/* header */
+.bar{background:var(--night);color:#cbd6e4;font-size:13px}
+.bar .wrap{display:flex;justify-content:space-between;gap:10px;padding-top:7px;padding-bottom:7px}
+.bar b{color:#fff}
+.bar a:hover{color:#fff}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:70px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{height:44px;width:auto}
+.logo small{display:block;font-size:11px;font-weight:600;color:#3a4350;line-height:1.1}
+.logo b{display:block;font-family:var(--h);font-size:20px;font-weight:800;color:var(--navy);letter-spacing:.02em;line-height:1.05}
 .logo b sup{font-size:9px}
-.logo em{display:block;font-style:normal;font-size:9.5px;opacity:.75;letter-spacing:.04em}
-.menu{display:flex;align-items:center;gap:22px;color:#fff;font-size:14.5px;font-weight:500}
-.menu a:not(.btn):hover{color:var(--peach)}
-.menu .btn{padding:10px 16px;font-size:14px}
+.logo em{display:block;font-style:normal;font-size:10px;color:var(--muted)}
+.menu{display:flex;align-items:center;gap:24px;font-weight:600;font-size:14.5px;color:#2a3441}
+.menu a:not(.btn):hover{color:var(--red)}
+.menu .btn{padding:11px 18px;font-size:14px}
 
 /* hero */
-.hero{position:relative;color:#e3ecf7;padding:56px 0 64px;overflow:hidden;
-  background:linear-gradient(100deg,rgba(0,53,107,.97) 0%,rgba(0,72,144,.90) 50%,rgba(0,72,144,.78) 100%),url(assets/img/hero-bg.webp) center/cover no-repeat;}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}
-.hero h1{color:#fff;font-size:clamp(32px,4.4vw,50px);font-weight:800;margin-bottom:16px}
-.hero h1 .hl{color:var(--peach)}
-.hero .lead{font-size:17.5px;color:#d5e2f1;max-width:560px}
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
-.pills span{background:#fff;color:var(--navy);font-weight:700;font-size:12.5px;padding:6px 12px;border-radius:999px}
-.ticks{list-style:none;display:grid;gap:10px;margin-bottom:26px}
-.ticks li{display:flex;gap:10px;align-items:flex-start;color:#fff;font-size:15.5px}
-.ticks svg{width:20px;height:20px;flex:none;color:var(--peach);margin-top:1px}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
-.team-card{margin-top:26px;display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:10px;max-width:540px}
-.team-card img{width:96px;height:66px;object-fit:cover;border-radius:9px;flex:none}
-.team-card b{color:#fff;font-size:14.5px;display:block}
-.team-card span{font-size:13px;color:#c8d8ea}
+.hero{position:relative;background:radial-gradient(800px 500px at 80% 30%,rgba(230,59,38,.28),transparent 60%),radial-gradient(600px 400px at 0% 100%,rgba(0,72,144,.45),transparent 60%),var(--night);color:#c9d5e4;padding:70px 0 150px;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.pulse{display:inline-flex;align-items:center;gap:10px;background:rgba(230,59,38,.12);border:1px solid rgba(230,59,38,.4);color:#ffb4a9;font-weight:600;font-size:13.5px;padding:7px 14px;border-radius:999px}
+.pulse i{width:9px;height:9px;border-radius:50%;background:var(--red);animation:ping 1.4s infinite}
+.hero h1{color:#fff;font-size:clamp(34px,4.8vw,58px);font-weight:800;margin:20px 0 18px}
+.hero h1 em{font-style:normal;color:#ff6a52}
+.hero .lead{font-size:18px;max-width:580px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 34px}
+.facts{display:flex;flex-wrap:wrap;gap:28px}
+.facts div b{display:block;font-family:var(--h);font-size:28px;font-weight:800;color:#fff;line-height:1.1}
+.facts div span{font-size:13px;color:#9fb0c4}
+.reel{position:relative;justify-self:center;width:100%;max-width:330px}
+.reel .frame{position:relative;border-radius:28px;overflow:hidden;border:6px solid #1b2a3d;box-shadow:var(--shadow-lg),0 0 0 1px rgba(255,255,255,.06);aspect-ratio:9/16;background:#0f1d2e}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel .chip{position:absolute;display:flex;align-items:center;gap:8px;background:#fff;color:var(--ink);font-weight:700;font-size:13px;padding:9px 12px;border-radius:12px;box-shadow:var(--shadow);white-space:nowrap}
+.reel .chip svg{width:18px;height:18px}
+.reel .c1{left:-56px;top:16%}
+.reel .c1 svg{color:var(--green-d)}
+.reel .c2{right:-40px;bottom:18%}
+.reel .c2 i{width:9px;height:9px;border-radius:50%;background:var(--red);animation:ping 1.2s infinite}
+.reel .mute{position:absolute;left:14px;bottom:14px;display:flex;gap:6px;align-items:center;background:rgba(0,0,0,.55);color:#fff;font-size:11.5px;font-weight:600;padding:5px 9px;border-radius:999px}
+.reel .mute svg{width:13px;height:13px}
 
-/* form */
-.form-card{background:#fff;border-radius:18px;box-shadow:var(--shadow-lg);padding:26px 24px 22px;color:var(--ink);scroll-margin-top:84px}
-.form-card h3{font-size:22px;font-weight:800;color:var(--navy)}
-.form-card .sub{font-size:13.5px;color:var(--muted);margin:4px 0 16px}
-.form-card .sub b{color:var(--orange)}
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.field{display:flex;flex-direction:column;gap:5px}
-.field.full{grid-column:1/-1}
+/* form band */
+.formband{margin-top:-104px;padding:0 0 70px;position:relative;z-index:5}
+.form-card{background:#fff;border-radius:22px;box-shadow:var(--shadow-lg);padding:30px 32px 26px;scroll-margin-top:90px;border-top:5px solid var(--red)}
+.form-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.form-top h3{font-size:24px;font-weight:800}
+.form-top p{color:var(--muted);font-size:14.5px}
+.form-top p b{color:var(--red)}
+.svc{display:flex;gap:10px;flex-wrap:wrap}
+.svc label{cursor:pointer}
+.svc input{position:absolute;opacity:0;pointer-events:none;width:1px!important;height:1px;padding:0;margin:0}
+.svc span{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:600;font-size:14px;color:#2a3441;transition:all .15s;background:#fff}
+.svc span img{width:22px;height:auto}
+.svc input:checked + span{border-color:var(--red);background:var(--red-soft);color:var(--red-d)}
+.svc input:focus-visible + span{box-shadow:0 0 0 3px rgba(0,72,144,.3)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+.field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.form-top > *{min-width:0}
+.field.span2{grid-column:span 2}
 .field label,.field .lbl{font-size:12.5px;font-weight:700;color:var(--ink)}
 .req{color:var(--red)}
 .opt{font-weight:500;color:var(--muted)}
-.field input,.field select,.field textarea{font:inherit;font-size:15px;color:var(--ink);border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:11px 12px;outline:none;width:100%;transition:border-color .15s,box-shadow .15s}
-.field textarea{resize:vertical;min-height:58px}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(0,72,144,.12)}
+.field input,.field select,.field textarea{font:inherit;font-size:15px;color:var(--ink);border:1.5px solid var(--line);background:var(--soft);border-radius:11px;padding:12px 13px;outline:none;width:100%;transition:border-color .15s,box-shadow .15s,background .15s}
+.field textarea{resize:none;height:48px}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--navy);background:#fff;box-shadow:0 0 0 3px rgba(0,72,144,.12)}
 .field.invalid input,.field.invalid select{border-color:var(--red);box-shadow:0 0 0 3px rgba(230,59,38,.12)}
+.field.invalid .svc span{border-color:#f2aea4}
 .err{display:none;font-size:12px;color:var(--red)}
 .field.invalid .err{display:block}
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.svc label{cursor:pointer}
-.svc input{position:absolute;opacity:0;pointer-events:none}
-.svc .tile{display:flex;flex-direction:column;align-items:center;gap:4px;border:1.5px solid var(--line);border-radius:12px;padding:10px 6px 9px;text-align:center;font-size:12.5px;font-weight:700;color:var(--navy);transition:all .15s;height:100%}
-.svc .tile img{height:40px;width:auto}
-.svc input:checked + .tile{border-color:var(--orange);background:var(--cream);box-shadow:0 0 0 3px rgba(232,112,16,.15)}
-.svc input:focus-visible + .tile{box-shadow:0 0 0 3px rgba(0,72,144,.3)}
-.field.invalid .tile{border-color:#f3b2a8}
-.form-card .btn{width:100%;margin-top:16px;font-size:16.5px;padding:15px}
-.note{display:flex;gap:6px;justify-content:center;align-items:center;font-size:12px;color:var(--muted);margin-top:10px}
+.submit-cell{display:flex;flex-direction:column;justify-content:flex-end}
+.submit-cell .btn{width:100%;padding:14px}
+.note{display:flex;gap:6px;align-items:center;font-size:12.5px;color:var(--muted);margin-top:12px}
 .note svg{width:14px;height:14px;color:var(--teal)}
-.success{display:none;text-align:center;padding:16px 4px}
-.success .ok{width:66px;height:66px;border-radius:50%;background:#e8f8ef;display:grid;place-items:center;margin:0 auto 12px}
+.success{display:none;align-items:center;gap:22px;flex-wrap:wrap}
+.success .ok{width:64px;height:64px;border-radius:50%;background:#e8f8ef;display:grid;place-items:center;flex:none}
 .success .ok svg{width:34px;height:34px;color:var(--green-d)}
-.success h3{margin-bottom:6px}
-.success p{font-size:15px;color:var(--muted);margin-bottom:16px}
-.success .btn{margin-top:8px}
+.success h3{font-size:22px;margin-bottom:4px}
+.success p{color:var(--muted)}
+.success .acts{display:flex;gap:10px;flex-wrap:wrap;margin-left:auto}
 .form-card.done form{display:none}
-.form-card.done .success{display:block}
+.form-card.done .success{display:flex}
 
-/* stats band */
-.stats{background:var(--peach)}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{display:flex;align-items:center;justify-content:center;gap:10px;padding:22px 10px;border-right:1px solid rgba(0,0,0,.08)}
-.stat:last-child{border-right:0}
-.stat b{font-size:36px;font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1}
-.stat span{font-size:11.5px;font-weight:700;color:var(--navy);letter-spacing:.1em;text-transform:uppercase;line-height:1.3}
+/* marquee */
+.logos{padding:0 0 70px}
+.logos p{text-align:center;font-family:var(--h);font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.marq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:18px;width:max-content;animation:slide 40s linear infinite}
+.marq:hover .track{animation-play-state:paused}
+.track div{width:104px;height:104px;border:1px solid var(--line);border-radius:16px;display:grid;place-items:center;padding:10px;background:#fff;flex:none}
+.track img{max-height:100%;width:auto;object-fit:contain}
 
-/* services */
-.services{background:var(--soft);position:relative;overflow:hidden}
-.services .deco{position:absolute;right:4%;top:28px;width:120px}
-.tabs{display:flex;justify-content:center;gap:10px;margin-bottom:36px;flex-wrap:wrap}
-.tab{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font-weight:700;font-size:15px;padding:11px 20px;border-radius:999px;cursor:pointer}
-.tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
-.svc-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
-.panel{display:none}
-.panel.active{display:block;animation:fade .35s ease}
-.panel h3{font-size:30px;font-weight:800;color:var(--navy)}
-.panel .tagline{color:var(--orange);font-weight:700;margin:4px 0 12px;font-size:16.5px}
-.panel p{color:var(--muted);font-size:16px}
-.panel ul{list-style:none;display:grid;gap:9px;margin:18px 0}
-.panel li{display:flex;gap:10px;font-size:15px}
-.panel li svg{width:20px;height:20px;flex:none;color:var(--teal);margin-top:1px}
-.codes{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
-.codes span{background:#fff;border:1px solid var(--line);color:var(--navy);font-weight:700;font-size:12.5px;padding:6px 12px;border-radius:999px}
-.devices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.dev{background:#fff;border-radius:16px;padding:14px 10px 12px;text-align:center;box-shadow:var(--shadow);transition:transform .2s}
-.dev:hover{transform:translateY(-4px)}
-.dev img{height:92px;width:auto;margin:0 auto 6px}
-.dev b{display:block;font-size:14px;color:var(--navy)}
+/* systems */
+.systems{background:var(--soft)}
+.sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.sys{background:#fff;border-radius:22px;padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.sys.dark{background:linear-gradient(150deg,var(--ink),#0f2c4f);color:#c9d5e4}
+.sys.dark h3{color:#fff}
+.sys .lbl{display:inline-block;font-family:var(--h);font-weight:700;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--red-soft);color:var(--red-d);margin-bottom:14px;align-self:flex-start}
+.sys.dark .lbl{background:rgba(255,255,255,.1);color:#ffb4a9}
+.sys h3{font-size:26px;font-weight:800;margin-bottom:8px}
+.sys > p{font-size:15.5px;color:var(--muted)}
+.sys.dark > p{color:#b2c1d3}
+.sys ul{list-style:none;display:grid;gap:10px;margin:20px 0 24px;flex:1}
+.sys li{display:flex;gap:10px;font-size:15px}
+.sys li svg{width:20px;height:20px;flex:none;color:var(--red);margin-top:2px}
+.sys.dark li svg{color:#ff7a66}
+.sys .btn{align-self:flex-start}
+.sys img.deco{position:absolute;right:20px;top:22px;width:92px;opacity:.95}
+.devices{margin-top:26px;background:#fff;border-radius:22px;padding:22px 24px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.dev{text-align:center;padding:6px}
+.dev img{height:66px;width:auto;margin:0 auto 8px}
+.dev b{display:block;font-size:13.5px;color:var(--ink);font-family:var(--h)}
 .dev span{font-size:12px;color:var(--muted)}
+.codes{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+.codes span{font-size:13px;font-weight:600;color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px}
 
-/* work / videos */
-.work .box{background:linear-gradient(140deg,var(--navy-x) 0%,#0a3a6e 60%,var(--navy) 100%);border-radius:26px;padding:44px;display:grid;grid-template-columns:.85fr 1.15fr;gap:36px;color:#cfdced;position:relative;overflow:hidden}
-.work .live{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.14em;color:var(--peach)}
-.work .live i{width:9px;height:9px;border-radius:50%;background:var(--red);animation:blink 1.2s infinite}
-.work h2{color:#fff;font-size:clamp(28px,3.6vw,42px);font-weight:800;margin:10px 0 10px}
-.chap{list-style:none;display:grid;gap:10px;margin-top:22px}
-.chap button{width:100%;text-align:left;display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px;color:#cfdced;cursor:pointer;transition:background .2s,border-color .2s;font-size:13.5px}
-.chap button:hover{background:rgba(255,255,255,.09)}
-.chap button.active{background:rgba(255,255,255,.12);border-color:var(--peach)}
-.chap .n{font-size:22px;font-weight:800;color:rgba(255,255,255,.35);line-height:1}
-.chap button.active .n{color:var(--peach)}
-.chap b{display:block;color:#fff;font-size:15.5px;margin-bottom:2px}
-.player{position:relative;border-radius:18px;overflow:hidden;background:#071a33;display:flex;justify-content:center;align-items:center;min-height:520px}
-.player .blur{position:absolute;inset:-20px;background-size:cover;background-position:center;filter:blur(22px) brightness(.55);transform:scale(1.1)}
-.player video{position:relative;height:540px;width:auto;max-width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.4);cursor:pointer}
-.player .prog{position:absolute;left:16px;right:16px;top:12px;display:flex;gap:6px;z-index:2}
-.player .prog i{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.3);overflow:hidden}
-.player .prog i b{display:block;height:100%;width:0;background:#fff}
-.player .muted{position:absolute;right:14px;bottom:14px;z-index:2;display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px}
-.player .muted svg{width:14px;height:14px}
-
-/* protects flow */
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
-.flow::before{content:"";position:absolute;top:42px;left:12%;right:12%;height:3px;background:linear-gradient(90deg,var(--orange),var(--red),var(--teal));opacity:.45;border-radius:3px}
-.fstep{text-align:center;position:relative}
-.fstep .bub{width:84px;height:84px;border-radius:50%;background:#fff;border:3px solid var(--line);margin:0 auto 14px;display:grid;place-items:center;box-shadow:var(--shadow);position:relative}
-.fstep .bub img{width:60px;height:auto}
-.fstep .bub i{position:absolute;top:-6px;right:-6px;width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;font-style:normal;font-weight:800;font-size:13px;display:grid;place-items:center;border:3px solid #fff}
-.fstep h4{font-size:18px;color:var(--navy);margin-bottom:4px}
-.fstep p{font-size:14.5px;color:var(--muted);max-width:230px;margin:0 auto}
-.pains{margin-top:54px;background:var(--cream);border:1px solid #ffe1c8;border-radius:20px;padding:28px}
-.pains h3{text-align:center;color:var(--navy);font-size:21px;margin-bottom:18px}
-.pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.pain{background:#fff;border-radius:12px;padding:14px;display:flex;gap:10px;align-items:flex-start;font-size:14.5px;font-weight:600}
-.pain svg{width:20px;height:20px;flex:none;color:var(--red);margin-top:1px}
+/* videos */
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.vid{border-radius:22px;overflow:hidden;background:var(--ink);box-shadow:var(--shadow);display:flex;flex-direction:column}
+.vid .v{position:relative;aspect-ratio:4/5;overflow:hidden;background:#0f1d2e}
+.vid video{width:100%;height:100%;object-fit:cover;cursor:pointer}
+.vid .num{position:absolute;left:14px;top:14px;background:var(--red);color:#fff;font-family:var(--h);font-weight:800;font-size:13px;padding:5px 10px;border-radius:999px}
+.vid .mute{position:absolute;right:12px;top:14px;display:flex;gap:5px;align-items:center;background:rgba(0,0,0,.55);color:#fff;font-size:11.5px;font-weight:600;padding:5px 9px;border-radius:999px}
+.vid .mute svg{width:13px;height:13px}
+.vid .cap{padding:18px 20px 20px;color:#b9c7d8;font-size:14px}
+.vid .cap b{display:block;color:#fff;font-family:var(--h);font-size:16.5px;margin-bottom:4px}
 
 /* industries */
-.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.ind{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3.2;isolation:isolate;background:var(--navy-x)}
-.ind img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s}
-.ind:hover img{transform:scale(1.06)}
-.ind::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,37,71,0) 35%,rgba(6,37,71,.92))}
-.ind div{position:absolute;left:14px;right:14px;bottom:12px;color:#fff}
-.ind h4{font-size:17px}
-.ind p{font-size:13px;color:#d3e0ee}
+.ind{background:var(--soft)}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ic{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;gap:14px;align-items:center;transition:transform .2s,box-shadow .2s,border-color .2s}
+.ic:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#f3c3bb}
+.ic i{width:48px;height:48px;border-radius:12px;background:var(--red-soft);display:grid;place-items:center;font-style:normal;font-size:24px;flex:none}
+.ic b{display:block;font-family:var(--h);font-size:15px;color:var(--ink)}
+.ic span{font-size:13px;color:var(--muted)}
 
-/* how we work */
-.how{background:var(--soft)}
-.badges{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:-18px 0 36px}
-.badges span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:700;font-size:13.5px;color:var(--navy)}
-.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-.step{background:#fff;border-radius:16px;padding:18px 12px;text-align:center;box-shadow:var(--shadow);position:relative}
-.step .no{position:absolute;top:10px;left:12px;font-size:12px;font-weight:800;color:var(--orange)}
-.step img{height:74px;width:auto;margin:6px auto 10px}
-.step h4{font-size:15.5px;color:var(--navy);margin-bottom:4px}
-.step p{font-size:13px;color:var(--muted)}
+/* process timeline */
+.proc{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.proc .stick{position:sticky;top:110px}
+.proc .stick .btn{margin-top:22px}
+.proc .call{display:flex;align-items:center;gap:12px;margin-top:18px;font-weight:600;color:var(--ink)}
+.proc .call svg{width:22px;height:22px;color:var(--red)}
+.tl{list-style:none;position:relative;padding-left:0}
+.tl::before{content:"";position:absolute;left:27px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--red),var(--navy))}
+.tl li{position:relative;display:flex;gap:22px;padding-bottom:28px}
+.tl li:last-child{padding-bottom:0}
+.tl .dot{position:relative;z-index:1;width:56px;height:56px;border-radius:16px;background:#fff;border:2px solid var(--line);display:grid;place-items:center;flex:none;box-shadow:var(--shadow)}
+.tl .dot img{width:36px;height:auto}
+.tl small{font-family:var(--h);font-weight:700;font-size:12px;color:var(--red);letter-spacing:.1em}
+.tl h4{font-size:18px;margin:2px 0 4px}
+.tl p{font-size:15px;color:var(--muted)}
 
-/* certificates */
-.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.cert{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column}
-.cert button{border:0;background:var(--soft);border-radius:12px;padding:12px;cursor:zoom-in;position:relative}
-.cert button img{width:100%;height:300px;object-fit:contain}
-.cert button::after{content:"Tap to view";position:absolute;right:18px;bottom:18px;background:rgba(6,37,71,.85);color:#fff;font-size:11.5px;font-weight:700;padding:5px 9px;border-radius:999px}
-.cert h4{color:var(--navy);font-size:17px;margin:14px 0 4px}
-.cert p{font-size:13.5px;color:var(--muted)}
-.cert .no{font-size:12.5px;font-weight:700;color:var(--orange);margin-top:6px}
-.scope{margin-top:26px;background:var(--navy);color:#dbe7f5;border-radius:16px;padding:20px 24px;display:flex;gap:16px;align-items:center}
-.scope svg{width:40px;height:40px;flex:none;color:var(--peach)}
+/* trust */
+.trust{background:var(--night);color:#b9c7d8}
+.trust .head h2{color:#fff}
+.trust .head p{color:#9fb0c4}
+.trust-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px}
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cert{background:#fff;border-radius:16px;padding:10px;cursor:zoom-in;border:0;text-align:left;transition:transform .2s}
+.cert:hover{transform:translateY(-4px)}
+.cert img{width:100%;height:210px;object-fit:contain;background:var(--soft);border-radius:10px}
+.cert b{display:block;font-family:var(--h);font-size:14px;color:var(--ink);margin:10px 4px 2px}
+.cert span{display:block;font-size:12px;color:var(--red);font-weight:600;margin:0 4px 4px}
+.scope{margin-top:16px;border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px;font-size:14px}
 .scope b{color:#fff}
-.lightbox{position:fixed;inset:0;z-index:100;background:rgba(3,14,28,.9);display:none;align-items:center;justify-content:center;padding:20px}
+.revs{display:grid;gap:14px}
+.rev{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px 20px}
+.rev .stars{color:#f5b301;letter-spacing:2px;font-size:14px}
+.rev p{color:#e3eaf3;font-size:14.5px;margin:6px 0 10px}
+.rev .who{display:flex;gap:10px;align-items:center;font-size:13px}
+.rev .who i{width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;font-style:normal;font-weight:700;display:grid;place-items:center}
+.rev .who b{color:#fff}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(3,10,20,.92);display:none;align-items:center;justify-content:center;padding:20px}
 .lightbox.open{display:flex}
-.lightbox img{max-height:92vh;max-width:96vw;width:auto;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.lightbox button{position:absolute;top:14px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--navy);font-size:26px;cursor:pointer;line-height:1}
-
-/* clients + reviews */
-.clients{background:var(--soft)}
-.logos{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
-.logos div{background:#fff;border:1px solid var(--line);border-radius:12px;aspect-ratio:1;display:grid;place-items:center;padding:8px}
-.logos img{max-height:100%;width:auto;object-fit:contain}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
-.rev{background:#fff;border-radius:16px;padding:22px;box-shadow:var(--shadow)}
-.rev .who{display:flex;gap:12px;align-items:center;margin-bottom:10px}
-.rev .av{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:grid;place-items:center}
-.rev .who b{display:block;font-size:15px}
-.rev .who small{color:var(--muted);font-size:12.5px}
-.rev .stars{color:#f5a623;letter-spacing:2px;font-size:15px;margin-bottom:6px}
-.rev p{font-size:14.5px;color:#333}
-
-/* packages */
-.pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.pkg{border:1.5px solid var(--line);border-radius:16px;padding:24px 20px;display:flex;flex-direction:column;position:relative;transition:transform .2s,box-shadow .2s}
-.pkg:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.pkg.pop{border-color:var(--orange);box-shadow:var(--shadow)}
-.pkg .flag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;white-space:nowrap}
-.pkg .tier{font-weight:800;font-size:12.5px;letter-spacing:.14em;color:var(--orange)}
-.pkg h4{font-size:20px;color:var(--navy);margin:4px 0 2px}
-.pkg .for{font-size:13.5px;color:var(--muted);margin-bottom:14px;min-height:38px}
-.pkg ul{list-style:none;display:grid;gap:8px;font-size:14.5px;margin-bottom:20px;flex:1}
-.pkg li{display:flex;gap:8px}
-.pkg li svg{width:18px;height:18px;flex:none;color:var(--teal);margin-top:2px}
-.pkg .btn{width:100%;padding:12px}
-.pkg-note{text-align:center;margin-top:20px;font-size:14px;color:var(--muted)}
-
-/* deliverables */
-.deliv{background:var(--soft)}
-.deliv-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}
-.dcard{background:#fff;border-radius:18px;padding:28px;box-shadow:var(--shadow)}
-.dcard h3{font-size:22px;color:var(--navy);margin:8px 0 4px}
-.dcard > p{color:var(--muted);font-size:15px;margin-bottom:18px}
-.dlist{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
-.dlist div{display:flex;gap:10px;align-items:center;font-weight:600;font-size:15px}
-.dlist svg{width:20px;height:20px;flex:none;color:var(--teal)}
-.std{background:var(--navy);color:#d6e3f3;border-radius:18px;padding:28px}
-.std h3{color:#fff;font-size:22px;margin-bottom:12px}
-.std .row{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:14px}
-.std .row:last-of-type{border-bottom:0}
-.std .row b{color:#fff;min-width:120px}
-.std small{display:block;margin-top:12px;color:#b5c9e0;font-size:13px}
+.lightbox img{max-height:92vh;max-width:96vw;border-radius:8px}
+.lightbox button{position:absolute;top:14px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:26px;cursor:pointer}
 
 /* faq */
-.faq-list{max-width:820px;margin:0 auto;display:grid;gap:12px}
-details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 20px}
-details[open]{box-shadow:var(--shadow)}
-summary{list-style:none;cursor:pointer;padding:17px 0;font-weight:700;font-size:16px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+.faq-list{display:grid;gap:12px}
+details{border:1px solid var(--line);border-radius:14px;padding:0 20px;background:#fff}
+details[open]{box-shadow:var(--shadow);border-color:#f3c3bb}
+summary{list-style:none;cursor:pointer;padding:18px 0;font-family:var(--h);font-weight:700;font-size:16px;color:var(--ink);display:flex;justify-content:space-between;gap:14px;align-items:center}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:24px;color:var(--orange);font-weight:500;line-height:1;transition:transform .2s}
+summary::after{content:"+";color:var(--red);font-size:24px;font-weight:600;line-height:1;transition:transform .2s}
 details[open] summary::after{transform:rotate(45deg)}
-details p{padding:0 0 18px;font-size:15px;color:#444}
+details p{padding:0 0 18px;color:#46505c;font-size:15px}
 
-/* final cta */
-.final{color:#dbe7f5;text-align:center;background:linear-gradient(rgba(0,72,144,.88),rgba(0,53,107,.94)),url(assets/img/team-van.webp) center/cover no-repeat}
-.final .eyebrow{color:var(--peach)}
-.final h2{color:#fff;font-size:clamp(28px,4vw,44px);font-weight:800;max-width:780px;margin:10px auto 12px}
-.final p{font-size:17px;max-width:600px;margin:0 auto 26px}
-.contacts{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:28px}
-.contacts a{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:12px 18px;text-align:left;transition:background .2s}
-.contacts a:hover{background:rgba(255,255,255,.18)}
-.contacts svg{width:26px;height:26px;color:var(--peach);flex:none}
-.contacts small{display:block;font-size:12px;color:#bcd0e6}
-.contacts b{color:#fff;font-size:19px}
+/* final */
+.final{padding:0 0 90px}
+.final .box{background:linear-gradient(120deg,var(--red) 0%,#c42d1a 55%,#8f1c0b 100%);border-radius:28px;padding:48px;color:#ffe3de;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;position:relative;overflow:hidden}
+.final .box::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;background:url(assets/img/flame.png) no-repeat center/contain;opacity:.12}
+.final h2{color:#fff;font-size:clamp(26px,3.4vw,38px);font-weight:800;margin-bottom:10px}
+.final .nums{display:grid;gap:10px;position:relative;z-index:1}
+.final .nums a{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:13px 18px;transition:background .2s}
+.final .nums a:hover{background:rgba(255,255,255,.2)}
+.final .nums svg{width:24px;height:24px;color:#fff;flex:none}
+.final .nums small{display:block;font-size:12px}
+.final .nums b{font-family:var(--h);font-size:20px;color:#fff}
+.final .btn{background:#fff;color:var(--red-d);margin-top:20px}
 
 /* footer */
-footer{background:var(--navy);color:#c6d6e8;font-size:14.5px;padding:44px 0 26px}
-.foot{display:grid;grid-template-columns:1.1fr 1fr 1fr 1.1fr;gap:28px}
-footer h5{color:#fff;font-size:16px;margin-bottom:10px}
+footer{background:var(--night);color:#93a4b8;font-size:14px;padding:46px 0 24px}
+.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.2fr;gap:28px}
+footer .logo b{color:#fff}
+footer .logo small,footer .logo em{color:#93a4b8}
+footer h5{font-family:var(--h);color:#fff;font-size:15px;margin-bottom:10px}
 footer p,footer .foot a:not(.logo){display:block;margin-bottom:6px}
 footer a:hover{color:#fff}
-.copy{border-top:1px solid rgba(255,255,255,.15);margin-top:30px;padding-top:16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13px}
+.copy{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-top:16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:12.5px}
 
 /* floating */
-.wa-float{position:fixed;right:20px;bottom:24px;z-index:55;width:58px;height:58px;border-radius:50%;background:var(--green);display:grid;place-items:center;box-shadow:0 10px 24px rgba(34,197,94,.45)}
+.wa-float{position:fixed;right:20px;bottom:24px;z-index:55;width:58px;height:58px;border-radius:50%;background:#22c55e;display:grid;place-items:center;box-shadow:0 10px 24px rgba(34,197,94,.45)}
 .wa-float svg{width:30px;height:30px;color:#fff}
-.mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;grid-template-columns:1fr 1fr 1.3fr;gap:8px;background:#fff;padding:8px;padding-bottom:calc(8px + env(safe-area-inset-bottom));box-shadow:0 -6px 20px rgba(6,37,71,.15)}
-.mbar a{display:flex;align-items:center;justify-content:center;gap:6px;border-radius:10px;padding:12px 6px;font-weight:700;font-size:14px;color:#fff}
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;grid-template-columns:1fr 1fr 1.3fr;gap:8px;background:#fff;padding:8px;padding-bottom:calc(8px + env(safe-area-inset-bottom));box-shadow:0 -6px 20px rgba(8,21,38,.15)}
+.mbar a{display:flex;align-items:center;justify-content:center;gap:6px;border-radius:11px;padding:12px 6px;font-family:var(--h);font-weight:700;font-size:14px;color:#fff}
 .mbar svg{width:18px;height:18px}
-.mbar .c{background:var(--navy)}.mbar .w{background:var(--green-d)}.mbar .q{background:var(--orange)}
+.mbar .c{background:var(--ink)}.mbar .w{background:var(--green-d)}.mbar .q{background:var(--red)}
 
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(230,59,38,.7)}70%{box-shadow:0 0 0 10px rgba(230,59,38,0)}100%{box-shadow:0 0 0 0 rgba(230,59,38,0)}}
+@keyframes slide{to{transform:translateX(-50%)}}
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
@@ -344,64 +305,53 @@ footer a:hover{color:#fff}
 /* responsive */
 @media (max-width:1080px){
   .menu a:not(.btn){display:none}
-  .steps{grid-template-columns:repeat(3,1fr)}
-  .logos{grid-template-columns:repeat(6,1fr)}
-  .pkg-grid,.pain-grid{grid-template-columns:repeat(2,1fr)}
+  .grid4{grid-template-columns:repeat(2,1fr)}
+  .devices{grid-template-columns:repeat(3,1fr)}
   .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .reel .c1{left:-20px}.reel .c2{right:-14px}
 }
 @media (max-width:900px){
-  section{padding:64px 0}
-  .hero{padding:36px 0 48px}
-  .hero .wrap,.svc-wrap,.deliv-wrap{grid-template-columns:1fr}
-  .stats .wrap{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:0}
-  .stat:nth-child(-n+2){border-bottom:1px solid rgba(0,0,0,.08)}
-  .work .box{grid-template-columns:1fr;padding:28px 20px}
-  .work .player{order:-1}
-  .player{min-height:0;padding:34px 0 20px}
-  .player video{height:460px}
-  .flow{grid-template-columns:repeat(2,1fr);row-gap:30px}
-  .flow::before{display:none}
-  .cert-grid,.reviews{grid-template-columns:1fr}
-  .cert-grid{max-width:460px;margin:0 auto}
+  section{padding:66px 0}
+  .bar .hide-m{display:none}
+  .hero{padding:44px 0 130px}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .reel{max-width:280px}
+  .sys-grid,.trust-grid,.faq,.proc{grid-template-columns:1fr}
+  .proc .stick{position:static}
+  .vids{grid-template-columns:1fr;max-width:420px;margin:0 auto}
+  .final .box{grid-template-columns:1fr;padding:34px 26px}
   .foot{grid-template-columns:1fr 1fr}
-  .services .deco{display:none}
 }
 @media (max-width:640px){
   body{font-size:15.5px}
   .wrap{padding:0 16px}
-  .strip{font-size:12px}
-  .strip .hide-m{display:none}
-  header.nav .wrap{height:60px}
-  .logo img{height:36px}
-  .logo b{font-size:16px}
-  .menu .btn{padding:9px 12px;font-size:13px}
-  .hero h1{font-size:31px}
+  .bar{font-size:12px}
+  .bar .wrap{justify-content:center}
+  header.nav .wrap{height:62px}
+  .logo img{height:38px}
+  .logo b{font-size:17px}
+  .menu .btn{padding:10px 13px;font-size:13px}
+  .hero h1{font-size:32px}
   .hero .lead{font-size:16px}
   .hero-ctas .btn{flex:1 1 100%}
-  .team-card img{width:80px;height:58px}
-  .form-card{padding:22px 16px 18px}
-  .fgrid{grid-template-columns:1fr}
-  .stat{flex-direction:column;gap:4px;text-align:center}
-  .stat b{font-size:28px}
-  .devices{grid-template-columns:repeat(2,1fr)}
-  .dev img{height:76px}
-  .panel h3{font-size:25px}
-  .player video{height:420px}
-  .pain-grid,.pkg-grid,.dlist{grid-template-columns:1fr}
-  .flow{gap:24px 10px}
-  .fstep .bub{width:72px;height:72px}
-  .fstep .bub img{width:50px}
-  .fstep p{font-size:13.5px}
-  .ind-grid{gap:10px}
-  .ind p{display:none}
-  .ind h4{font-size:15px}
-  .steps{grid-template-columns:repeat(2,1fr);gap:10px}
-  .logos{grid-template-columns:repeat(4,1fr);gap:8px}
-  .cert button img{height:260px}
-  .scope{flex-direction:column;text-align:center}
+  .facts{gap:20px}
+  .facts div b{font-size:23px}
+  .reel .c1{left:-8px;top:8%}.reel .c2{right:-6px}
+  .formband{margin-top:-96px}
+  .form-card{padding:24px 18px 20px}
+  .grid4{grid-template-columns:1fr}
+  .field.span2{grid-column:auto}
+  .svc span{font-size:13px;padding:8px 12px}
+  .success .acts{margin-left:0;width:100%}
+  .success .acts .btn{flex:1 1 100%}
+  .devices{grid-template-columns:repeat(2,1fr);padding:16px}
+  .sys{padding:24px 20px}
+  .sys img.deco{width:64px;right:14px;top:16px}
+  .sys h3{font-size:22px;padding-right:60px}
+  .ind-grid{grid-template-columns:1fr}
+  .certs{grid-template-columns:1fr 1fr}
+  .cert img{height:170px}
   .foot{grid-template-columns:1fr}
-  .contacts a{width:100%}
   .mbar{display:grid}
   .wa-float{display:none}
   footer{padding-bottom:96px}
@@ -413,24 +363,23 @@ footer a:hover{color:#fff}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".18"/><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M7.5 12.3l3 3 6-6.3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".16"/><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M7.5 12.3l3 3 6-6.3"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2.8l8 3.2v6c0 4.9-3.4 8.4-8 9.6-4.6-1.2-8-4.7-8-9.6V6z"/><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.2l2.5 2.5 4.6-4.9"/></symbol>
-  <symbol id="i-warn" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3.5L2.5 20h19z"/><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 10v4.5M12 17.4v.1"/></symbol>
   <symbol id="i-mute" viewBox="0 0 24 24"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9z"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M16.5 9.5l5 5m0-5l-5 5"/></symbol>
 </defs></svg>
 
-<div class="strip"><div class="wrap"><span>🔥 FREE Site Survey for Fire Alarm Systems</span><span class="dot hide-m">·</span><span class="hide-m">Call-back within 24 hrs</span><span class="dot hide-m">·</span><span class="hide-m">NBC Part 4 &amp; IS 2189 compliant design</span></div></div>
+<div class="bar"><div class="wrap"><span>🔔 <b>FREE site survey</b> for fire alarm systems · call-back within 24 hrs</span><span class="hide-m">Call <a href="tel:+917772078610" data-track="call"><b>77720 78610</b></a> · <a href="tel:+917772070303" data-track="call"><b>77720 70303</b></a></span></div></div>
 
 <header class="nav">
   <div class="wrap">
     <a href="#top" class="logo" aria-label="MSD Engineering – The Fire Wala">
-      <img src="assets/img/flame.png" alt="" width="26" height="42">
+      <img src="assets/img/flame.png" alt="" width="27" height="44">
       <span><small>MSD Engineering</small><b>THE FIRE WALA<sup>®</sup></b><em>ISO 9001:2015 Certified</em></span>
     </a>
     <nav class="menu">
-      <a href="#services">Services</a><a href="#work">Our Work</a><a href="#industries">Industries</a><a href="#how">How we work</a><a href="#clients">Clients</a><a href="#faq">FAQ</a>
-      <a href="#quote" class="btn btn-orange">Book FREE Survey</a>
+      <a href="#systems">Systems</a><a href="#work">Our Work</a><a href="#process">Process</a><a href="#trust">Certificates</a><a href="#faq">FAQ</a>
+      <a href="#quote" class="btn btn-red">Book FREE Survey</a>
     </nav>
   </div>
 </header>
@@ -440,38 +389,48 @@ footer a:hover{color:#fff}
 <section class="hero">
   <div class="wrap">
     <div>
-      <h1>Fire Alarm Systems — <span class="hl">designed, installed &amp; tested</span> to NBC norms</h1>
-      <p class="lead">Smoke &amp; heat detectors, manual call points, hooters and control panels — one ISO-certified team for survey, design, installation, testing and handover. For hospitals, hotels, schools, factories, offices and high-rise buildings.</p>
-      <div class="pills"><span>ISO 9001:2015</span><span>Since 2016</span><span>700+ Clients</span><span>NBC Part 4 · IS 2189</span></div>
-      <ul class="ticks">
-        <li><svg><use href="#i-check"/></svg>FREE site survey · call-back within 24 hours</li>
-        <li><svg><use href="#i-check"/></svg>Detector layout drawing, BOQ &amp; Fire NOC-ready documents</li>
-        <li><svg><use href="#i-check"/></svg>Every detector, call point &amp; hooter tested before handover</li>
-      </ul>
+      <span class="pulse"><i></i>Fire Alarm System Installation · Raipur &amp; Central India</span>
+      <h1>The first <em>30 seconds</em> of a fire decide everything.</h1>
+      <p class="lead">We design, install and test fire alarm systems that detect smoke early and alert every person in your building — with complete documentation for Fire NOC &amp; insurance.</p>
       <div class="hero-ctas">
-        <a href="tel:+917772078610" class="btn btn-orange" data-track="call"><svg><use href="#i-phone"/></svg>Call 77720 78610</a>
-        <a href="#" class="btn btn-green js-wa"><svg><use href="#i-wa"/></svg>WhatsApp for Quote</a>
+        <a href="#quote" class="btn btn-red">Book FREE Site Survey <svg><use href="#i-arrow"/></svg></a>
+        <a href="tel:+917772078610" class="btn btn-line" data-track="call"><svg><use href="#i-phone"/></svg>77720 78610</a>
       </div>
-      <div class="team-card">
-        <img src="assets/img/team-van.webp" alt="The Fire Wala field team with service vehicle" width="96" height="66">
-        <div><b>Our own trained team</b><span>Survey, installation, testing &amp; AMC — handled by The Fire Wala, Raipur. No sub-contracting.</span></div>
+      <div class="facts">
+        <div><b>10+</b><span>Years experience</span></div>
+        <div><b>700+</b><span>Clients served</span></div>
+        <div><b>50+</b><span>In-house team</span></div>
+        <div><b>ISO</b><span>9001:2015 certified</span></div>
       </div>
     </div>
+    <div class="reel">
+      <div class="frame">
+        <video id="heroVid" muted autoplay loop playsinline preload="metadata" poster="assets/video/alarm-1-poster.webp" disablepictureinpicture aria-label="Our technician testing a smoke detector (muted)"><source src="assets/video/alarm-1.mp4" type="video/mp4"></video>
+        <span class="mute"><svg><use href="#i-mute"/></svg>Real site · muted</span>
+      </div>
+      <span class="chip c1"><svg><use href="#i-check"/></svg>Smoke detector tested</span>
+      <span class="chip c2"><i></i>Panel: Zone 03 alarm</span>
+    </div>
+  </div>
+</section>
 
+<!-- FORM BAND -->
+<div class="formband">
+  <div class="wrap">
     <div class="form-card" id="quote">
       <form id="leadForm" novalidate>
-        <h3>Book a FREE Site Survey</h3>
-        <p class="sub">Share a few details — our team will call you <b>within 24 hours.</b></p>
-        <div class="fgrid">
-          <div class="field full" id="svcField">
-            <span class="lbl">Service required <span class="req">*</span></span>
-            <div class="svc">
-              <label><input type="radio" name="requirement" value="New Fire Alarm Installation"><span class="tile"><img src="assets/3d/smoke-detector.svg" alt="">New System</span></label>
-              <label><input type="radio" name="requirement" value="Repair / Upgrade / False Alarms"><span class="tile"><img src="assets/3d/control-panel.svg" alt="">Repair / Upgrade</span></label>
-              <label><input type="radio" name="requirement" value="AMC / Fire NOC Support"><span class="tile"><img src="assets/3d/step-handover.svg" alt="">AMC / NOC</span></label>
+        <div class="form-top">
+          <div><h3>Book a FREE Site Survey</h3><p>Our fire alarm engineer will call you <b>within 24 hours.</b></p></div>
+          <div class="field" id="svcField">
+            <div class="svc" role="radiogroup" aria-label="Service required">
+              <label><input type="radio" name="requirement" value="New Fire Alarm Installation"><span><img src="assets/3d/smoke-detector.svg" alt="">New System</span></label>
+              <label><input type="radio" name="requirement" value="Repair / Upgrade / False Alarms"><span><img src="assets/3d/control-panel.svg" alt="">Repair / Upgrade</span></label>
+              <label><input type="radio" name="requirement" value="AMC / Fire NOC Support"><span><img src="assets/3d/step-handover.svg" alt="">AMC / NOC</span></label>
             </div>
             <span class="err">Please choose a service</span>
           </div>
+        </div>
+        <div class="grid4">
           <div class="field">
             <label for="f-name">Full name <span class="req">*</span></label>
             <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name">
@@ -524,337 +483,226 @@ footer a:hover{color:#fff}
               <option>Not sure</option>
             </select>
           </div>
-          <div class="field full">
+          <div class="field">
             <label for="f-msg">Anything else? <span class="opt">(optional)</span></label>
-            <textarea id="f-msg" name="message" rows="2" placeholder="Floors, existing system, timeline…"></textarea>
+            <textarea id="f-msg" name="message" rows="1" placeholder="Floors, timeline…"></textarea>
           </div>
+          <div class="submit-cell"><button type="submit" class="btn btn-red" id="submitBtn">Book FREE Survey <svg><use href="#i-arrow"/></svg></button></div>
         </div>
         <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
         <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="fbclid"><input type="hidden" name="page">
-        <button type="submit" class="btn btn-orange" id="submitBtn">Book My FREE Site Survey <svg><use href="#i-arrow"/></svg></button>
         <p class="note"><svg><use href="#i-shield"/></svg>Your details are safe with us. No spam, ever.</p>
       </form>
       <div class="success" role="status" aria-live="polite">
         <div class="ok"><svg><use href="#i-check"/></svg></div>
-        <h3>Thank you, <span id="okName">there</span>!</h3>
-        <p>Your survey request is received. Our team will call you on <b id="okPhone"></b> within 24 hours.</p>
-        <a class="btn btn-green" id="okWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Also send on WhatsApp</a>
-        <a class="btn btn-navy" href="tel:+917772078610" data-track="call"><svg><use href="#i-phone"/></svg>Call now: 77720 78610</a>
+        <div><h3>Thank you, <span id="okName">there</span>!</h3><p>Request received — our engineer will call you on <b id="okPhone"></b> within 24 hours.</p></div>
+        <div class="acts">
+          <a class="btn btn-green" id="okWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Also send on WhatsApp</a>
+          <a class="btn btn-dark" href="tel:+917772078610" data-track="call"><svg><use href="#i-phone"/></svg>Call 77720 78610</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<div class="stats" aria-label="Company highlights">
-  <div class="wrap">
-    <div class="stat"><b>10+</b><span>Years of fire<br>safety</span></div>
-    <div class="stat"><b>700+</b><span>Clients<br>served</span></div>
-    <div class="stat"><b>50+</b><span>In-house<br>team</span></div>
-    <div class="stat"><b>24 hrs</b><span>Call-back<br>promise</span></div>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <img class="deco" src="assets/3d/mini-ladder.svg" alt="" aria-hidden="true">
+<!-- CLIENT MARQUEE -->
+<div class="logos" aria-label="Our clients">
+  <p>Trusted by 700+ hospitals, malls, schools &amp; industries</p>
+  <div class="marq"><div class="track" id="track">
+    <div><img src="assets/clients/pvr.webp" alt="PVR"></div>
+    <div><img src="assets/clients/zora.webp" alt="Zora The Mall"></div>
+    <div><img src="assets/clients/colors.webp" alt="Lalganga Kolors Mall"></div>
+    <div><img src="assets/clients/apollo.webp" alt="Apollo Sugar Clinics"></div>
+    <div><img src="assets/clients/yashwant.webp" alt="Yashwant Hospital"></div>
+    <div><img src="assets/clients/shrinathji.webp" alt="Shrinathji Hospital"></div>
+    <div><img src="assets/clients/balaji.webp" alt="Shri Balaji Group of Hospitals"></div>
+    <div><img src="assets/clients/suyashhospital.webp" alt="Suyash Hospital"></div>
+    <div><img src="assets/clients/neco.webp" alt="Neco"></div>
+    <div><img src="assets/clients/holycross.webp" alt="Holy Cross"></div>
+    <div><img src="assets/clients/cps.webp" alt="CPS"></div>
+    <div><img src="assets/clients/sinoflex.webp" alt="Sinoflex"></div>
+    <div><img src="assets/clients/icon.webp" alt="Icon"></div>
+    <div><img src="assets/clients/lotus.webp" alt="Lotus"></div>
+    <div><img src="assets/clients/anand.webp" alt="Anand"></div>
+    <div><img src="assets/clients/laxmi.webp" alt="Laxmi"></div>
+  </div></div>
+</div>
+
+<!-- SYSTEMS -->
+<section class="systems" id="systems">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Our services</span>
-      <h2>Complete fire alarm systems — every device, one team</h2>
+    <div class="head center reveal">
+      <span class="tag">Choose your system</span>
+      <h2>Conventional or Addressable — we fit the right one</h2>
+      <p>Our engineer recommends the system after a site survey, based on your building size, occupancy and budget.</p>
     </div>
-    <div class="tabs" role="tablist">
-      <button class="tab active" role="tab" aria-selected="true" data-tab="conv">🔔 Conventional System</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="addr">📡 Addressable System</button>
-    </div>
-    <div class="svc-wrap">
-      <div>
-        <div class="panel active" id="tab-conv" role="tabpanel">
-          <h3>Conventional Fire Alarm</h3>
-          <p class="tagline">Reliable, zone-wise detection for small &amp; medium buildings.</p>
-          <p>Detectors are wired in zones — the panel shows exactly which zone is in alarm so your staff can respond in seconds. Cost-effective and easy to maintain.</p>
-          <ul>
-            <li><svg><use href="#i-check"/></svg><span><b>Best for</b> — shops, offices, clinics, small schools &amp; hotels</span></li>
-            <li><svg><use href="#i-check"/></svg><span><b>Zone-wise layout</b> of smoke &amp; heat detectors</span></li>
-            <li><svg><use href="#i-check"/></svg><span><b>MCPs &amp; hooters</b> on every floor, battery backup</span></li>
-          </ul>
-          <div class="codes"><span>NBC Part 4</span><span>IS 2189</span><span>Local Fire Authority</span></div>
-          <a href="#quote" class="btn btn-orange" data-pkg="Conventional system">Get Conventional Quote</a>
-        </div>
-        <div class="panel" id="tab-addr" role="tabpanel">
-          <h3>Addressable Fire Alarm</h3>
-          <p class="tagline">Pinpoints the exact device — for large &amp; high-risk buildings.</p>
-          <p>Every detector has its own address on a loop. The panel shows the exact room and device in alarm, finds faults instantly and expands easily as your building grows.</p>
-          <ul>
-            <li><svg><use href="#i-check"/></svg><span><b>Best for</b> — hospitals, hotels, malls, factories &amp; campuses</span></li>
-            <li><svg><use href="#i-check"/></svg><span><b>Loop design</b> with multi-sensor, beam &amp; flame detectors</span></li>
-            <li><svg><use href="#i-check"/></svg><span><b>Faster response</b>, easy fault finding, future-expandable</span></li>
-          </ul>
-          <div class="codes"><span>NBC Part 4</span><span>IS 2189</span><span>OEM Guidelines</span></div>
-          <a href="#quote" class="btn btn-orange" data-pkg="Addressable system">Get Addressable Quote</a>
-        </div>
+    <div class="sys-grid">
+      <div class="sys reveal">
+        <img class="deco" src="assets/3d/control-panel.svg" alt="" aria-hidden="true">
+        <span class="lbl">Small &amp; medium buildings</span>
+        <h3>Conventional System</h3>
+        <p>Detectors are wired in zones — the panel shows which zone is in alarm. Reliable, cost-effective and easy to maintain.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg><span>Shops, offices, clinics, small schools &amp; hotels</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Zone-wise smoke &amp; heat detection</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Call points &amp; hooters on every floor, battery backup</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Lower initial investment</span></li>
+        </ul>
+        <a href="#quote" class="btn btn-red" data-pkg="Conventional system">Get Conventional Quote</a>
       </div>
-      <div class="devices">
-        <div class="dev reveal"><img src="assets/3d/smoke-detector.svg" alt="Smoke detector" loading="lazy"><b>Smoke Detector</b><span>Rooms, corridors &amp; lobbies</span></div>
-        <div class="dev reveal"><img src="assets/3d/heat-detector.svg" alt="Heat detector" loading="lazy"><b>Heat Detector</b><span>Kitchens, DG &amp; boiler rooms</span></div>
-        <div class="dev reveal"><img src="assets/3d/call-point.svg" alt="Manual call point" loading="lazy"><b>Manual Call Point</b><span>Near exits &amp; staircases</span></div>
-        <div class="dev reveal"><img src="assets/3d/hooter.svg" alt="Hooter" loading="lazy"><b>Hooter / Sounder</b><span>Audible on every floor</span></div>
-        <div class="dev reveal"><img src="assets/3d/response-indicator.svg" alt="Response indicator" loading="lazy"><b>Response Indicator</b><span>Outside closed rooms</span></div>
-        <div class="dev reveal"><img src="assets/3d/control-panel.svg" alt="Fire alarm control panel" loading="lazy"><b>Control Panel</b><span>With battery backup</span></div>
+      <div class="sys dark reveal">
+        <img class="deco" src="assets/3d/smoke-detector.svg" alt="" aria-hidden="true">
+        <span class="lbl">Large &amp; high-risk buildings</span>
+        <h3>Addressable System</h3>
+        <p>Every device has its own address on a loop — the panel shows the exact room and detector in alarm.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg><span>Hospitals, hotels, malls, factories &amp; campuses</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Multi-sensor, beam &amp; flame detectors on loops</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Instant fault finding, fewer false alarms</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Expandable as your building grows</span></li>
+        </ul>
+        <a href="#quote" class="btn btn-red" data-pkg="Addressable system">Get Addressable Quote</a>
       </div>
     </div>
+    <div class="devices reveal">
+      <div class="dev"><img src="assets/3d/smoke-detector.svg" alt="" loading="lazy"><b>Smoke Detector</b><span>Rooms &amp; corridors</span></div>
+      <div class="dev"><img src="assets/3d/heat-detector.svg" alt="" loading="lazy"><b>Heat Detector</b><span>Kitchens &amp; DG rooms</span></div>
+      <div class="dev"><img src="assets/3d/call-point.svg" alt="" loading="lazy"><b>Call Point</b><span>Near every exit</span></div>
+      <div class="dev"><img src="assets/3d/hooter.svg" alt="" loading="lazy"><b>Hooter</b><span>Audible on all floors</span></div>
+      <div class="dev"><img src="assets/3d/response-indicator.svg" alt="" loading="lazy"><b>Response Indicator</b><span>Outside closed rooms</span></div>
+      <div class="dev"><img src="assets/3d/control-panel.svg" alt="" loading="lazy"><b>Control Panel</b><span>With battery backup</span></div>
+    </div>
+    <div class="codes"><span>NBC Part 4</span><span>IS 2189</span><span>Local Fire Authority norms</span><span>Fire NOC-ready documents</span></div>
   </div>
 </section>
 
-<!-- OUR WORK -->
-<section class="work" id="work">
+<!-- VIDEOS -->
+<section id="work">
   <div class="wrap">
-    <div class="box">
-      <div>
-        <span class="live"><i></i>FROM OUR SITES</span>
-        <h2>Real work, real sites</h2>
-        <p>Short clips from our own fire alarm projects — no stock footage.</p>
-        <ol class="chap">
-          <li><button class="active" data-v="0"><span class="n">01</span><span><b>Smoke detector live test</b>Our technician tests each ceiling detector with smoke before handover.</span></button></li>
-          <li><button data-v="1"><span class="n">02</span><span><b>Client walkthrough &amp; panel demo</b>Engineer explains the system, triggers a call point and shows the panel alarm.</span></button></li>
-          <li><button data-v="2"><span class="n">03</span><span><b>Commissioning with client team</b>Detector triggered, alarm verified on panel and demonstrated to staff.</span></button></li>
-        </ol>
-        <a href="#quote" class="btn btn-orange" style="margin-top:22px">Book FREE Site Survey</a>
-      </div>
-      <div class="player" id="player">
-        <div class="blur" id="pBlur" style="background-image:url(assets/video/alarm-1-poster.webp)"></div>
-        <div class="prog"><i><b></b></i><i><b></b></i><i><b></b></i></div>
-        <video id="vid" muted playsinline preload="none" poster="assets/video/alarm-1-poster.webp" width="432" height="768" disablepictureinpicture controlslist="nodownload noplaybackrate" aria-label="Fire alarm project videos (muted)"></video>
-        <span class="muted"><svg><use href="#i-mute"/></svg>Muted</span>
-      </div>
+    <div class="head reveal">
+      <span class="tag">From our sites</span>
+      <h2>See our team at work</h2>
+      <p>Real clips from our fire alarm projects — every device is tested in front of the client before handover.</p>
     </div>
-  </div>
-</section>
-
-<!-- HOW IT PROTECTS -->
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">How it protects you</span>
-      <h2>The first warning line of defence against fire</h2>
-      <p>A properly designed system gives you the critical minutes that save lives, reduce damage and protect your business.</p>
-    </div>
-    <div class="flow">
-      <div class="fstep reveal"><div class="bub"><img src="assets/3d/smoke-detector.svg" alt=""><i>1</i></div><h4>Detect</h4><p>Smoke, heat &amp; flame detectors sense fire at its initial stage.</p></div>
-      <div class="fstep reveal"><div class="bub"><img src="assets/3d/control-panel.svg" alt=""><i>2</i></div><h4>Signal</h4><p>The control panel instantly shows the zone or device in alarm.</p></div>
-      <div class="fstep reveal"><div class="bub"><img src="assets/3d/hooter.svg" alt=""><i>3</i></div><h4>Alert</h4><p>Hooters &amp; response indicators warn every occupant immediately.</p></div>
-      <div class="fstep reveal"><div class="bub"><img src="assets/3d/step-handover.svg" alt=""><i>4</i></div><h4>Evacuate</h4><p>People exit safely and response starts — damage is minimised.</p></div>
-    </div>
-    <div class="pains reveal">
-      <h3>Is your building facing any of these?</h3>
-      <div class="pain-grid">
-        <div class="pain"><svg><use href="#i-warn"/></svg>No fire alarm system installed</div>
-        <div class="pain"><svg><use href="#i-warn"/></svg>Existing system not working / showing faults</div>
-        <div class="pain"><svg><use href="#i-warn"/></svg>Frequent false alarms</div>
-        <div class="pain"><svg><use href="#i-warn"/></svg>Fire NOC delayed or rejected</div>
-        <div class="pain"><svg><use href="#i-warn"/></svg>Insurance / Fire Audit observations</div>
-        <div class="pain"><svg><use href="#i-warn"/></svg>Building expanded — coverage inadequate</div>
-        <div class="pain"><svg><use href="#i-warn"/></svg>No way to alert all occupants</div>
-        <div class="pain"><svg><use href="#i-warn"/></svg>Hospital / NABH or hotel compliance</div>
-      </div>
-      <p class="mt-cta" style="margin-top:22px"><a href="#quote" class="btn btn-orange">Get your building checked — FREE</a></p>
+    <div class="vids">
+      <div class="vid reveal"><div class="v"><video class="lazyvid" muted loop playsinline preload="none" poster="assets/video/alarm-1-poster.webp" data-src="assets/video/alarm-1.mp4" disablepictureinpicture></video><span class="num">01</span><span class="mute"><svg><use href="#i-mute"/></svg>Muted</span></div><div class="cap"><b>Smoke detector live test</b>Each ceiling detector is tested with smoke before handover.</div></div>
+      <div class="vid reveal"><div class="v"><video class="lazyvid" muted loop playsinline preload="none" poster="assets/video/alarm-2-poster.webp" data-src="assets/video/alarm-2.mp4" disablepictureinpicture></video><span class="num">02</span><span class="mute"><svg><use href="#i-mute"/></svg>Muted</span></div><div class="cap"><b>Client walkthrough &amp; panel demo</b>Engineer triggers a call point and shows the alarm on the panel.</div></div>
+      <div class="vid reveal"><div class="v"><video class="lazyvid" muted loop playsinline preload="none" poster="assets/video/alarm-3-poster.webp" data-src="assets/video/alarm-3.mp4" disablepictureinpicture></video><span class="num">03</span><span class="mute"><svg><use href="#i-mute"/></svg>Muted</span></div><div class="cap"><b>Commissioning with client team</b>Alarm verified on the panel and demonstrated to staff.</div></div>
     </div>
   </div>
 </section>
 
 <!-- INDUSTRIES -->
-<section id="industries" style="padding-top:0">
+<section class="ind">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Industries we serve</span>
+    <div class="head center reveal">
+      <span class="tag">Industries we serve</span>
       <h2>Fire alarm systems for every type of building</h2>
     </div>
     <div class="ind-grid">
-      <div class="ind reveal"><img src="assets/img/ind-hospital2.webp" alt="Hospital building" loading="lazy"><div><h4>Hospitals &amp; Clinics</h4><p>Patient-safe, NABH-ready detection</p></div></div>
-      <div class="ind reveal"><img src="assets/img/ind-school.webp" alt="School corridor" loading="lazy"><div><h4>Schools &amp; Colleges</h4><p>Classrooms, labs &amp; hostels</p></div></div>
-      <div class="ind reveal"><img src="assets/img/ind-factory.webp" alt="Factory floor" loading="lazy"><div><h4>Factories &amp; Plants</h4><p>Production &amp; process areas</p></div></div>
-      <div class="ind reveal"><img src="assets/img/ind-residential.webp" alt="Residential building" loading="lazy"><div><h4>Residential Societies</h4><p>High-rise towers &amp; apartments</p></div></div>
-      <div class="ind reveal"><img src="assets/img/ind-hotel.webp" alt="Hotel kitchen" loading="lazy"><div><h4>Hotels &amp; Resorts</h4><p>Rooms, kitchens &amp; banquets</p></div></div>
-      <div class="ind reveal"><img src="assets/img/ind-mall.webp" alt="Shopping mall" loading="lazy"><div><h4>Malls &amp; Showrooms</h4><p>Retail floors &amp; parking</p></div></div>
-      <div class="ind reveal"><img src="assets/img/ind-warehouse.webp" alt="Warehouse" loading="lazy"><div><h4>Warehouses</h4><p>Beam detection for high ceilings</p></div></div>
-      <div class="ind reveal"><img src="assets/img/ind-office.webp" alt="Office" loading="lazy"><div><h4>Offices &amp; Govt. Buildings</h4><p>Commercial &amp; institutional</p></div></div>
+      <div class="ic reveal"><i>🏥</i><div><b>Hospitals &amp; Clinics</b><span>NABH-ready detection</span></div></div>
+      <div class="ic reveal"><i>🏨</i><div><b>Hotels &amp; Resorts</b><span>Rooms, kitchens &amp; banquets</span></div></div>
+      <div class="ic reveal"><i>🏫</i><div><b>Schools &amp; Colleges</b><span>Classrooms, labs &amp; hostels</span></div></div>
+      <div class="ic reveal"><i>🏭</i><div><b>Factories &amp; Plants</b><span>Production &amp; process areas</span></div></div>
+      <div class="ic reveal"><i>📦</i><div><b>Warehouses</b><span>Beam detection, high ceilings</span></div></div>
+      <div class="ic reveal"><i>🛍️</i><div><b>Malls &amp; Showrooms</b><span>Retail floors &amp; parking</span></div></div>
+      <div class="ic reveal"><i>🏢</i><div><b>Offices &amp; Govt.</b><span>Commercial &amp; institutional</span></div></div>
+      <div class="ic reveal"><i>🏘️</i><div><b>Residential Societies</b><span>High-rise towers</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- HOW WE WORK -->
-<section class="how" id="how">
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap proc">
+    <div class="stick reveal">
+      <span class="tag">How we work</span>
+      <h2 style="font-size:clamp(27px,3.4vw,40px);margin:10px 0 12px">From FREE survey to signed handover</h2>
+      <p style="color:var(--muted);font-size:17px">One in-house team — no sub-contracting. You get progress updates at every step and full documentation at the end.</p>
+      <a href="#quote" class="btn btn-red">Book FREE Site Survey <svg><use href="#i-arrow"/></svg></a>
+      <a href="tel:+917772070303" class="call" data-track="call"><svg><use href="#i-phone"/></svg>Or call 77720 70303</a>
+    </div>
+    <ol class="tl">
+      <li class="reveal"><span class="dot"><img src="assets/3d/step-survey.svg" alt=""></span><div><small>STEP 01</small><h4>FREE Site Survey</h4><p>We study your layout, occupancy and risk areas to decide the detector requirement.</p></div></li>
+      <li class="reveal"><span class="dot"><img src="assets/3d/step-design.svg" alt=""></span><div><small>STEP 02</small><h4>Design &amp; Quotation</h4><p>Detector layout, zone / loop design, panel selection and a clear itemised quote.</p></div></li>
+      <li class="reveal"><span class="dot"><img src="assets/3d/step-supply.svg" alt=""></span><div><small>STEP 03</small><h4>Material Supply</h4><p>Panel, detectors, call points, hooters, batteries and cables — right make for your budget.</p></div></li>
+      <li class="reveal"><span class="dot"><img src="assets/3d/mini-ladder.svg" alt=""></span><div><small>STEP 04</small><h4>Installation</h4><p>Neat cabling and conduiting, device mounting, panel installation and termination.</p></div></li>
+      <li class="reveal"><span class="dot"><img src="assets/3d/smoke-detector.svg" alt=""></span><div><small>STEP 05</small><h4>Testing &amp; Commissioning</h4><p>Every detector, call point, hooter, battery, zone and loop tested — with fault simulation.</p></div></li>
+      <li class="reveal"><span class="dot"><img src="assets/3d/step-handover.svg" alt=""></span><div><small>STEP 06</small><h4>Training &amp; Handover</h4><p>Staff training, as-built drawing, test reports, warranty and signed handover documents.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust" id="trust">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">How we work</span>
-      <h2>From FREE survey to signed handover</h2>
-      <p>Our own engineers and technicians at every step.</p>
+    <div class="head reveal">
+      <span class="tag">Why trust us</span>
+      <h2>Certified, registered &amp; reviewed</h2>
+      <p>Tap a certificate to view it in full.</p>
     </div>
-    <div class="badges"><span>🛡️ ISO 9001:2015</span><span>👷 In-house team</span><span>✅ Tested before handover</span></div>
-    <div class="steps">
-      <div class="step reveal"><span class="no">01</span><img src="assets/3d/step-survey.svg" alt=""><h4>FREE Site Survey</h4><p>Layout, occupancy &amp; risk areas</p></div>
-      <div class="step reveal"><span class="no">02</span><img src="assets/3d/step-design.svg" alt=""><h4>Design &amp; BOQ</h4><p>Detector layout, zones / loops &amp; clear quote</p></div>
-      <div class="step reveal"><span class="no">03</span><img src="assets/3d/step-supply.svg" alt=""><h4>Material Supply</h4><p>Panel, detectors, MCPs, hooters &amp; cables</p></div>
-      <div class="step reveal"><span class="no">04</span><img src="assets/3d/mini-ladder.svg" alt=""><h4>Installation</h4><p>Cabling, conduit, devices &amp; panel</p></div>
-      <div class="step reveal"><span class="no">05</span><img src="assets/3d/smoke-detector.svg" alt=""><h4>Testing</h4><p>Detector, MCP, hooter, battery &amp; fault tests</p></div>
-      <div class="step reveal"><span class="no">06</span><img src="assets/3d/step-handover.svg" alt=""><h4>Handover</h4><p>Reports, warranty &amp; staff training</p></div>
-    </div>
-    <div class="mt-cta"><a href="#quote" class="btn btn-orange">Book FREE Site Survey</a> <a href="tel:+917772078610" class="btn btn-navy" data-track="call" style="margin-left:6px"><svg><use href="#i-phone"/></svg>77720 78610</a></div>
-  </div>
-</section>
-
-<!-- CERTIFICATES -->
-<section id="certificates">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Certified &amp; registered</span>
-      <h2>A company you can verify</h2>
-      <p>Government-registered, trademark-protected and certified for fire alarm supply &amp; installation.</p>
-    </div>
-    <div class="cert-grid">
-      <div class="cert reveal">
-        <button data-full="assets/certs/iso-7202.webp" aria-label="View ISO 7202:2018 certificate"><img src="assets/certs/thumb-iso-7202.webp" alt="ISO 7202:2018 Certificate of Compliance – M.S.D. Engineering" loading="lazy"></button>
-        <h4>ISO 7202:2018 Certificate of Compliance</h4>
-        <p>Arcade Management Certification — scope includes <b>all type fire alarm system supply &amp; installation</b>.</p>
-        <span class="no">Cert. No. FRE-MSD-2306211</span>
+    <div class="trust-grid">
+      <div class="reveal">
+        <div class="certs">
+          <button class="cert" data-full="assets/certs/iso-7202.webp" aria-label="View ISO 7202:2018 certificate"><img src="assets/certs/thumb-iso-7202.webp" alt="ISO 7202:2018 Certificate of Compliance" loading="lazy"><b>ISO 7202:2018</b><span>FRE-MSD-2306211</span></button>
+          <button class="cert" data-full="assets/certs/udyam-msme.webp" aria-label="View Udyam registration certificate"><img src="assets/certs/thumb-udyam-msme.webp" alt="Udyam MSME Registration Certificate" loading="lazy"><b>MSME / Udyam</b><span>UDYAM-CG-14-0022637</span></button>
+          <button class="cert" data-full="assets/certs/trademark.webp" aria-label="View trademark registration certificate"><img src="assets/certs/thumb-trademark.webp" alt="Trade Mark Registration Certificate" loading="lazy"><b>Trademark ®</b><span>No. 5645830</span></button>
+        </div>
+        <p class="scope"><b>Certified scope includes</b> all type fire alarm system supply &amp; installation, hydrant &amp; sprinkler, suppression, extinguishers, mock drills, design &amp; consulting and AMC.</p>
       </div>
-      <div class="cert reveal">
-        <button data-full="assets/certs/udyam-msme.webp" aria-label="View Udyam registration certificate"><img src="assets/certs/thumb-udyam-msme.webp" alt="Udyam (MSME) Registration Certificate – The Fire Wala" loading="lazy"></button>
-        <h4>MSME / Udyam Registered</h4>
-        <p>Registered with the Ministry of MSME, Government of India.</p>
-        <span class="no">UDYAM-CG-14-0022637</span>
+      <div class="revs">
+        <div class="rev reveal"><div class="stars">★★★★★</div><p>“Taught all about Fire alarm system &amp; hydrant system demo in very easy way.”</p><div class="who"><i>V</i><span><b>Vikash Jaiswal</b> · Google review</span></div></div>
+        <div class="rev reveal"><div class="stars">★★★★★</div><p>“Good fire safety services in reasonable price. Installation team are very good and polite and given a detailed demo.”</p><div class="who"><i>S</i><span><b>Shraddha Agrawal</b> · Google review</span></div></div>
+        <div class="rev reveal"><div class="stars">★★★★★</div><p>“The best service is MSD Engineering, the fire team Hari Bahadur &amp; Jayaprakash Divya.”</p><div class="who"><i>D</i><span><b>Dheeraj Sahu</b> · Google review</span></div></div>
       </div>
-      <div class="cert reveal">
-        <button data-full="assets/certs/trademark.webp" aria-label="View trademark registration certificate"><img src="assets/certs/thumb-trademark.webp" alt="Trade Mark Registration Certificate – The Fire Wala" loading="lazy"></button>
-        <h4>Registered Trademark ®</h4>
-        <p>“The Fire Wala” brand registered with Trade Marks Registry, Govt. of India.</p>
-        <span class="no">Trade Mark No. 5645830</span>
-      </div>
-    </div>
-    <div class="scope reveal"><svg><use href="#i-shield"/></svg><p><b>Certified scope covers:</b> fire alarm system supply &amp; installation, fire hydrant &amp; sprinkler, fire suppression, extinguisher supply &amp; refilling, mock drills, design &amp; consulting and AMC for all fire-fighting systems.</p></div>
-  </div>
-</section>
-
-<!-- CLIENTS & REVIEWS -->
-<section class="clients" id="clients">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Trusted by 700+ clients</span>
-      <h2>Hospitals, malls, schools &amp; industries rely on us</h2>
-    </div>
-    <div class="logos">
-      <div><img src="assets/clients/pvr.webp" alt="PVR" loading="lazy"></div>
-      <div><img src="assets/clients/zora.webp" alt="Zora The Mall" loading="lazy"></div>
-      <div><img src="assets/clients/colors.webp" alt="Lalganga Kolors Mall" loading="lazy"></div>
-      <div><img src="assets/clients/apollo.webp" alt="Apollo Sugar Clinics" loading="lazy"></div>
-      <div><img src="assets/clients/yashwant.webp" alt="Yashwant Hospital" loading="lazy"></div>
-      <div><img src="assets/clients/shrinathji.webp" alt="Shrinathji Hospital" loading="lazy"></div>
-      <div><img src="assets/clients/balaji.webp" alt="Shri Balaji Group of Hospitals" loading="lazy"></div>
-      <div><img src="assets/clients/suyashhospital.webp" alt="Suyash Hospital" loading="lazy"></div>
-      <div><img src="assets/clients/neco.webp" alt="Neco" loading="lazy"></div>
-      <div><img src="assets/clients/holycross.webp" alt="Holy Cross" loading="lazy"></div>
-      <div><img src="assets/clients/cps.webp" alt="CPS" loading="lazy"></div>
-      <div><img src="assets/clients/sinoflex.webp" alt="Sinoflex" loading="lazy"></div>
-      <div><img src="assets/clients/icon.webp" alt="Icon" loading="lazy"></div>
-      <div><img src="assets/clients/lotus.webp" alt="Lotus" loading="lazy"></div>
-      <div><img src="assets/clients/anand.webp" alt="Anand" loading="lazy"></div>
-      <div><img src="assets/clients/laxmi.webp" alt="Laxmi" loading="lazy"></div>
-    </div>
-    <div class="reviews">
-      <div class="rev reveal"><div class="who"><span class="av">V</span><div><b>Vikash Jaiswal</b><small>Google review</small></div></div><div class="stars">★★★★★</div><p>“We have learned Fire Mock drill at Hari Vilaas Luxa Varanasi from Mr. Asgar Ali. Taught all about Fire alarm system hydrant system demo in very easy way.”</p></div>
-      <div class="rev reveal"><div class="who"><span class="av">S</span><div><b>Shraddha Agrawal</b><small>Google review</small></div></div><div class="stars">★★★★★</div><p>“The Firewala provided good fire safety services in reasonable price. Installation team (Hari and Ranveer) are very good and polite and given a detailed demo. Having a great experience.”</p></div>
-      <div class="rev reveal"><div class="who"><span class="av">D</span><div><b>Dheeraj Sahu</b><small>Google review</small></div></div><div class="stars">★★★★★</div><p>“The best service is MSD Engineering, the fire team Hari Bahadur &amp; Jayaprakash Divya.”</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PACKAGES -->
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Solutions for every size</span>
-      <h2>Choose the right fire alarm package</h2>
-      <p>Pricing depends on building area, height, device quantity &amp; cable routing — every quote is site-specific and transparent.</p>
-    </div>
-    <div class="pkg-grid">
-      <div class="pkg reveal"><span class="tier">BASIC</span><h4>Small Premises</h4><p class="for">Small offices, shops &amp; clinics</p><ul><li><svg><use href="#i-check"/></svg>Conventional panel</li><li><svg><use href="#i-check"/></svg>Smoke / heat detection</li><li><svg><use href="#i-check"/></svg>MCP &amp; hooter</li><li><svg><use href="#i-check"/></svg>Testing &amp; handover</li></ul><a href="#quote" class="btn btn-navy" data-pkg="Basic package">Get Quote</a></div>
-      <div class="pkg pop reveal"><span class="flag">Most requested</span><span class="tier">STANDARD</span><h4>Full Coverage</h4><p class="for">Schools, hotels &amp; commercial buildings</p><ul><li><svg><use href="#i-check"/></svg>Full building coverage</li><li><svg><use href="#i-check"/></svg>Conventional or addressable</li><li><svg><use href="#i-check"/></svg>Zone-wise layout drawing</li><li><svg><use href="#i-check"/></svg>Staff training</li></ul><a href="#quote" class="btn btn-orange" data-pkg="Standard package">Get Quote</a></div>
-      <div class="pkg reveal"><span class="tier">PREMIUM</span><h4>High-Risk Sites</h4><p class="for">Hospitals, factories &amp; warehouses</p><ul><li><svg><use href="#i-check"/></svg>Addressable detection</li><li><svg><use href="#i-check"/></svg>Risk-area specific devices</li><li><svg><use href="#i-check"/></svg>Detailed documentation</li><li><svg><use href="#i-check"/></svg>AMC-ready handover</li></ul><a href="#quote" class="btn btn-navy" data-pkg="Premium package">Get Quote</a></div>
-      <div class="pkg reveal"><span class="tier">ENTERPRISE</span><h4>Large Campuses</h4><p class="for">Industrial plants, malls &amp; multi-building projects</p><ul><li><svg><use href="#i-check"/></svg>Multi-loop addressable</li><li><svg><use href="#i-check"/></svg>Integration planning</li><li><svg><use href="#i-check"/></svg>Dashboard-ready infrastructure</li><li><svg><use href="#i-check"/></svg>Dedicated project manager</li></ul><a href="#quote" class="btn btn-navy" data-pkg="Enterprise package">Get Quote</a></div>
-    </div>
-    <p class="pkg-note">Easy payment terms: advance for material → running payment during execution → balance before handover.</p>
-  </div>
-</section>
-
-<!-- DELIVERABLES -->
-<section class="deliv">
-  <div class="wrap deliv-wrap">
-    <div class="dcard reveal">
-      <span class="eyebrow">What you receive</span>
-      <h3>Not just a system — a fully documented handover</h3>
-      <p>Everything you need for Fire NOC, insurance audits and future maintenance.</p>
-      <div class="dlist">
-        <div><svg><use href="#i-check"/></svg>Working fire alarm system</div><div><svg><use href="#i-check"/></svg>As-built layout drawing</div>
-        <div><svg><use href="#i-check"/></svg>Installation report</div><div><svg><use href="#i-check"/></svg>Testing report</div>
-        <div><svg><use href="#i-check"/></svg>Device schedule</div><div><svg><use href="#i-check"/></svg>Material list</div>
-        <div><svg><use href="#i-check"/></svg>Warranty documents</div><div><svg><use href="#i-check"/></svg>User training record</div>
-        <div><svg><use href="#i-check"/></svg>Signed handover report</div>
-      </div>
-    </div>
-    <div class="std reveal">
-      <h3>Designed to the right standards</h3>
-      <div class="row"><b>NBC Part 4</b><span>National Building Code – Fire &amp; Life Safety</span></div>
-      <div class="row"><b>IS 2189</b><span>Fire detection &amp; alarm systems code</span></div>
-      <div class="row"><b>Fire Authority</b><span>Local requirements for Fire NOC</span></div>
-      <div class="row"><b>Insurance &amp; OEM</b><span>Guidelines &amp; manufacturer specs</span></div>
-      <small>Handover only when all devices, zones &amp; loops work, there is no active fault, and testing &amp; training are complete.</small>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
 <section id="faq">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Client questions</span>
-      <h2>Frequently asked questions</h2>
+  <div class="wrap faq">
+    <div class="head reveal">
+      <span class="tag">Questions</span>
+      <h2>Before you book</h2>
+      <p>Still unsure? Call us on <a href="tel:+917772078610" data-track="call" style="color:var(--red);font-weight:700">77720 78610</a> — our engineer will guide you.</p>
     </div>
     <div class="faq-list">
-      <details open><summary>We already have extinguishers. Why do we need a fire alarm?</summary><p>An extinguisher works only when someone knows there is a fire. A fire alarm system gives the early warning — it detects fire at the initial stage and alerts everyone, even at night or in unattended rooms. For most commercial and institutional buildings it is also an NBC and Fire NOC requirement.</p></details>
-      <details><summary>Abhi fire alarm ki zarurat nahi hai — why now?</summary><p>Delay in detecting a fire is the biggest risk. Most damage happens in the first few minutes, before anyone notices. A fire alarm buys those critical minutes for evacuation and response.</p></details>
-      <details><summary>How much does it cost?</summary><p>It depends on building area &amp; height, number of devices, panel type (conventional / addressable) and cable routing. We do a FREE site survey and give you a clear, itemised quotation — a life-safety and property-protection investment, not just a compliance cost.</p></details>
-      <details><summary>Conventional or addressable — which one do I need?</summary><p>Conventional suits smaller premises like shops, clinics and small offices. Addressable is better for hospitals, hotels, malls, factories and campuses because it pinpoints the exact device. Our engineer recommends the right one after the survey.</p></details>
-      <details><summary>Our system gives false alarms / doesn't work. Can you fix it?</summary><p>Yes. We inspect the panel, detectors and wiring, find the root cause (wrong detector type, dust, wiring faults, battery issues) and repair or upgrade the system — then test everything again.</p></details>
-      <details><summary>Do you help with Fire NOC?</summary><p>Our design follows NBC Part 4, IS 2189 and local fire authority requirements, and you receive complete testing &amp; handover documents. We also offer Fire NOC consultancy for end-to-end support.</p></details>
-      <details><summary>How long does installation take?</summary><p>A small office takes a few days. Schools, hotels, hospitals and factories are project-based — it depends on device quantity, cable routing and site readiness. You get a clear timeline with the proposal.</p></details>
-      <details><summary>Do you provide AMC after installation?</summary><p>Yes — regular detector testing, panel and battery checks with service reports, plus fire audits, staff training and mock drills.</p></details>
+      <details open><summary>We already have extinguishers. Why a fire alarm?</summary><p>An extinguisher only helps once someone knows there is a fire. A fire alarm detects it early and alerts everyone — even at night or in empty rooms. It is also required for Fire NOC in most commercial buildings.</p></details>
+      <details><summary>How much does a fire alarm system cost?</summary><p>It depends on building area, number of devices, panel type and cable routing. After a FREE site survey you get a clear, itemised quotation.</p></details>
+      <details><summary>Our system gives false alarms / doesn't work. Can you fix it?</summary><p>Yes. We check the panel, detectors and wiring, find the cause and repair or upgrade the system — then test everything again.</p></details>
+      <details><summary>Will this help with Fire NOC?</summary><p>Our design follows NBC Part 4, IS 2189 and local fire norms, and you receive full testing &amp; handover documents. We also offer Fire NOC consultancy.</p></details>
+      <details><summary>Do you provide AMC after installation?</summary><p>Yes — regular detector testing, panel &amp; battery checks with service reports.</p></details>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final">
+<!-- FINAL -->
+<div class="final">
   <div class="wrap">
-    <span class="eyebrow">Aapke apno ka rakhwala</span>
-    <h2>Get your fire alarm system done right — the first time.</h2>
-    <p>Book a FREE site survey. Our team calls you within 24 hours.</p>
-    <a href="#quote" class="btn btn-orange">Book FREE Site Survey <svg><use href="#i-arrow"/></svg></a>
-    <div class="contacts">
-      <a href="tel:+917772078610" data-track="call"><svg><use href="#i-phone"/></svg><span><small>Call us</small><b>77720 78610</b></span></a>
-      <a href="tel:+917772070303" data-track="call"><svg><use href="#i-phone"/></svg><span><small>Call us</small><b>77720 70303</b></span></a>
-      <a href="#" class="js-wa"><svg><use href="#i-wa"/></svg><span><small>Chat on WhatsApp</small><b>77720 78610</b></span></a>
+    <div class="box reveal">
+      <div>
+        <h2>Don't wait for a fire to test your building.</h2>
+        <p>Book a FREE site survey today — our engineer will tell you exactly what your building needs.</p>
+        <a href="#quote" class="btn">Book FREE Site Survey <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="nums">
+        <a href="tel:+917772078610" data-track="call"><svg><use href="#i-phone"/></svg><span><small>Call us</small><b>77720 78610</b></span></a>
+        <a href="tel:+917772070303" data-track="call"><svg><use href="#i-phone"/></svg><span><small>Call us</small><b>77720 70303</b></span></a>
+        <a href="#" class="js-wa"><svg><use href="#i-wa"/></svg><span><small>WhatsApp</small><b>77720 78610</b></span></a>
+      </div>
     </div>
   </div>
-</section>
+</div>
 </main>
 
 <footer>
   <div class="wrap">
     <div class="foot">
-      <div><a href="#top" class="logo" style="margin-bottom:12px"><img src="assets/img/flame.png" alt="" width="26" height="42"><span><small>MSD Engineering</small><b>THE FIRE WALA<sup>®</sup></b><em>ISO 9001:2015 Certified</em></span></a><p>We keep you &amp; your property safe from fire.</p></div>
+      <div><a href="#top" class="logo" style="margin-bottom:12px"><img src="assets/img/flame.png" alt="" width="27" height="44"><span><small>MSD Engineering</small><b>THE FIRE WALA<sup>®</sup></b><em>ISO 9001:2015 Certified</em></span></a><p>Aapke Apno Ka Rakhwala.</p></div>
       <div><h5>Our Services</h5><p>Fire Alarm System · Fire Hydrant · Fire Sprinkler · Extinguisher Supply &amp; Refilling · AMC</p></div>
-      <div><h5>Contact Us</h5><a href="tel:+917772078610" data-track="call">+91 77720 78610</a><a href="tel:+917772070303" data-track="call">+91 77720 70303</a><a href="mailto:info@thefirewala.com">info@thefirewala.com</a></div>
-      <div><h5>Visit Us</h5><p>Office No. G04, Safoorah Complex, Parashuram Chowk, Stadium Road, in front of Kota, Raipur, Chhattisgarh – 492010</p></div>
+      <div><h5>Contact</h5><a href="tel:+917772078610" data-track="call">+91 77720 78610</a><a href="tel:+917772070303" data-track="call">+91 77720 70303</a><a href="mailto:info@thefirewala.com">info@thefirewala.com</a></div>
+      <div><h5>Office</h5><p>Office No. G04, Safoorah Complex, Parashuram Chowk, Stadium Road, in front of Kota, Raipur, Chhattisgarh – 492010</p></div>
     </div>
     <div class="copy"><span>© <span id="yr">2026</span> The Fire Wala | MSD Engineering</span><span>ISO 9001:2015 Certified · MSME Registered</span></div>
   </div>
@@ -882,47 +730,28 @@ footer a:hover{color:#fff}
   });
   document.querySelectorAll('[data-track="call"]').forEach(function(a){ a.addEventListener('click', function(){ track('Contact', {method:'call'}); }); });
 
-  /* Service tabs */
-  document.querySelectorAll('.tab').forEach(function(t){
-    t.addEventListener('click', function(){
-      document.querySelectorAll('.tab').forEach(function(x){ x.classList.toggle('active', x===t); x.setAttribute('aria-selected', x===t); });
-      document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id === 'tab-' + t.dataset.tab); });
-    });
-  });
+  /* Client marquee: duplicate logos for a seamless loop */
+  var tr = document.getElementById('track'); tr.innerHTML += tr.innerHTML;
+  tr.querySelectorAll('div').forEach(function(d, i){ if(i >= tr.children.length / 2) d.setAttribute('aria-hidden','true'); });
 
-  /* Video showcase – files have no audio track, and the player is forced muted */
-  var clips = [
-    {src:'assets/video/alarm-1.mp4', poster:'assets/video/alarm-1-poster.webp'},
-    {src:'assets/video/alarm-2.mp4', poster:'assets/video/alarm-2-poster.webp'},
-    {src:'assets/video/alarm-3.mp4', poster:'assets/video/alarm-3-poster.webp'}
-  ];
-  var vid = document.getElementById('vid'), blur = document.getElementById('pBlur');
-  var bars = document.querySelectorAll('.prog i b'), chaps = document.querySelectorAll('.chap button');
-  var cur = 0, started = false;
-  vid.muted = true; vid.defaultMuted = true; vid.volume = 0;
-  vid.addEventListener('volumechange', function(){ if(!vid.muted) vid.muted = true; });
-  function load(i, play){
-    cur = i;
-    chaps.forEach(function(c, k){ c.classList.toggle('active', k===i); });
-    bars.forEach(function(b, k){ b.style.width = k < i ? '100%' : '0'; });
-    vid.poster = clips[i].poster; blur.style.backgroundImage = 'url(' + clips[i].poster + ')';
-    vid.src = clips[i].src; vid.muted = true;
-    if(play){ var p = vid.play(); if(p && p.catch) p.catch(function(){}); }
-  }
-  vid.addEventListener('timeupdate', function(){ if(vid.duration) bars[cur].style.width = (vid.currentTime / vid.duration * 100) + '%'; });
-  vid.addEventListener('ended', function(){ load((cur + 1) % clips.length, true); });
-  vid.addEventListener('click', function(){ if(vid.paused) vid.play().catch(function(){}); else vid.pause(); });
-  chaps.forEach(function(c){ c.addEventListener('click', function(){ started = true; load(+c.dataset.v, true); }); });
+  /* Videos – files have no audio track; players are forced muted */
+  function keepMuted(v){ v.muted = true; v.defaultMuted = true; v.addEventListener('volumechange', function(){ if(!v.muted) v.muted = true; }); }
+  var hero = document.getElementById('heroVid'); keepMuted(hero);
+  var lazy = document.querySelectorAll('.lazyvid'); lazy.forEach(keepMuted);
+  lazy.forEach(function(v){ v.addEventListener('click', function(){ if(v.paused) v.play().catch(function(){}); else v.pause(); }); });
   if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){ es.forEach(function(e){
-      if(e.isIntersecting){ if(!started){ started = true; load(0, true); } else if(vid.paused && vid.src) vid.play().catch(function(){}); }
-      else if(!vid.paused) vid.pause();
-    }); }, {threshold:.35}).observe(document.getElementById('player'));
-  } else { load(0, false); }
+    var vo = new IntersectionObserver(function(es){ es.forEach(function(e){
+      var v = e.target;
+      if(e.isIntersecting){ if(v.dataset.src && !v.src){ v.src = v.dataset.src; } v.play().catch(function(){}); }
+      else if(!v.paused) v.pause();
+    }); }, {threshold:.45});
+    lazy.forEach(function(v){ vo.observe(v); });
+    vo.observe(hero);
+  } else lazy.forEach(function(v){ v.src = v.dataset.src; });
 
   /* Certificate lightbox */
   var lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
-  document.querySelectorAll('.cert button').forEach(function(b){ b.addEventListener('click', function(){ lbImg.src = b.dataset.full; lbImg.alt = b.getAttribute('aria-label'); lb.classList.add('open'); }); });
+  document.querySelectorAll('.cert').forEach(function(b){ b.addEventListener('click', function(){ lbImg.src = b.dataset.full; lbImg.alt = b.getAttribute('aria-label'); lb.classList.add('open'); }); });
   lb.addEventListener('click', function(e){ if(e.target !== lbImg) lb.classList.remove('open'); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') lb.classList.remove('open'); });
 
@@ -965,16 +794,10 @@ footer a:hover{color:#fff}
       document.getElementById('okWa').href = waUrl(msg);
       var card = document.getElementById('quote'); card.classList.add('done'); card.scrollIntoView({behavior:'smooth', block:'center'});
     };
-    var post = function(url, body){
-      return fetch(url, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(body)});
-    };
-    var req;
     if(C.ALARM_SHEET_URL){
-      // Dedicated Fire Alarm sheet: every field in its own column
-      req = post(C.ALARM_SHEET_URL, Object.assign({form_id:C.FORM_ID}, d));
-    }
-    if(req){ req.then(done).catch(function(){ done(); window.open(waUrl(msg), '_blank'); }); }
-    else { done(); window.open(waUrl(msg), '_blank'); }
+      fetch(C.ALARM_SHEET_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(Object.assign({form_id:C.FORM_ID}, d))})
+        .then(done).catch(function(){ done(); window.open(waUrl(msg), '_blank'); });
+    } else { done(); window.open(waUrl(msg), '_blank'); }
   });
 
   /* Reveal on scroll */

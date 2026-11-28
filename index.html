@@ -168,12 +168,15 @@ header.nav .wrap{display:flex;align-items:center;justify-content:space-between;g
 .sys h3{font-size:26px;font-weight:800;margin-bottom:8px}
 .sys > p{font-size:15.5px;color:var(--muted)}
 .sys.dark > p{color:#b2c1d3}
-.sys ul{list-style:none;display:grid;gap:10px;margin:20px 0 24px;flex:1}
-.sys li{display:flex;gap:10px;font-size:15px}
-.sys li svg{width:20px;height:20px;flex:none;color:var(--red);margin-top:2px}
-.sys.dark li svg{color:#ff7a66}
 .sys .btn{align-self:flex-start}
-.sys img.deco{position:absolute;right:20px;top:22px;width:92px;opacity:.95}
+.sys .one{font-size:16px;color:var(--muted);margin-bottom:16px}
+.sys .one b{color:var(--ink)}
+.sys.dark .one{color:#b2c1d3}.sys.dark .one b{color:#fff}
+.sys .diag{width:100%;height:auto;margin:4px 0 18px;background:var(--soft);border-radius:14px;padding:12px}
+.sys.dark .diag{background:rgba(255,255,255,.06)}
+.sys .best{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.sys .best span{font-size:13px;font-weight:600;padding:6px 11px;border-radius:999px;background:var(--soft);color:var(--ink)}
+.sys.dark .best span{background:rgba(255,255,255,.1);color:#fff}
 .devices{margin-top:26px;background:#fff;border-radius:22px;padding:22px 24px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
 .dev{text-align:center;padding:6px}
 .dev img{height:66px;width:auto;margin:0 auto 8px}
@@ -202,21 +205,6 @@ header.nav .wrap{display:flex;align-items:center;justify-content:space-between;g
 .ic b{display:block;font-family:var(--h);font-size:15px;color:var(--ink)}
 .ic span{font-size:13px;color:var(--muted)}
 
-/* process timeline */
-.proc{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
-.proc .stick{position:sticky;top:110px}
-.proc .stick .btn{margin-top:22px}
-.proc .call{display:flex;align-items:center;gap:12px;margin-top:18px;font-weight:600;color:var(--ink)}
-.proc .call svg{width:22px;height:22px;color:var(--red)}
-.tl{list-style:none;position:relative;padding-left:0}
-.tl::before{content:"";position:absolute;left:27px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--red),var(--navy))}
-.tl li{position:relative;display:flex;gap:22px;padding-bottom:28px}
-.tl li:last-child{padding-bottom:0}
-.tl .dot{position:relative;z-index:1;width:56px;height:56px;border-radius:16px;background:#fff;border:2px solid var(--line);display:grid;place-items:center;flex:none;box-shadow:var(--shadow)}
-.tl .dot img{width:36px;height:auto}
-.tl small{font-family:var(--h);font-weight:700;font-size:12px;color:var(--red);letter-spacing:.1em}
-.tl h4{font-size:18px;margin:2px 0 4px}
-.tl p{font-size:15px;color:var(--muted)}
 
 /* trust */
 .trust{background:var(--night);color:#b9c7d8}
@@ -302,9 +290,10 @@ footer a:hover{color:#fff}
   .bar .hide-m{display:none}
   .hero{padding:40px 0 56px}
   .hero .wrap{grid-template-columns:1fr;gap:40px}
-    .sys-grid,.trust-grid,.faq,.proc{grid-template-columns:1fr}
-  .proc .stick{position:static}
-  .vids{grid-template-columns:1fr;max-width:420px;margin:0 auto}
+    .sys-grid,.trust-grid,.faq{grid-template-columns:1fr}
+  .vids{gap:12px}
+  .vid .cap{padding:12px 12px 14px;font-size:12.5px}
+  .vid .cap b{font-size:14px}
   .final .box{grid-template-columns:1fr;padding:34px 26px}
   .foot{grid-template-columns:1fr 1fr}
 }
@@ -328,9 +317,16 @@ footer a:hover{color:#fff}
   .svc span{font-size:13px;padding:8px 12px}
   .devices{grid-template-columns:repeat(2,1fr);padding:16px}
   .sys{padding:24px 20px}
-  .sys img.deco{width:64px;right:14px;top:16px}
-  .sys h3{font-size:22px;padding-right:60px}
+  .sys h3{font-size:22px}
   .ind-grid{grid-template-columns:1fr}
+  .vids{gap:8px}
+  .vid{border-radius:14px}
+  .vid .v{aspect-ratio:9/16}
+  .vid .cap{padding:8px 8px 10px;font-size:0}
+  .vid .cap b{font-size:11.5px;line-height:1.25;margin:0}
+  .vid .num{left:6px;top:6px;font-size:10px;padding:3px 7px}
+  .vid .mute{right:6px;top:6px;font-size:0;padding:4px}
+  .vid .mute svg{width:12px;height:12px}
   .certs{grid-template-columns:1fr 1fr}
   .cert img{height:170px}
   .foot{grid-template-columns:1fr}
@@ -360,7 +356,7 @@ footer a:hover{color:#fff}
       <span><small>MSD Engineering</small><b>THE FIRE WALA<sup>®</sup></b><em>ISO 9001:2015 Certified</em></span>
     </a>
     <nav class="menu">
-      <a href="#systems">Systems</a><a href="#work">Our Work</a><a href="#process">Process</a><a href="#trust">Certificates</a><a href="#faq">FAQ</a>
+      <a href="#systems">Systems</a><a href="#work">Our Work</a><a href="#trust">Certificates</a><a href="#faq">FAQ</a>
       <a href="#quote" class="btn btn-red">Book FREE Survey</a>
     </nav>
   </div>
@@ -496,54 +492,6 @@ footer a:hover{color:#fff}
   </div></div>
 </div>
 
-<!-- SYSTEMS -->
-<section class="systems" id="systems">
-  <div class="wrap">
-    <div class="head center reveal">
-      <span class="tag">Choose your system</span>
-      <h2>Conventional or Addressable — we fit the right one</h2>
-      <p>Our engineer recommends the system after a site survey, based on your building size, occupancy and budget.</p>
-    </div>
-    <div class="sys-grid">
-      <div class="sys reveal">
-        <img class="deco" src="assets/3d/control-panel.svg" alt="" aria-hidden="true">
-        <span class="lbl">Small &amp; medium buildings</span>
-        <h3>Conventional System</h3>
-        <p>Detectors are wired in zones — the panel shows which zone is in alarm. Reliable, cost-effective and easy to maintain.</p>
-        <ul>
-          <li><svg><use href="#i-check"/></svg><span>Shops, offices, clinics, small schools &amp; hotels</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Zone-wise smoke &amp; heat detection</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Call points &amp; hooters on every floor, battery backup</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Lower initial investment</span></li>
-        </ul>
-        <a href="#quote" class="btn btn-red" data-pkg="Conventional system">Get Conventional Quote</a>
-      </div>
-      <div class="sys dark reveal">
-        <img class="deco" src="assets/3d/smoke-detector.svg" alt="" aria-hidden="true">
-        <span class="lbl">Large &amp; high-risk buildings</span>
-        <h3>Addressable System</h3>
-        <p>Every device has its own address on a loop — the panel shows the exact room and detector in alarm.</p>
-        <ul>
-          <li><svg><use href="#i-check"/></svg><span>Hospitals, hotels, malls, factories &amp; campuses</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Multi-sensor, beam &amp; flame detectors on loops</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Instant fault finding, fewer false alarms</span></li>
-          <li><svg><use href="#i-check"/></svg><span>Expandable as your building grows</span></li>
-        </ul>
-        <a href="#quote" class="btn btn-red" data-pkg="Addressable system">Get Addressable Quote</a>
-      </div>
-    </div>
-    <div class="devices reveal">
-      <div class="dev"><img src="assets/3d/smoke-detector.svg" alt="" loading="lazy"><b>Smoke Detector</b><span>Rooms &amp; corridors</span></div>
-      <div class="dev"><img src="assets/3d/heat-detector.svg" alt="" loading="lazy"><b>Heat Detector</b><span>Kitchens &amp; DG rooms</span></div>
-      <div class="dev"><img src="assets/3d/call-point.svg" alt="" loading="lazy"><b>Call Point</b><span>Near every exit</span></div>
-      <div class="dev"><img src="assets/3d/hooter.svg" alt="" loading="lazy"><b>Hooter</b><span>Audible on all floors</span></div>
-      <div class="dev"><img src="assets/3d/response-indicator.svg" alt="" loading="lazy"><b>Response Indicator</b><span>Outside closed rooms</span></div>
-      <div class="dev"><img src="assets/3d/control-panel.svg" alt="" loading="lazy"><b>Control Panel</b><span>With battery backup</span></div>
-    </div>
-    <div class="codes"><span>NBC Part 4</span><span>IS 2189</span><span>Local Fire Authority norms</span><span>Fire NOC-ready documents</span></div>
-  </div>
-</section>
-
 <!-- VIDEOS -->
 <section id="work">
   <div class="wrap">
@@ -557,6 +505,71 @@ footer a:hover{color:#fff}
       <div class="vid reveal"><div class="v"><video class="lazyvid" muted loop playsinline preload="none" poster="assets/video/alarm-2-poster.webp" data-src="assets/video/alarm-2.mp4" disablepictureinpicture></video><span class="num">02</span><span class="mute"><svg><use href="#i-mute"/></svg>Muted</span></div><div class="cap"><b>Client walkthrough &amp; panel demo</b>Engineer triggers a call point and shows the alarm on the panel.</div></div>
       <div class="vid reveal"><div class="v"><video class="lazyvid" muted loop playsinline preload="none" poster="assets/video/alarm-3-poster.webp" data-src="assets/video/alarm-3.mp4" disablepictureinpicture></video><span class="num">03</span><span class="mute"><svg><use href="#i-mute"/></svg>Muted</span></div><div class="cap"><b>Commissioning with client team</b>Alarm verified on the panel and demonstrated to staff.</div></div>
     </div>
+  </div>
+</section>
+
+<!-- SYSTEMS -->
+<section class="systems" id="systems">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="tag">Choose your system</span>
+      <h2>Conventional or Addressable?</h2>
+      <p>We recommend the right one after a FREE site survey.</p>
+    </div>
+    <div class="sys-grid">
+      <div class="sys reveal">
+        <span class="lbl">Small &amp; medium buildings</span>
+        <h3>Conventional</h3>
+        <p class="one">Panel shows <b>which zone</b> is in alarm.</p>
+        <svg class="diag" viewBox="0 0 320 150" role="img" aria-label="Conventional system: panel shows which zone is in alarm">
+          <rect x="8" y="35" width="70" height="80" rx="8" fill="#0b1b2e"/>
+          <rect x="16" y="43" width="54" height="22" rx="3" fill="#1f8f5a"/><text x="43" y="58" text-anchor="middle" font-family="Arial" font-weight="700" font-size="9" fill="#fff">ZONE 2</text>
+          <circle cx="24" cy="80" r="5" fill="#8a96a6"/><circle cx="43" cy="80" r="5" fill="#E63B26"/><circle cx="62" cy="80" r="5" fill="#8a96a6"/>
+          <text x="43" y="103" text-anchor="middle" font-family="Arial" font-size="8" fill="#9fb0c4">PANEL</text>
+          <g fill="none" stroke="#c9d2dd" stroke-width="2"><path d="M78 55h30v-30h20M78 75h50M78 95h30v30h20"/></g>
+          <g font-family="Arial" font-weight="700" font-size="9">
+            <rect x="128" y="10" width="184" height="30" rx="8" fill="#f4f6f9" stroke="#e5e9ef"/><text x="140" y="29" fill="#5d6673">ZONE 1</text>
+            <rect x="128" y="60" width="184" height="30" rx="8" fill="#fdecea" stroke="#E63B26" stroke-width="1.5"/><text x="140" y="79" fill="#c42d1a">ZONE 2 · ALARM</text>
+            <rect x="128" y="110" width="184" height="30" rx="8" fill="#f4f6f9" stroke="#e5e9ef"/><text x="140" y="129" fill="#5d6673">ZONE 3</text>
+          </g>
+          <g fill="#fff" stroke="#9aa6b5" stroke-width="1.5"><circle cx="232" cy="25" r="7"/><circle cx="262" cy="25" r="7"/><circle cx="292" cy="25" r="7"/><circle cx="262" cy="125" r="7"/><circle cx="292" cy="125" r="7"/><circle cx="232" cy="125" r="7"/></g>
+          <g fill="#fff" stroke="#E63B26" stroke-width="2"><circle cx="232" cy="75" r="7"/><circle cx="262" cy="75" r="7"/><circle cx="292" cy="75" r="7"/></g>
+          <g fill="#E63B26"><circle cx="232" cy="75" r="2.5"/><circle cx="262" cy="75" r="2.5"/><circle cx="292" cy="75" r="2.5"/></g>
+        </svg>
+        <div class="best"><span>🏪 Shops</span><span>🏢 Offices</span><span>🩺 Clinics</span><span>🏫 Schools</span></div>
+        <a href="#quote" class="btn btn-red" data-pkg="Conventional system">Get Quote</a>
+      </div>
+      <div class="sys dark reveal">
+        <span class="lbl">Large &amp; high-risk buildings</span>
+        <h3>Addressable</h3>
+        <p class="one">Panel shows the <b>exact device &amp; room</b>.</p>
+        <svg class="diag" viewBox="0 0 320 150" role="img" aria-label="Addressable system: panel shows the exact device and room in alarm">
+          <rect x="8" y="35" width="70" height="80" rx="8" fill="#fff"/>
+          <rect x="15" y="43" width="56" height="30" rx="3" fill="#1f8f5a"/><text x="43" y="56" text-anchor="middle" font-family="Arial" font-weight="700" font-size="8" fill="#fff">DET 04</text><text x="43" y="67" text-anchor="middle" font-family="Arial" font-weight="700" font-size="8" fill="#fff">ROOM 204</text>
+          <circle cx="24" cy="88" r="5" fill="#E63B26"/><circle cx="43" cy="88" r="5" fill="#cbd5df"/><circle cx="62" cy="88" r="5" fill="#cbd5df"/>
+          <text x="43" y="107" text-anchor="middle" font-family="Arial" font-size="8" fill="#5d6673">PANEL</text>
+          <path d="M78 60 H110 V18 H300 V132 H110 V90 H78" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-dasharray="5 4"/>
+          <g font-family="Arial" font-weight="700" font-size="8" text-anchor="middle">
+            <g fill="#0f2c4f" stroke="#9fb7d3" stroke-width="1.5"><circle cx="150" cy="18" r="11"/><circle cx="205" cy="18" r="11"/><circle cx="260" cy="18" r="11"/><circle cx="300" cy="75" r="11"/><circle cx="205" cy="132" r="11"/><circle cx="150" cy="132" r="11"/></g>
+            <text x="150" y="21" fill="#cfe0f2">01</text><text x="205" y="21" fill="#cfe0f2">02</text><text x="260" y="21" fill="#cfe0f2">03</text><text x="205" y="135" fill="#cfe0f2">05</text><text x="150" y="135" fill="#cfe0f2">06</text>
+            <circle cx="260" cy="132" r="13" fill="#E63B26"/><text x="260" y="135" fill="#fff">04</text>
+            <text x="300" y="78" fill="#cfe0f2">MCP</text>
+          </g>
+          <rect x="226" y="88" width="68" height="20" rx="10" fill="#E63B26"/><text x="260" y="101" text-anchor="middle" font-family="Arial" font-weight="700" font-size="8.5" fill="#fff">ROOM 204</text>
+        </svg>
+        <div class="best"><span>🏥 Hospitals</span><span>🏨 Hotels</span><span>🛍️ Malls</span><span>🏭 Factories</span></div>
+        <a href="#quote" class="btn btn-red" data-pkg="Addressable system">Get Quote</a>
+      </div>
+    </div>
+    <div class="devices reveal">
+      <div class="dev"><img src="assets/3d/smoke-detector.svg" alt="" loading="lazy"><b>Smoke Detector</b><span>Rooms &amp; corridors</span></div>
+      <div class="dev"><img src="assets/3d/heat-detector.svg" alt="" loading="lazy"><b>Heat Detector</b><span>Kitchens &amp; DG rooms</span></div>
+      <div class="dev"><img src="assets/3d/call-point.svg" alt="" loading="lazy"><b>Call Point</b><span>Near every exit</span></div>
+      <div class="dev"><img src="assets/3d/hooter.svg" alt="" loading="lazy"><b>Hooter</b><span>Audible on all floors</span></div>
+      <div class="dev"><img src="assets/3d/response-indicator.svg" alt="" loading="lazy"><b>Response Indicator</b><span>Outside closed rooms</span></div>
+      <div class="dev"><img src="assets/3d/control-panel.svg" alt="" loading="lazy"><b>Control Panel</b><span>With battery backup</span></div>
+    </div>
+    <div class="codes"><span>NBC Part 4</span><span>IS 2189</span><span>Local Fire Authority norms</span><span>Fire NOC-ready documents</span></div>
   </div>
 </section>
 
@@ -577,27 +590,6 @@ footer a:hover{color:#fff}
       <div class="ic reveal"><i>🏢</i><div><b>Offices &amp; Govt.</b><span>Commercial &amp; institutional</span></div></div>
       <div class="ic reveal"><i>🏘️</i><div><b>Residential Societies</b><span>High-rise towers</span></div></div>
     </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section id="process">
-  <div class="wrap proc">
-    <div class="stick reveal">
-      <span class="tag">How we work</span>
-      <h2 style="font-size:clamp(27px,3.4vw,40px);margin:10px 0 12px">From FREE survey to signed handover</h2>
-      <p style="color:var(--muted);font-size:17px">One in-house team — no sub-contracting. You get progress updates at every step and full documentation at the end.</p>
-      <a href="#quote" class="btn btn-red">Book FREE Site Survey <svg><use href="#i-arrow"/></svg></a>
-      <a href="tel:+917772070303" class="call" data-track="call"><svg><use href="#i-phone"/></svg>Or call 77720 70303</a>
-    </div>
-    <ol class="tl">
-      <li class="reveal"><span class="dot"><img src="assets/3d/step-survey.svg" alt=""></span><div><small>STEP 01</small><h4>FREE Site Survey</h4><p>We study your layout, occupancy and risk areas to decide the detector requirement.</p></div></li>
-      <li class="reveal"><span class="dot"><img src="assets/3d/step-design.svg" alt=""></span><div><small>STEP 02</small><h4>Design &amp; Quotation</h4><p>Detector layout, zone / loop design, panel selection and a clear itemised quote.</p></div></li>
-      <li class="reveal"><span class="dot"><img src="assets/3d/step-supply.svg" alt=""></span><div><small>STEP 03</small><h4>Material Supply</h4><p>Panel, detectors, call points, hooters, batteries and cables — right make for your budget.</p></div></li>
-      <li class="reveal"><span class="dot"><img src="assets/3d/mini-ladder.svg" alt=""></span><div><small>STEP 04</small><h4>Installation</h4><p>Neat cabling and conduiting, device mounting, panel installation and termination.</p></div></li>
-      <li class="reveal"><span class="dot"><img src="assets/3d/smoke-detector.svg" alt=""></span><div><small>STEP 05</small><h4>Testing &amp; Commissioning</h4><p>Every detector, call point, hooter, battery, zone and loop tested — with fault simulation.</p></div></li>
-      <li class="reveal"><span class="dot"><img src="assets/3d/step-handover.svg" alt=""></span><div><small>STEP 06</small><h4>Training &amp; Handover</h4><p>Staff training, as-built drawing, test reports, warranty and signed handover documents.</p></div></li>
-    </ol>
   </div>
 </section>
 

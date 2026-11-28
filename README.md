@@ -27,8 +27,8 @@ Upload `index.html` and the `assets/` folder to any static host (your web server
 Vercel, GitHub Pages, Hostinger etc.) and use that URL as the ad's destination.
 
 ## Sections
-Hero (headline + real-site video) → Lead form band → Client logo marquee →
-Systems (Conventional vs Addressable + devices) → Project videos (muted) → Industries →
-Process timeline → Why trust us (certificates + Google reviews) → FAQ → Final CTA → Footer.
+Hero (headline + lead form) → Client logo marquee → Project videos (muted, 3 in a row on mobile) →
+Systems (Conventional vs Addressable diagrams + devices) → Industries →
+Why trust us (certificates + Google reviews) → FAQ → Final CTA → Footer.
 Sticky Call / WhatsApp / FREE Survey bar on mobile. Montserrat headings, Safety Red accents —
 deliberately different from the Hydrant & Sprinkler page.

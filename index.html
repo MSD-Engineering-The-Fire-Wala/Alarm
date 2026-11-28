@@ -199,10 +199,13 @@ header.nav .wrap{display:flex;align-items:center;justify-content:space-between;g
 /* industries */
 .ind{background:var(--soft)}
 .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.ic{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;gap:14px;align-items:center;transition:transform .2s,box-shadow .2s,border-color .2s}
-.ic:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#f3c3bb}
-.ic i{width:48px;height:48px;border-radius:12px;background:var(--red-soft);display:grid;place-items:center;font-style:normal;font-size:24px;flex:none}
-.ic b{display:block;font-family:var(--h);font-size:15px;color:var(--ink)}
+.ic{background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+.ic:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.ic .ph{aspect-ratio:4/3;overflow:hidden;background:#dfe5ec}
+.ic img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.ic:hover img{transform:scale(1.06)}
+.ic .tx{padding:14px 16px 16px;border-top:3px solid var(--red)}
+.ic b{display:block;font-family:var(--h);font-size:15.5px;color:var(--ink)}
 .ic span{font-size:13px;color:var(--muted)}
 
 
@@ -318,7 +321,10 @@ footer a:hover{color:#fff}
   .devices{grid-template-columns:repeat(2,1fr);padding:16px}
   .sys{padding:24px 20px}
   .sys h3{font-size:22px}
-  .ind-grid{grid-template-columns:1fr}
+  .ind-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .ic .tx{padding:10px 11px 12px}
+  .ic b{font-size:13.5px}
+  .ic span{font-size:11.5px;line-height:1.35;display:block}
   .vids{gap:8px}
   .vid{border-radius:14px}
   .vid .v{aspect-ratio:9/16}
@@ -581,14 +587,14 @@ footer a:hover{color:#fff}
       <h2>Fire alarm systems for every type of building</h2>
     </div>
     <div class="ind-grid">
-      <div class="ic reveal"><i>🏥</i><div><b>Hospitals &amp; Clinics</b><span>NABH-ready detection</span></div></div>
-      <div class="ic reveal"><i>🏨</i><div><b>Hotels &amp; Resorts</b><span>Rooms, kitchens &amp; banquets</span></div></div>
-      <div class="ic reveal"><i>🏫</i><div><b>Schools &amp; Colleges</b><span>Classrooms, labs &amp; hostels</span></div></div>
-      <div class="ic reveal"><i>🏭</i><div><b>Factories &amp; Plants</b><span>Production &amp; process areas</span></div></div>
-      <div class="ic reveal"><i>📦</i><div><b>Warehouses</b><span>Beam detection, high ceilings</span></div></div>
-      <div class="ic reveal"><i>🛍️</i><div><b>Malls &amp; Showrooms</b><span>Retail floors &amp; parking</span></div></div>
-      <div class="ic reveal"><i>🏢</i><div><b>Offices &amp; Govt.</b><span>Commercial &amp; institutional</span></div></div>
-      <div class="ic reveal"><i>🏘️</i><div><b>Residential Societies</b><span>High-rise towers</span></div></div>
+      <div class="ic reveal"><div class="ph"><img src="assets/img/ind-hospital2.webp" alt="Hospitals and Clinics" loading="lazy" width="640" height="427"></div><div class="tx"><b>Hospitals &amp; Clinics</b><span>NABH-ready detection</span></div></div>
+      <div class="ic reveal"><div class="ph"><img src="assets/img/ind-hotel.webp" alt="Hotels and Resorts" loading="lazy" width="640" height="427"></div><div class="tx"><b>Hotels &amp; Resorts</b><span>Rooms, kitchens &amp; banquets</span></div></div>
+      <div class="ic reveal"><div class="ph"><img src="assets/img/ind-school.webp" alt="Schools and Colleges" loading="lazy" width="640" height="427"></div><div class="tx"><b>Schools &amp; Colleges</b><span>Classrooms, labs &amp; hostels</span></div></div>
+      <div class="ic reveal"><div class="ph"><img src="assets/img/ind-factory.webp" alt="Factories and Plants" loading="lazy" width="640" height="427"></div><div class="tx"><b>Factories &amp; Plants</b><span>Production &amp; process areas</span></div></div>
+      <div class="ic reveal"><div class="ph"><img src="assets/img/ind-warehouse.webp" alt="Warehouses" loading="lazy" width="640" height="427"></div><div class="tx"><b>Warehouses</b><span>Beam detection, high ceilings</span></div></div>
+      <div class="ic reveal"><div class="ph"><img src="assets/img/ind-mall.webp" alt="Malls and Showrooms" loading="lazy" width="640" height="427"></div><div class="tx"><b>Malls &amp; Showrooms</b><span>Retail floors &amp; parking</span></div></div>
+      <div class="ic reveal"><div class="ph"><img src="assets/img/ind-office.webp" alt="Offices and Govt." loading="lazy" width="640" height="427"></div><div class="tx"><b>Offices &amp; Govt.</b><span>Commercial &amp; institutional</span></div></div>
+      <div class="ic reveal"><div class="ph"><img src="assets/img/ind-residential.webp" alt="Residential Societies" loading="lazy" width="640" height="427"></div><div class="tx"><b>Residential Societies</b><span>High-rise towers</span></div></div>
     </div>
   </div>
 </section>
